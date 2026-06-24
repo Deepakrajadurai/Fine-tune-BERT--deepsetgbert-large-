@@ -1,0 +1,12 @@
+# Data files (too large for GitHub)
+/Data/
+
+# Trained models and checkpoints
+/models/
+
+# Python virtual environment
+/venv/
+
+# Python cache
+__pycache__/
+*.pyc

@@ -1,0 +1,15 @@
+# Core data processing & splitting
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# Language detection
+langdetect>=1.0.9
+
+# Deep learning & transformers
+torch>=2.0.0
+transformers>=4.30.0
+accelerate>=0.21.0
+evaluate>=0.4.0
+sentencepiece>=0.1.99
+tqdm>=4.66.0
+tabulate>=0.9.0
