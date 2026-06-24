@@ -11,6 +11,8 @@ import os
 import threading
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel, Field
 
 logging.basicConfig(
@@ -37,16 +39,41 @@ _device    = "cpu"
 _threshold = 0.5
 _ready     = False
 
+# Shared state dict – also writable by run_api.py pre-loader
+_state: dict = {
+    "tokenizer": None,
+    "model":     None,
+    "device":    "cpu",
+    "threshold": 0.5,
+    "ready":     False,
+}
+
 
 def _ensure_loaded() -> None:
-    """Load model exactly once; safe for concurrent first requests."""
+    """Load model exactly once. If run_api.py already populated _state, this is a no-op."""
     global _tokenizer, _model, _device, _threshold, _ready
+
+    # Fast path: pre-loader already filled _state
+    if _state.get("ready"):
+        _tokenizer = _state["tokenizer"]
+        _model     = _state["model"]
+        _device    = _state["device"]
+        _threshold = _state["threshold"]
+        _ready     = True
+        return
 
     if _ready:
         return
 
     with _lock:
-        if _ready:          # double-checked locking
+        if _ready:
+            return
+        if _state.get("ready"):   # re-check after acquiring lock
+            _tokenizer = _state["tokenizer"]
+            _model     = _state["model"]
+            _device    = _state["device"]
+            _threshold = _state["threshold"]
+            _ready     = True
             return
 
         import torch
@@ -75,6 +102,14 @@ def _ensure_loaded() -> None:
 # App  (no lifespan — avoids torch/asyncio conflict on Windows)
 # ─────────────────────────────────────────────────────────────────────────────
 app = FastAPI(title="AI Text Detection API")
+
+# Allow Swagger UI and local browser clients to call the API
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -123,13 +158,19 @@ def _predict(text: str) -> dict:
 # ─────────────────────────────────────────────────────────────────────────────
 # Endpoints
 # ─────────────────────────────────────────────────────────────────────────────
+@app.get("/", include_in_schema=False)
+def root():
+    """Redirect homepage to the interactive API docs."""
+    return RedirectResponse(url="/docs")
+
+
 @app.get("/health")
 def health():
     return {
         "status":       "ok",
-        "model_loaded": _ready,
-        "device":       _device,
-        "threshold":    _threshold,
+        "model_loaded": _ready or _state.get("ready", False),
+        "device":       _state.get("device", _device),
+        "threshold":    _state.get("threshold", _threshold),
     }
 
 

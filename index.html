@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GBERT Detector – AI Text Detection</title>
+  <meta name="description" content="Detect AI-generated vs human-written German text using a fine-tuned deepset/gbert-large model." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Tokens ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #07080f;
+      --surface:   #0f1120;
+      --card:      rgba(15,17,36,0.75);
+      --border:    rgba(255,255,255,0.07);
+      --border-hi: rgba(124,58,237,0.6);
+      --purple:    #7c3aed;
+      --blue:      #2563eb;
+      --cyan:      #06b6d4;
+      --green:     #10b981;
+      --red:       #ef4444;
+      --text:      #e2e8f0;
+      --muted:     #64748b;
+      --radius:    16px;
+      --shadow:    0 24px 80px rgba(0,0,0,0.6);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Animated background ──────────────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,58,237,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(37,99,235,0.14) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Layout ───────────────────────────────────────────────────────── */
+    .page { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 32px 20px 80px; }
+
+    /* ── Header ───────────────────────────────────────────────────────── */
+    header { text-align: center; margin-bottom: 48px; }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 8px 20px;
+      backdrop-filter: blur(12px);
+      margin-bottom: 28px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .logo-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.6; transform: scale(0.85); }
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #e2e8f0 30%, #7c3aed 70%, #2563eb 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      font-weight: 400;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ── Card ─────────────────────────────────────────────────────────── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow);
+      padding: 32px;
+      transition: border-color 0.3s;
+    }
+    .card:focus-within { border-color: rgba(124,58,237,0.4); }
+
+    /* ── Textarea ─────────────────────────────────────────────────────── */
+    .textarea-wrap { position: relative; margin-bottom: 20px; }
+
+    textarea {
+      width: 100%;
+      min-height: 180px;
+      resize: vertical;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 18px 20px;
+      outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    textarea::placeholder { color: var(--muted); }
+    textarea:focus {
+      border-color: var(--border-hi);
+      box-shadow: 0 0 0 3px rgba(124,58,237,0.15), 0 0 20px rgba(124,58,237,0.08);
+    }
+
+    .char-count {
+      position: absolute;
+      bottom: 12px; right: 14px;
+      font-size: 12px;
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+      pointer-events: none;
+    }
+
+    /* ── Controls row ─────────────────────────────────────────────────── */
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .sample-btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .sample-btn {
+      padding: 8px 14px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .sample-btn:hover {
+      color: var(--text);
+      border-color: rgba(124,58,237,0.4);
+      background: rgba(124,58,237,0.08);
+    }
+
+    #detect-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 32px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.25s;
+      box-shadow: 0 4px 20px rgba(124,58,237,0.35);
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    #detect-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0);
+      transition: background 0.2s;
+    }
+    #detect-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(124,58,237,0.5); }
+    #detect-btn:hover::after { background: rgba(255,255,255,0.06); }
+    #detect-btn:active { transform: translateY(0); }
+    #detect-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+    .btn-icon { font-size: 18px; }
+
+    /* ── Spinner ──────────────────────────────────────────────────────── */
+    .spinner {
+      width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Separator ────────────────────────────────────────────────────── */
+    .sep {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
+      margin: 28px 0;
+    }
+
+    /* ── Results ──────────────────────────────────────────────────────── */
+    #results {
+      display: none;
+      animation: fadeUp 0.4s ease;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* ── Gauge ────────────────────────────────────────────────────────── */
+    .gauge-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .gauge-svg { width: 140px; height: 140px; }
+
+    .gauge-track {
+      fill: none;
+      stroke: rgba(255,255,255,0.06);
+      stroke-width: 10;
+    }
+    .gauge-fill {
+      fill: none;
+      stroke-width: 10;
+      stroke-linecap: round;
+      transform-origin: center;
+      transform: rotate(-90deg);
+      transition: stroke-dashoffset 0.9s cubic-bezier(.4,0,.2,1), stroke 0.5s;
+    }
+
+    .gauge-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── Verdict badge ────────────────────────────────────────────────── */
+    #verdict-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: all 0.4s;
+    }
+    #verdict-badge.human {
+      background: rgba(16,185,129,0.12);
+      border: 1px solid rgba(16,185,129,0.35);
+      color: var(--green);
+    }
+    #verdict-badge.ai {
+      background: rgba(239,68,68,0.12);
+      border: 1px solid rgba(239,68,68,0.35);
+      color: var(--red);
+    }
+
+    /* ── Stats panel ──────────────────────────────────────────────────── */
+    .stats-panel { display: flex; flex-direction: column; gap: 16px; }
+
+    .stats-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    #verdict-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .confidence-note {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* Prob bars */
+    .prob-bars { display: flex; flex-direction: column; gap: 10px; }
+
+    .prob-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .prob-row-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .prob-row-header span:first-child { color: var(--muted); }
+    .prob-row-header span:last-child  { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+
+    .bar-track {
+      height: 6px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      width: 0%;
+      transition: width 0.9s cubic-bezier(.4,0,.2,1);
+    }
+    .bar-fill.human { background: linear-gradient(90deg, #10b981, #34d399); }
+    .bar-fill.ai    { background: linear-gradient(90deg, #ef4444, #f87171); }
+
+    /* Meta row */
+    .meta-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-top: 4px;
+    }
+    .meta-chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .meta-chip strong { color: var(--text); font-family: 'JetBrains Mono', monospace; }
+
+    /* ── History ──────────────────────────────────────────────────────── */
+    #history-section { margin-top: 40px; display: none; }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #history-list { display: flex; flex-direction: column; gap: 8px; }
+
+    .history-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+      animation: fadeUp 0.3s ease;
+    }
+    .history-item:hover {
+      background: rgba(124,58,237,0.06);
+      border-color: rgba(124,58,237,0.25);
+    }
+
+    .history-text {
+      font-size: 14px;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+    }
+
+    .history-badge {
+      flex-shrink: 0;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .history-badge.human {
+      background: rgba(16,185,129,0.12);
+      color: var(--green);
+      border: 1px solid rgba(16,185,129,0.3);
+    }
+    .history-badge.ai {
+      background: rgba(239,68,68,0.12);
+      color: var(--red);
+      border: 1px solid rgba(239,68,68,0.3);
+    }
+
+    .history-conf {
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    /* ── Error toast ──────────────────────────────────────────────────── */
+    #toast {
+      position: fixed;
+      bottom: 32px; left: 50%; transform: translateX(-50%) translateY(80px);
+      background: rgba(239,68,68,0.12);
+      border: 1px solid rgba(239,68,68,0.35);
+      color: #fca5a5;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+      max-width: 400px;
+      text-align: center;
+      pointer-events: none;
+    }
+    #toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* ── Footer ───────────────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    footer a { color: var(--purple); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Responsive ───────────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .results-grid { grid-template-columns: 1fr; }
+      .gauge-wrap   { flex-direction: row; }
+      .controls     { flex-direction: column; align-items: stretch; }
+      #detect-btn   { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <span class="logo-dot"></span>
+      GBERT Detector · deepset/gbert-large
+    </div>
+    <h1>AI Text Detection</h1>
+    <p class="subtitle">Detect whether German text was written by a human or generated by AI — powered by a fine-tuned BERT-large model.</p>
+  </header>
+
+  <!-- Main card -->
+  <div class="card" id="main-card">
+    <div class="textarea-wrap">
+      <textarea
+        id="input-text"
+        placeholder="Paste German text here… (e.g., Bundestag speech, news article, or AI-generated content)"
+        spellcheck="false"
+        maxlength="4000"
+      ></textarea>
+      <span class="char-count" id="char-count">0 / 4000</span>
+    </div>
+
+    <div class="controls">
+      <div class="sample-btns">
+        <button class="sample-btn" id="sample-human" title="Load a human-written sample">👤 Human sample</button>
+        <button class="sample-btn" id="sample-ai" title="Load an AI-generated sample">🤖 AI sample</button>
+        <button class="sample-btn" id="clear-btn" title="Clear input">✕ Clear</button>
+      </div>
+      <button id="detect-btn">
+        <span class="btn-icon">🔍</span>
+        <span id="btn-label">Detect</span>
+        <span class="spinner" id="spinner"></span>
+      </button>
+    </div>
+
+    <!-- Results -->
+    <div id="results">
+      <div class="sep"></div>
+      <div class="results-grid">
+
+        <!-- Gauge -->
+        <div class="gauge-wrap">
+          <svg class="gauge-svg" viewBox="0 0 140 140" aria-hidden="true">
+            <circle class="gauge-track" cx="70" cy="70" r="54" />
+            <circle class="gauge-fill" id="gauge-fill" cx="70" cy="70" r="54"
+              stroke="url(#gaugeGrad)"
+              stroke-dasharray="339.29"
+              stroke-dashoffset="339.29"
+            />
+            <defs>
+              <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#7c3aed" />
+                <stop offset="100%" stop-color="#2563eb" />
+              </linearGradient>
+              <linearGradient id="gaugeGradGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#10b981" />
+                <stop offset="100%" stop-color="#34d399" />
+              </linearGradient>
+              <linearGradient id="gaugeGradRed" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#ef4444" />
+                <stop offset="100%" stop-color="#f87171" />
+              </linearGradient>
+            </defs>
+            <text x="70" y="62" text-anchor="middle" font-family="Outfit,sans-serif"
+              font-size="26" font-weight="700" fill="#e2e8f0" id="gauge-pct">–</text>
+            <text x="70" y="82" text-anchor="middle" font-family="Outfit,sans-serif"
+              font-size="11" font-weight="500" fill="#64748b" id="gauge-sub">confidence</text>
+          </svg>
+          <span id="verdict-badge">–</span>
+          <span class="gauge-label">Result</span>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-panel">
+          <div class="stats-header">
+            <span id="verdict-text">–</span>
+          </div>
+
+          <div class="prob-bars">
+            <div class="prob-row">
+              <div class="prob-row-header">
+                <span>Human probability</span>
+                <span id="human-pct">–</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill human" id="bar-human"></div></div>
+            </div>
+            <div class="prob-row">
+              <div class="prob-row-header">
+                <span>AI probability</span>
+                <span id="ai-pct">–</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill ai" id="bar-ai"></div></div>
+            </div>
+          </div>
+
+          <div class="meta-row">
+            <div class="meta-chip">Threshold <strong id="meta-threshold">–</strong></div>
+            <div class="meta-chip">Device <strong id="meta-device">–</strong></div>
+            <div class="meta-chip">Model <strong>gbert-large</strong></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- History -->
+  <section id="history-section">
+    <p class="section-title">🕒 Recent checks</p>
+    <div id="history-list"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    Powered by <a href="https://huggingface.co/deepset/gbert-large" target="_blank">deepset/gbert-large</a>
+    fine-tuned for German AI-text detection · API at
+    <a href="http://127.0.0.1:8000/docs" target="_blank">127.0.0.1:8000/docs</a>
+  </footer>
+
+</div>
+
+<!-- Error toast -->
+<div id="toast"></div>
+
+<script>
+  const API = 'http://127.0.0.1:8000';
+  const CIRCUMFERENCE = 2 * Math.PI * 54; // 339.29
+
+  const $ = id => document.getElementById(id);
+
+  // ── Sample texts ──────────────────────────────────────────────────────────
+  const SAMPLES = {
+    human: `Die Bundesregierung hat heute im Kabinett die neue Digitalstrategie beschlossen. Bundesminister Karl Lauterbach erklärte bei der anschließenden Pressekonferenz, dass die Investitionen in die digitale Infrastruktur in den kommenden Jahren erheblich steigen werden. "Wir müssen aufholen, was in den letzten Jahrzehnten versäumt wurde", sagte er vor versammelten Journalisten.`,
+    ai: `Die Digitalisierung in Deutschland schreitet voran und bietet zahlreiche Möglichkeiten für Wirtschaft und Gesellschaft. Durch gezielte Investitionen in moderne Infrastruktur und innovative Technologien kann Deutschland seine Wettbewerbsfähigkeit auf dem globalen Markt nachhaltig stärken. Es ist wichtig, dass alle Beteiligten gemeinsam an diesem Zukunftsprojekt arbeiten, um die Potenziale der digitalen Transformation vollständig auszuschöpfen.`,
+  };
+
+  // ── State ─────────────────────────────────────────────────────────────────
+  let history = [];
+  let serverDevice = 'cuda';
+
+  // ── Init: fetch device from health endpoint ────────────────────────────────
+  async function initHealth() {
+    try {
+      const res = await fetch(`${API}/health`);
+      if (res.ok) {
+        const data = await res.json();
+        serverDevice = data.device || 'cuda';
+        $('meta-device').textContent = serverDevice.toUpperCase();
+      }
+    } catch { /* server might not be running yet */ }
+  }
+  initHealth();
+
+  // ── Char counter ──────────────────────────────────────────────────────────
+  const textarea = $('input-text');
+  const charCount = $('char-count');
+  textarea.addEventListener('input', () => {
+    charCount.textContent = `${textarea.value.length} / 4000`;
+  });
+
+  // ── Sample buttons ────────────────────────────────────────────────────────
+  $('sample-human').addEventListener('click', () => {
+    textarea.value = SAMPLES.human;
+    textarea.dispatchEvent(new Event('input'));
+  });
+  $('sample-ai').addEventListener('click', () => {
+    textarea.value = SAMPLES.ai;
+    textarea.dispatchEvent(new Event('input'));
+  });
+  $('clear-btn').addEventListener('click', () => {
+    textarea.value = '';
+    textarea.dispatchEvent(new Event('input'));
+    $('results').style.display = 'none';
+  });
+
+  // ── Detect ────────────────────────────────────────────────────────────────
+  $('detect-btn').addEventListener('click', detect);
+  textarea.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') detect();
+  });
+
+  async function detect() {
+    const text = textarea.value.trim();
+    if (!text) { showToast('Please enter some text to analyse.'); return; }
+
+    setLoading(true);
+
+    try {
+      const res = await fetch(`${API}/predict`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.detail || `HTTP ${res.status}`);
+      }
+
+      const data = await res.json();
+      renderResult(data, text);
+    } catch (err) {
+      showToast(`Error: ${err.message}. Make sure server.py is running.`);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // ── Render result ─────────────────────────────────────────────────────────
+  function renderResult(data, text) {
+    const isHuman   = data.label === 'Human';
+    const conf      = (data.confidence * 100).toFixed(1);
+    const humanPct  = (data.human_prob * 100).toFixed(2);
+    const aiPct     = (data.ai_prob   * 100).toFixed(2);
+
+    // Show results section
+    const resultsEl = $('results');
+    resultsEl.style.display = 'block';
+
+    // Gauge
+    const fill    = $('gauge-fill');
+    const offset  = CIRCUMFERENCE * (1 - data.confidence);
+    fill.style.strokeDashoffset = offset;
+    fill.setAttribute('stroke', isHuman ? 'url(#gaugeGradGreen)' : 'url(#gaugeGradRed)');
+
+    $('gauge-pct').textContent = conf + '%';
+    $('gauge-sub').textContent = 'confidence';
+
+    // Verdict badge
+    const badge = $('verdict-badge');
+    badge.className = 'human' ? '' : '';
+    badge.className = isHuman ? 'human' : 'ai';
+    badge.textContent = isHuman ? '✅ Human-written' : '🤖 AI-generated';
+
+    // Verdict text
+    $('verdict-text').textContent = isHuman ? 'Human-written text' : 'AI-generated text';
+    $('verdict-text').style.color = isHuman ? 'var(--green)' : 'var(--red)';
+
+    // Bars
+    $('human-pct').textContent = humanPct + '%';
+    $('ai-pct').textContent    = aiPct    + '%';
+    setTimeout(() => {
+      $('bar-human').style.width = humanPct + '%';
+      $('bar-ai').style.width    = aiPct    + '%';
+    }, 50);
+
+    // Meta
+    $('meta-threshold').textContent = data.threshold;
+    $('meta-device').textContent    = serverDevice.toUpperCase();
+
+    // History
+    addHistory({ text, label: data.label, confidence: data.confidence });
+
+    resultsEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // ── Loading state ─────────────────────────────────────────────────────────
+  function setLoading(on) {
+    const btn     = $('detect-btn');
+    const label   = $('btn-label');
+    const spinner = $('spinner');
+    btn.disabled            = on;
+    label.textContent       = on ? 'Detecting…' : 'Detect';
+    spinner.style.display   = on ? 'block' : 'none';
+    $('btn-icon').style.display = on ? 'none' : 'block';
+  }
+
+  // ── History ───────────────────────────────────────────────────────────────
+  function addHistory(item) {
+    history.unshift(item);
+    if (history.length > 8) history.pop();
+
+    const section = $('history-section');
+    const list    = $('history-list');
+
+    section.style.display = 'block';
+    list.innerHTML = '';
+
+    history.forEach(h => {
+      const el = document.createElement('div');
+      el.className = 'history-item';
+      el.innerHTML = `
+        <span class="history-text">${escapeHtml(h.text.substring(0, 80))}${h.text.length > 80 ? '…' : ''}</span>
+        <span class="history-badge ${h.label === 'Human' ? 'human' : 'ai'}">${h.label}</span>
+        <span class="history-conf">${(h.confidence * 100).toFixed(1)}%</span>
+      `;
+      el.addEventListener('click', () => {
+        textarea.value = h.text;
+        textarea.dispatchEvent(new Event('input'));
+        textarea.scrollIntoView({ behavior: 'smooth' });
+      });
+      list.appendChild(el);
+    });
+  }
+
+  // ── Toast ─────────────────────────────────────────────────────────────────
+  let toastTimer;
+  function showToast(msg) {
+    const t = $('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 4000);
+  }
+
+  // ── Utils ─────────────────────────────────────────────────────────────────
+  function escapeHtml(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+</script>
+</body>
+</html>
