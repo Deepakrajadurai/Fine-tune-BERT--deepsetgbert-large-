@@ -1,0 +1,4 @@
+model_setup,epoch,train_loss,val_loss,val_f1,val_accuracy,learning_rate
+Base Model (500k Dataset),1,0.3554,1.0776,0.3382,0.5111,1.36e-05
+Base Model (500k Dataset),2,0.3573,1.526,0.3382,0.5111,6.8e-06
+Base Model (500k Dataset),3,0.3393,1.8905,0.3382,0.5111,0.0

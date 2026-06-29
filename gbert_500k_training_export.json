@@ -1,0 +1,107 @@
+{
+  "experiment_identifier": {
+    "experiment_id": "GBERT_LARGE_500K_V1",
+    "git_commit": "b1d5dc1",
+    "date": "2026-06-25",
+    "training_command": "python train.py --train_csv Data/train_500k.csv --val_csv Data/val_500k.csv --ext_val_csv Data/val_500k.csv --epochs 3 --batch_size 16 --lr 2e-5 --output_dir models/full_model_500k"
+  },
+  "training_configuration": {
+    "Model": "deepset/gbert-large",
+    "Architecture": "BertForSequenceClassification",
+    "Task": "Binary Classification — Human vs. AI German Text (500k)",
+    "Hidden Size": 1024,
+    "Attention Heads": 16,
+    "Hidden Layers": 24,
+    "Vocab Size": 31102,
+    "Max Sequence Length": 256,
+    "Batch Size": 16,
+    "Learning Rate": "2e-5",
+    "Epochs": 3,
+    "Weight Decay": 0.01,
+    "Warmup Ratio": 0.1,
+    "Precision": "BF16 (CUDA BFloat16)",
+    "GPU Hardware": "NVIDIA GeForce RTX 4080 (16 GB VRAM)",
+    "Total Run Time": "4h 18m 20s",
+    "Avg Epoch Time": "1h 26m 6s",
+    "Peak GPU Memory": "12.2 GB",
+    "Seed": 42
+  },
+  "best_checkpoint": {
+    "best_checkpoint": "checkpoint-48912",
+    "selection_criterion": "Lowest evaluation loss",
+    "best_metric_value": 1.0776
+  },
+  "training_logs": {
+    "base_model": [
+      {
+        "epoch": 1,
+        "train_loss": 0.3554,
+        "val_loss": 1.0776,
+        "val_f1": 0.3382,
+        "val_accuracy": 0.5111,
+        "learning_rate": 1.36e-05
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.3573,
+        "val_loss": 1.526,
+        "val_f1": 0.3382,
+        "val_accuracy": 0.5111,
+        "learning_rate": 6.8e-06
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.3393,
+        "val_loss": 1.8905,
+        "val_f1": 0.3382,
+        "val_accuracy": 0.5111,
+        "learning_rate": 0.0
+      }
+    ]
+  },
+  "dataset_statistics": {
+    "dataset_version": "German AI Detector Dataset v2.0 (500k)",
+    "dataset_sha256": "1ece8662e2e50ffdf0f04679942d5edd223297c077a2bb86ce741deaeaf970e8",
+    "total_samples": 978234,
+    "splits": {
+      "train": {
+        "total": 782587,
+        "human": 400000,
+        "ai": 382587
+      },
+      "validation": {
+        "total": 97823,
+        "human": 50000,
+        "ai": 47823
+      },
+      "test": {
+        "total": 97824,
+        "human": 50000,
+        "ai": 47824
+      }
+    }
+  },
+  "evaluation_results": {
+    "epoch_1": {
+      "accuracy": 0.5111,
+      "macro_f1": 0.3382,
+      "roc_auc": 0.6829,
+      "macro_precision": 0.2556,
+      "macro_recall": 0.5
+    },
+    "epoch_2": {
+      "accuracy": 0.5111,
+      "macro_f1": 0.3382,
+      "roc_auc": 0.6829,
+      "macro_precision": 0.2556,
+      "macro_recall": 0.5
+    },
+    "epoch_3": {
+      "accuracy": 0.5111,
+      "macro_f1": 0.3382,
+      "roc_auc": 0.6829,
+      "macro_precision": 0.2556,
+      "macro_recall": 0.5
+    }
+  }
+}

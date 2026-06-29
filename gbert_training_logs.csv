@@ -1,0 +1,10 @@
+model_setup,epoch,train_loss,val_loss,val_f1,learning_rate
+Base Model (Full Dataset),1,0.0239,0.0154,0.9967,1.49e-05
+Base Model (Full Dataset),2,0.0003,0.0212,0.9956,7.51e-06
+Base Model (Full Dataset),3,2e-05,0.0207,0.997,2.84e-08
+Rotation 1 — Gemini Out,1,0.4238,,,
+Rotation 1 — Gemini Out,2,0.0755,,,
+Rotation 1 — Gemini Out,3,0.0078,,,
+Rotation 2 — Qwen Out,1,0.402,,,
+Rotation 2 — Qwen Out,2,0.1347,,,
+Rotation 2 — Qwen Out,3,0.0268,,,

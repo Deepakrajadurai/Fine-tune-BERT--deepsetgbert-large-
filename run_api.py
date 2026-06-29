@@ -28,7 +28,7 @@ try:
 
     logger = logging.getLogger("run_api")
     BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
-    MODEL_PATH = os.path.join(BASE_DIR, "models", "best_model")
+    MODEL_PATH = os.path.join(BASE_DIR, "models", "legal_model")
     THRESHOLD_PATH = os.path.join(BASE_DIR, "results", "threshold.txt")
 
     device = "cuda" if torch.cuda.is_available() else "cpu"

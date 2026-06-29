@@ -1,0 +1,181 @@
+{
+  "experiment_identifier": {
+    "experiment_id": "GBERT_LARGE_FULL_V1",
+    "git_commit": "b1d5dc1",
+    "date": "2026-06-22",
+    "training_command": "python train.py --model_name deepset/gbert-large --epochs 3 --batch_size 16 --lr 2e-5 --max_length 256 --seed 42 --threshold 0.10"
+  },
+  "training_configuration": {
+    "Model": "deepset/gbert-large",
+    "Architecture": "BertForSequenceClassification",
+    "Task": "Binary Classification — Human vs. AI German Text",
+    "Hidden Size": 1024,
+    "Attention Heads": 16,
+    "Hidden Layers": 24,
+    "Vocab Size": 31102,
+    "Max Sequence Length": 256,
+    "Batch Size": 16,
+    "Learning Rate": "2e-5",
+    "Epochs": 3,
+    "Weight Decay": 0.01,
+    "Warmup Ratio": 0.1,
+    "Precision": "BF16 (CUDA BFloat16)",
+    "GPU Hardware": "NVIDIA GeForce RTX 4080 (16 GB VRAM)",
+    "Total Run Time": "26m 24s",
+    "Avg Epoch Time": "8m 48s",
+    "Peak GPU Memory": "12.2 GB",
+    "Seed": 42
+  },
+  "best_checkpoint": {
+    "best_checkpoint": "checkpoint-8610",
+    "selection_criterion": "Highest eval_external_f1",
+    "best_metric_value": 0.9970383202449933
+  },
+  "training_logs": {
+    "base_model": [
+      {
+        "epoch": 1,
+        "train_loss": 0.0239,
+        "val_loss": 0.0154,
+        "val_f1": 0.9967,
+        "learning_rate": 1.49e-05
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.0003,
+        "val_loss": 0.0212,
+        "val_f1": 0.9956,
+        "learning_rate": 7.51e-06
+      },
+      {
+        "epoch": 3,
+        "train_loss": 2e-05,
+        "val_loss": 0.0207,
+        "val_f1": 0.997,
+        "learning_rate": 2.84e-08
+      }
+    ],
+    "rotation_1": [
+      {
+        "epoch": 1,
+        "loss": 0.4238
+      },
+      {
+        "epoch": 2,
+        "loss": 0.0755
+      },
+      {
+        "epoch": 3,
+        "loss": 0.0078
+      }
+    ],
+    "rotation_2": [
+      {
+        "epoch": 1,
+        "loss": 0.402
+      },
+      {
+        "epoch": 2,
+        "loss": 0.1347
+      },
+      {
+        "epoch": 3,
+        "loss": 0.0268
+      }
+    ]
+  },
+  "dataset_statistics": {
+    "dataset_version": "German AI Detector Dataset v1.0",
+    "dataset_sha256": "1ece8662e2e50ffdf0f04679942d5edd223297c077a2bb86ce741deaeaf970e8",
+    "dataset_generated": "2026-06-22",
+    "total_samples": 57396,
+    "human_samples": 28671,
+    "ai_samples": 28725,
+    "class_balance": "50 / 50 — perfectly balanced",
+    "language": "German (de)",
+    "splits": {
+      "train": {
+        "total": 45916,
+        "human": 22958,
+        "ai": 22958
+      },
+      "validation": {
+        "total": 5740,
+        "human": 2870,
+        "ai": 2870
+      },
+      "test": {
+        "total": 5740,
+        "human": 2870,
+        "ai": 2870
+      },
+      "external_val": {
+        "total": 5740,
+        "human": 2870,
+        "ai": 2870
+      }
+    },
+    "train_sources": {
+      "Bundestag (AI)": 12002,
+      "News (Human)": 11518,
+      "Bundestag (Human)": 10302,
+      "News (AI)": 8679,
+      "Casual (AI)": 2277,
+      "Casual (Human)": 1138
+    },
+    "ai_generators": [
+      "gemini-1.5-flash",
+      "mistralai/Mistral-7B-Instruct-v0.3",
+      "llama3-70b-8192",
+      "gemma2-9b-it",
+      "mixtral-8x7b-32768",
+      "phi3",
+      "mistral",
+      "llama3"
+    ]
+  },
+  "evaluation_results": {
+    "original_model": {
+      "accuracy": 0.587,
+      "macro_f1": 0.5738,
+      "roc_auc": 0.6718,
+      "macro_precision": 0.6435,
+      "macro_recall": 0.6142
+    },
+    "rotation1_gemini_held_out": {
+      "accuracy": 0.8367,
+      "macro_f1": 0.6086,
+      "roc_auc": 0.8692,
+      "macro_precision": 0.9152,
+      "macro_recall": 0.5917
+    },
+    "rotation2_qwen_held_out": {
+      "accuracy": 0.9467,
+      "macro_f1": 0.9069,
+      "roc_auc": 0.9932,
+      "macro_precision": 0.9688,
+      "macro_recall": 0.8667
+    },
+    "calibrated_threshold": 0.5
+  },
+  "confusion_matrices": {
+    "original_model": {
+      "true_negative": 206,
+      "false_positive": 34,
+      "false_negative": 189,
+      "true_positive": 111
+    },
+    "rotation_1": {
+      "true_negative": 240,
+      "false_positive": 0,
+      "false_negative": 49,
+      "true_positive": 11
+    },
+    "rotation_2": {
+      "true_negative": 240,
+      "false_positive": 0,
+      "false_negative": 16,
+      "true_positive": 44
+    }
+  }
+}

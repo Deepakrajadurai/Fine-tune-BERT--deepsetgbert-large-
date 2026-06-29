@@ -27,7 +27,6 @@ import numpy as np
 import pandas as pd
 import torch
 from pathlib import Path
-from torch.cuda.amp import autocast
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from tqdm import tqdm
 
@@ -162,7 +161,7 @@ class AITextDetector:
         input_ids      = enc["input_ids"].to(DEVICE)
         attention_mask = enc["attention_mask"].to(DEVICE)
 
-        with autocast(enabled=USE_FP16):
+        with torch.amp.autocast('cuda', enabled=USE_FP16):
             logits = self.model(input_ids=input_ids,
                                 attention_mask=attention_mask).logits
         return torch.softmax(logits, dim=-1).cpu().numpy()

@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 # Paths
 # ─────────────────────────────────────────────────────────────────────────────
 BASE_DIR       = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH     = os.path.join(BASE_DIR, "models", "best_model")
+MODEL_PATH     = os.path.join(BASE_DIR, "models", "legal_model")
 THRESHOLD_PATH = os.path.join(BASE_DIR, "results", "threshold.txt")
 
 # ─────────────────────────────────────────────────────────────────────────────

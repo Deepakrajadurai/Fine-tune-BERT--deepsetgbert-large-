@@ -10,3 +10,12 @@
 # Python cache
 __pycache__/
 *.pyc
+
+# IDE files
+.vscode/
+
+# Exported large models and logs
+exports/
+
+# Log files
+*.log

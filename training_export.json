@@ -1,0 +1,77 @@
+﻿{
+  "training_configuration": {
+    "model": "deepset/gbert-large",
+    "architecture": "BertForSequenceClassification",
+    "task": "Binary Classification (Human vs. AI-Generated German Text)",
+    "num_labels": 2,
+    "hidden_size": 1024,
+    "num_hidden_layers": 24,
+    "num_attention_heads": 16,
+    "intermediate_size": 4096,
+    "vocab_size": 31102,
+    "max_position_embeddings": 512,
+    "max_length": 256,
+    "batch_size": 16,
+    "learning_rate": 0.00002,
+    "epochs": 3,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "early_stopping_patience": 2,
+    "eval_strategy": "epoch",
+    "save_strategy": "epoch",
+    "metric_for_best_model": "eval_external_f1",
+    "precision": "bf16",
+    "decision_threshold": 0.10,
+    "seed": 42,
+    "device": "NVIDIA GeForce RTX 4080 (16GB VRAM, CUDA 12.4)",
+    "framework": "Hugging Face Transformers 5.12.1 + PyTorch 2.6.0+cu124"
+  },
+  "training_logs": {
+    "base_model": {
+      "description": "Main GBERT-large model fine-tuned on full German Bundestag + News + Casual dataset",
+      "train_samples": 45916,
+      "val_samples": 5740
+    },
+    "rotation1": {
+      "description": "Cross-validation: Gemini held out from training",
+      "train_samples": 420,
+      "test_samples": 300,
+      "held_out_source": "AI Gemini",
+      "epochs": [
+        {"epoch": 1, "loss": 0.4238},
+        {"epoch": 2, "loss": 0.0755},
+        {"epoch": 3, "loss": 0.0078}
+      ]
+    },
+    "rotation2": {
+      "description": "Cross-validation: Qwen held out from training",
+      "train_samples": 420,
+      "test_samples": 300,
+      "held_out_source": "AI Qwen",
+      "epochs": [
+        {"epoch": 1, "loss": 0.4020},
+        {"epoch": 2, "loss": 0.1347},
+        {"epoch": 3, "loss": 0.0268}
+      ]
+    }
+  },
+  "dataset_statistics": {
+    "total_samples": 57396,
+    "human_samples": 28671,
+    "ai_samples": 28725,
+    "class_balance": "50/50 perfectly balanced",
+    "language": "German (de)",
+    "splits": {
+      "train": {"total": 45916, "human": 22958, "ai": 22958},
+      "validation": {"total": 5740, "human": 2870, "ai": 2870},
+      "test": {"total": 5740, "human": 2870, "ai": 2870},
+      "external_val": {"total": 5740, "human": 2870, "ai": 2870}
+    }
+  },
+  "evaluation_results": {
+    "original_model": {"accuracy": 0.5870, "macro_f1": 0.5738, "roc_auc": 0.6718},
+    "rotation1_gemini_held_out": {"accuracy": 0.8367, "macro_f1": 0.6086, "roc_auc": 0.8692},
+    "rotation2_qwen_held_out": {"accuracy": 0.9467, "macro_f1": 0.9069, "roc_auc": 0.9932},
+    "calibrated_threshold": 0.5
+  }
+}
