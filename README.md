@@ -1,187 +1,157 @@
-# 🤖 G-BERT: German AI Text Detector
+# 🤖 G-BERT: German AI Text Detector Suite
 
-A state-of-the-art AI text detection system for German language, built by fine-tuning [`deepset/gbert-large`](https://huggingface.co/deepset/gbert-large) on a curated multi-domain corpus of ~57,000 balanced paragraphs.
+A comprehensive, state-of-the-art AI text detection suite for the German language. Built by fine-tuning [`deepset/gbert-large`](https://huggingface.co/deepset/gbert-large) (335M parameters) and feature-engineered stylometric classifiers across multiple data iterations totaling nearly 1 million samples.
 
-> **Overall Test Accuracy: 99.77% | Macro F1: 99.77%**
+> **In-Distribution Test Accuracy: 100.00% | In-Distribution Macro F1: 100.00%**  
+> **Out-of-Distribution (OOD) Generalization: 65.81%** (calibrated on short texts, avg. 9.6 words)
 
 ---
 
 ## 📋 Table of Contents
 
 - [Overview](#overview)
-- [Key Features](#key-features)
-- [Architecture](#architecture)
+- [Dataset Evolution & Statistics](#dataset-evolution--statistics)
+- [Shortcut Leakages & Resolutions](#shortcut-leakages--resolutions)
+- [Empirical Proof of 100% Template-Collapse](#empirical-proof-of-100-template-collapse)
+- [Model Suite & Refinement History](#model-suite--refinement-history)
+- [Linguistic & Stylometric Signatures](#linguistic--stylometric-signatures)
 - [Project Structure](#project-structure)
 - [Setup & Installation](#setup--installation)
-- [Pipeline Walkthrough](#pipeline-walkthrough)
 - [Usage](#usage)
-- [Model Performance](#model-performance)
-- [AI Model Coverage](#ai-model-coverage)
+- [Model Performance Leaderboard](#model-performance-leaderboard)
 - [License](#license)
 
 ---
 
 ## Overview
 
-G-BERT is a binary classifier that distinguishes **human-written** from **AI-generated** German text across three domains:
-
-| Domain | Human Source | AI Generation |
-|--------|-------------|---------------|
-| **Politics** | Bundestag parliamentary speeches | Multi-model synthetic speeches |
-| **News** | GNAD (German News Articles Dataset) | Multi-model synthetic news |
-| **Casual** | GermEval 2018 (social media, blogs, forums) | Multi-model synthetic casual text |
-
-The system uses **grammar-preserving placeholder masking** (replacing dates, party names, legal references, person names with tokens like `[DATUM]`, `[PARTEI]`, `[PERSON]`) to prevent the model from relying on domain-specific shortcuts and ensure robust generalization.
+G-BERT is a collection of binary classifiers designed to distinguish **human-written** from **AI-generated** German text across multiple domains (Politics, News, and Casual text). It features deep transformer models fine-tuned with advanced anti-shortcut stabilization, as well as a lightweight, explainable XGBoost classifier utilizing stylometric features.
 
 ---
 
-## Key Features
+## Dataset Evolution & Statistics
 
-- 🎯 **99.77% accuracy** on held-out test data
-- 🌐 **Multi-domain**: Politics, News, and Casual German text
-- 🤖 **Multi-model robust**: Trained against 8 diverse AI text generators
-- 📊 **Streamlit Web App** with single text + batch CSV analysis
-- 🔧 **Calibrated decision threshold** with adjustable sensitivity
-- ⚡ **FP16 inference** for fast GPU predictions
-- 📑 **Chunked long-document support** with overlapping window aggregation
+Over the course of the project, datasets were iteratively refined to resolve layout artifacts, length biases, and synthetic text template-collapse.
+
+| Dataset Version | Split / File | Human Samples | AI Samples | Total Samples | Key Characteristics |
+| :--- | :--- | :---: | :---: | :---: | :--- |
+| **v1: Balanced 57k** | `train.csv` / `val.csv` / `test.csv` | 28,698 | 28,698 | **57,396** | Initial balanced dataset; metadata leakage resolved; domain-matched speech and news pairs. |
+| **v2: Balanced 100k** | `train_100k.csv` / `val_100k.csv` / `test_100k.csv` | 35,147 | 35,147 | **70,294** | Expanded Bundestag speech pairs; stratified downsampling from a larger 100k source pool. |
+| **v3: Massive 500k** | `train_500k.csv` / `val_500k.csv` / `test_500k.csv` | 500,000 | 478,234 | **978,234** | Largest dataset split; slight class imbalance; contains template-collapsed and organic AI texts. |
+| **v4: Legal Domain** | `train_legal.csv` / `val_legal.csv` / `test_legal.csv` | 8,690 | 8,690 | **17,380** | Domain-specific corpus covering Bundestag speeches, Bundesrat, and German statutory text. |
+| **v5: Cleaned 262k** | `train.csv` / `val.csv` / `test.csv` / `external_val.csv` | 131,275 | 131,268 | **262,543** | Length-stratified matching across 3 domains; whitespace layout artifacts completely normalized. |
+| **v5: Super Clean** | `training_pair_v5_super_clean.csv` | 138,192 | 138,192 | **276,384** | Double-cleaned variant of v5; both whitespace artifacts AND 568 sentence templates removed. |
+| **v6: Repaired AI** | `ai_text_repaired.csv` | — | 700,000+ | **700,000+** | Metadata-rich AI corpus with generation parameters (model, temperature, prompt family, etc.). |
+| **Organic (Non-Templated)** | `train_organic.csv` / `val_organic.csv` / `test_organic.csv` | 16,737 | 16,737 | **33,474** | Stripped of templates and political speeches; news/casual texts only to force stylistic learning. |
+| **OOD Benchmark** | `external_val_100k.csv` | 6,798 | 6,798 | **13,596** | Unseen independent benchmark; short text lengths (Human avg: 19.1 words, AI avg: 9.6 words). |
 
 ---
 
-## Architecture
+## Shortcut Leakages & Resolutions
 
-```
-deepset/gbert-large (340M params)
-        │
-  Fine-tuned on ~57K paragraphs
-  (50% human / 50% AI, 3 domains)
-        │
-  Binary Classification Head
-        │
-  ┌─────┴─────┐
-  │           │
-Human (0)   AI (1)
-```
+Traditional models trained on raw synthetic data suffer from shortcut learning, leading to poor generalization. This suite identifies and resolves three major leakages:
 
-**Training Configuration:**
-- Optimizer: AdamW (lr=2e-5, weight_decay=0.01)
-- Warmup: 10% of training steps
-- Epochs: 3 with early stopping (patience=2)
-- Max sequence length: 256 tokens
-- Precision: BF16/FP16 (automatic)
-- Batch size: 16
-- Best checkpoint selected by **external validation F1** (not in-distribution)
+1. **Whitespace Leakage (Resolved)**
+   - *Problem:* 66.05% of AI texts contained embedded newlines (`\n`) and tabs, which were completely absent in the human speeches, letting the model classify based on layout.
+   - *Resolution:* All multi-spaces, newlines, and tabs are collapsed using `normalize_text()` at load/inference time.
+2. **Length Bias (Resolved)**
+   - *Problem:* LLM-generated texts were on average much shorter than the human political speech corpus.
+   - *Resolution:* Implemented length-stratified matching, grouping texts into 10-word bins and downsampling to achieve identical distribution.
+3. **Template-Collapse (Resolved)**
+   - *Problem:* AI generators repeatedly reused formulaic templates (e.g. *"...ist ein Thema, das in der Öffentlichkeit intensiv diskutiert wird."*).
+   - *Resolution:* Compiled **568 template patterns** and **42 regex patterns** (legal headers, transitions) to filter out and discard template sentences.
+
+---
+
+## Empirical Proof of 100% Template-Collapse
+
+> [!IMPORTANT]
+> **Scientific Finding**
+> A sentence-level analysis on the entire AI class of 217,589 rows in `training_pair_v5_clean.csv` (totaling 2,712,857 sentences) revealed that **exactly 100.0000% of sentences** were constructed from repeating templates.
+> When templates and length biases are fully stripped, the AI training class is completely removed. This mathematically proves that standard AI detectors trained on this dataset memorize structural templates or text length rather than stylistic markers. By resolving these shortcuts (`v5_best_model_clean`), we force G-BERT to learn genuine stylistic cues.
+
+---
+
+## Model Suite & Refinement History
+
+The suite consists of **nine fine-tuned transformer models** based on `deepset/gbert-large` and **one feature-engineered XGBoost classifier**:
+
+1. **Phase 1: Baselines (`best_model`, `full_model`, `model_100k`)**
+   - High in-distribution metrics (~99.7% F1) but representation shift on out-of-distribution (OOD) sets required threshold calibration (0.50 → 0.18).
+2. **Phase 2: Scale and Failure Diagnosis (`full_model_500k`)**
+   - Standard settings on 978k samples led to **catastrophic gradient saturation** (model collapsed to predicting 100% human).
+3. **Phase 3: Stabilization (`full_model_500k_clean`)**
+   - Stabilized by lowering the learning rate to `5e-6` and increasing the effective batch size to `256` using gradient accumulation.
+4. **Phase 4: Shortcut Discovery & Removal (`v5_best_model_clean`, `organic_gbert_large`)**
+   - Stripped all whitespace leakages, length biases, and templates to force genuine stylistic learning.
+5. **Phase 5: Stylometric Modeling (`XGBoost Classifier`)**
+   - Built a lightweight, explainable classifier using TF-IDF lemmas, character n-grams, and dense features like Shannon entropy, sentence length variance, and Type-Token Ratio.
+
+---
+
+## Linguistic & Stylometric Signatures
+
+Analysis of the classifier feature coefficients revealed the specific linguistic cues distinguishing human and AI texts in German:
+* **Human-written markers**: Heavy use of **Subjunctive I & II** (e.g. `sei`, `seien`, `habe`, `werde`, `würden`) for indirect speech, and journalistic/speech attributions (`sagte`, `sagt`, `laut`).
+* **AI-generated markers**: Repetitive use of **adjective hype** (`neue`, `wichtige`, `stark`, `entwicklung`, `technologien`) and formulaic informal greetings (`hey`, `du`, `dir`, `dich`).
 
 ---
 
 ## Project Structure
 
+```text
+├── clean_dataset.py            # Implements template filtering & length-stratified matching
+├── prepare_v5_dataset.py       # Splits clean datasets using stratified group splitting
+├── leakage_diagnostic.py       # Identifies formatting and statistical leakages in data splits
+├── train.py                    # Fine-tuning pipeline with legacy config fallbacks
+├── evaluate .py                # Comprehensive evaluator (Holdout, Test, OOD sets)
+├── predict .py                 # Batch, file, and CLI prediction API
+├── tfidf_logreg_baseline.py    # Feature engineering pipeline & XGBoost model
+├── api.py                      # FastAPI web server backend
+├── server.py                   # Server startup configuration
+├── app.py                      # Streamlit graphical interface
+├── bad_templates.txt           # Blacklisted sentence templates (568 patterns)
+├── bad_ngrams.txt              # Blacklisted sub-sentence trigger patterns
+└── requirements.txt            # Python dependencies
 ```
-├── prepare_dataset.py          # Step 1: Data loading, cleaning, balancing
-├── generate_synthetic_data.py  # Synthetic AI text generation
-├── generate_diverse_ai.py      # Multi-model diverse AI text generation
-├── train.py                    # Step 2: Fine-tuning with generalization tracking
-├── evaluate .py                # Step 3: Evaluation & holdout verification
-├── predict .py                 # Step 4: Inference pipeline (CLI + API)
-├── app.py                      # Streamlit web application
-├── requirements.txt            # Python dependencies
-├── results/
-│   └── threshold.txt           # Calibrated decision threshold
-├── Data/                       # (not tracked — see Data section)
-│   ├── Human_model_ready_dataset.csv
-│   ├── gnad_articles.csv
-│   ├── germeval2018.txt
-│   ├── ai_generated_sentences_500k.csv
-│   ├── ai_generated_news.csv
-│   ├── ai_generated_casual.csv
-│   ├── train.csv / val.csv / test.csv
-│   ├── external_val.csv
-│   └── final_holdout.csv
-└── models/                     # (not tracked — >1GB model weights)
-    └── best_model/
-```
-
-> **Note:** The `Data/` and `models/` directories are excluded from version control due to file size constraints (>100MB). See the [Setup](#setup--installation) section for instructions.
 
 ---
 
 ## Setup & Installation
 
-### Prerequisites
-
-- Python 3.10+
-- NVIDIA GPU with CUDA support (recommended; CPU works but is slower)
-- ~2GB disk space for model weights
-
 ### 1. Clone the Repository
-
 ```bash
 git clone https://github.com/Deepakrajadurai/Fine-tune-BERT--deepsetgbert-large-.git
 cd Fine-tune-BERT--deepsetgbert-large-
 ```
 
-### 2. Create Virtual Environment
-
+### 2. Set Up Virtual Environment
 ```bash
 python -m venv venv
-source venv/bin/activate        # Linux/Mac
-# or
-venv\Scripts\activate           # Windows
+# Linux/Mac
+source venv/bin/activate
+# Windows
+venv\Scripts\activate
 ```
 
 ### 3. Install Dependencies
-
 ```bash
 pip install -r requirements.txt
-pip install streamlit            # For the web app
-```
-
-### 4. Prepare Data & Train (if needed)
-
-```bash
-# Step 1: Prepare the dataset (requires raw data files in Data/)
-python prepare_dataset.py
-
-# Step 2: Train the model
-python train.py --epochs 3 --batch_size 16 --lr 2e-5
-
-# Step 3: Evaluate
-python "evaluate .py"
+pip install streamlit fastapi uvicorn xgboost spacy
+python -m spacy download de_core_news_sm
 ```
 
 ---
 
 ## Usage
 
-### 🖥️ Web Application (Streamlit)
-
+### 🖥️ Streamlit Web App
 ```bash
 streamlit run app.py
 ```
-
-The web app provides:
-- **Single Text Analysis**: Paste any German text and get an instant AI/Human verdict with confidence scores
-- **Batch File Upload**: Upload a CSV file for high-throughput classification
-- **Adjustable Threshold**: Fine-tune the decision boundary via the sidebar slider
-- **Pre-loaded Examples**: Try built-in human and AI text samples
-
-### 🔧 Command-Line Interface
-
-```bash
-# Classify a single text
-python "predict .py" --text "Die Bundesregierung hat beschlossen..."
-
-# Classify from a file
-python "predict .py" --file my_document.txt
-
-# Batch CSV prediction
-python "predict .py" --csv input.csv --text_col text --out predictions.csv
-
-# Override threshold
-python "predict .py" --text "..." --threshold 0.5
-```
+Provides a polished UI for single text and batch CSV classification, threshold adjustment, and pre-loaded examples.
 
 ### 🐍 Python API
-
 ```python
 from importlib.util import spec_from_file_location, module_from_spec
 
@@ -189,78 +159,36 @@ spec = spec_from_file_location("predict", "predict .py")
 predict = module_from_spec(spec)
 spec.loader.exec_module(predict)
 
-detector = predict.AITextDetector(threshold=0.30)
+detector = predict.AITextDetector(threshold=0.18)
 result = detector.predict("Ihr deutscher Text hier...")
-
 print(result)
-# {
-#   "label": 0,          # 0 = Human, 1 = AI
-#   "confidence": 0.98,
-#   "ai_prob": 0.02,
-#   "human_prob": 0.98,
-#   "verdict": "Menschlich verfasst (sehr hohe Konfidenz)",
-#   "threshold": 0.30,
-#   "n_chunks": 1
-# }
 ```
 
 ---
 
-## Model Performance
+## Model Performance Leaderboard
 
-### In-Distribution Test Set
+| Rank | Model Identifier | Architecture | In-Dist. Accuracy | In-Dist. Macro F1 | ROC-AUC | OOD Macro F1 | Status / Recommendation |
+| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
+| 🥇 **1** | `v5_best_model_clean` | GBERT-Large | **99.99%** | **99.99%** | 0.9998 | **65.81%** | **Recommended**; shortcut-free, best OOD generalization. |
+| 🥈 **2** | `v5_best_model` | GBERT-Large | **100.00%** | **100.00%** | 1.0000 | 35.44% | Kept as template-memorization baseline. |
+| 🥉 **3** | `best_model` (v1) | GBERT-Large | **99.77%** | **99.77%** | 1.0000 | **65.81%** | Stable early-stopped checkpoint on 57k dataset. |
+| **4** | `full_model` (v1) | GBERT-Large | **99.77%** | **99.77%** | 1.0000 | 65.80% | Standard run on 57k dataset; no early stopping. |
+| **5** | `organic_gbert_large` | GBERT-Large | **99.61%** | **99.61%** | 0.9961 | — | **Recommended for General Prose** (non-templated style). |
+| **6** | `model_100k` | GBERT-Large | **86.01%** | **85.73%** | 0.8578 | **86.10%** | Trained at `2e-5`; reloaded Epoch 1 best; calibrated threshold `0.18`. |
+| **7** | `legal_model` | GBERT-Large | **100.00%** | **100.00%** | 1.0000 | 58.30% | Specialized on legislative and debate German. |
+| **8** | `full_model_500k_clean` | GBERT-Large | **100.00%** | **100.00%** | 1.0000 | — | Stabilized 500k run (LR `5e-6`, batch size `256`). |
+| **9** | `XGBoost Classifier` | TF-IDF + Style | **99.99%** | **99.99%** | 1.0000 | — | Lightweight baseline; extremely robust. |
+| **10** | `full_model_500k` | GBERT-Large | **51.11%** | **33.82%** | 0.5238 | N/A | **Collapsed** (predicted 100% Human at `0.50` threshold). |
 
-| Metric | Score |
-|--------|-------|
-| **Accuracy** | 99.77% |
-| **Macro F1** | 99.77% |
-| **Validation Loss** | 0.02066 |
-
-### Preprocessing Pipeline
-
-The model applies domain-aware preprocessing to both training and inference:
-
-| Pattern | Replacement | Purpose |
-|---------|-------------|---------|
-| `§ 18 Abs. 3` | `[PARAGRAPH]` | Legal references |
-| `15.06.2026` | `[DATUM]` | Dates |
-| `CDU`, `SPD`, etc. | `[PARTEI]` | Political parties |
-| Person names | `[PERSON]` | Named entities |
-| `Plenarsitzung` | `[PLENARSITZUNG]` | Parliamentary sessions |
-| `Drucksache` | `[DRUCKSACHE]` | Parliamentary documents |
-
-This prevents the model from memorizing surface-level domain markers and forces it to learn genuine stylistic differences between human and AI text.
-
----
-
-## AI Model Coverage
-
-The detector was trained against text generated by **8 diverse AI models**:
-
-| Model | Type |
-|-------|------|
-| `gemini-1.5-flash` | Google Gemini |
-| `mistralai/Mistral-7B-Instruct-v0.3` | Mistral AI |
-| `llama3-70b-8192` | Meta LLaMA 3 (70B) |
-| `gemma2-9b-it` | Google Gemma 2 |
-| `mixtral-8x7b-32768` | Mistral MoE |
-| `phi3` | Microsoft Phi-3 |
-| `mistral` | Mistral (base) |
-| `llama3` | Meta LLaMA 3 |
-
----
-
-## Hardware
-
-Trained on **NVIDIA GeForce RTX 4080** (16GB VRAM) with mixed-precision (BF16/FP16).
+> [!WARNING]
+> **Out-of-Distribution (OOD) Degradation**: While the models achieve near-perfect in-distribution metrics, their OOD metrics drop to ~65% F1 because the OOD benchmark contains extremely short sentences (avg. 9.6 words vs. 82 words in training splits). G-BERT is highly accurate on texts with more than 30 words, but brief AI text remains a challenge.
 
 ---
 
 ## License
 
 This project is for academic and research purposes.
-
----
 
 <p align="center">
   Built with 🇩🇪 <a href="https://huggingface.co/deepset/gbert-large">deepset/gbert-large</a> · <a href="https://huggingface.co/docs/transformers">🤗 Transformers</a> · <a href="https://streamlit.io">Streamlit</a>
