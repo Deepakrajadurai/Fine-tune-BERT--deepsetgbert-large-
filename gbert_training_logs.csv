@@ -1,10 +1,9 @@
-model_setup,epoch,train_loss,val_loss,val_f1,learning_rate
-Base Model (Full Dataset),1,0.0239,0.0154,0.9967,1.49e-05
-Base Model (Full Dataset),2,0.0003,0.0212,0.9956,7.51e-06
-Base Model (Full Dataset),3,2e-05,0.0207,0.997,2.84e-08
-Rotation 1 — Gemini Out,1,0.4238,,,
-Rotation 1 — Gemini Out,2,0.0755,,,
-Rotation 1 — Gemini Out,3,0.0078,,,
-Rotation 2 — Qwen Out,1,0.402,,,
-Rotation 2 — Qwen Out,2,0.1347,,,
-Rotation 2 — Qwen Out,3,0.0268,,,
+model_key,model_name,model_path,accuracy,macro_f1,ood_f1,val_f1,train_loss,dataset,epochs,batch_size,learning_rate,notes
+organic_gbert_large,Organic GBERT-large (News & Casual),models/organic_gbert_large,99.61%,99.61%,N/A,N/A,N/A,N/A,3,16,2e-5,
+v5_best_model_clean,v5 GBERT-large (Clean / Robust),models/v5_best_model_clean,99.99%,99.99%,65.81%,99.99%,0.0082 → 0.0004 → 0.0001,"193,474 train rows (from 435,178-row source pool, length-stratified + template-stripped)",3,16,2e-5,"Resolves all 3 shortcuts: whitespace leakage, template-collapse, length-bias. Best OOD generalizer."
+v5_best_model,v5 GBERT-large (Baseline),models/v5_best_model,100.00%,100.00%,35.44%,100.00%,0.0021 → 0.0000 → 0.0000,"193,474 train rows (435,178-row source pool, whitespace-cleaned, templates NOT removed)",3,16,2e-5,Achieves perfect in-distribution F1 by memorising 568 template phrases. OOD drops to 35.44%.
+best_model,v1 GBERT-large (Best Model),models/best_model,99.77%,99.77%,65.81%,99.77%,0.0239 → 0.0003 → 0.0000,"45,916 train rows (57,396 total v1 balanced dataset — 28,698 human / 28,698 AI)",3,16,2e-5,Original best-checkpoint model. Early stopping at epoch 3. ROC-AUC = 1.0000. Solid OOD baseline.
+full_model,v1 GBERT-large (Full Model),models/full_model,99.77%,99.77%,65.80%,99.77%,0.0241 → 0.0004 → 0.0001,"45,916 train rows (57,396 total v1 balanced — full 3 epochs, no early stopping)",3,16,2e-5,Full-epoch run of v1. Practically identical to best_model (F1 delta < 0.01%). ROC-AUC = 1.0000.
+full_model_500k,500k GBERT-large (Massive Dataset),models/full_model_500k,50.00%,33.33%,N/A,33.82%,0.3554 → 0.3573 → 0.3393,"782,587 train rows (978,234 total corpus — train 782,587 · val 97,823 · test 97,824)",3,16,2e-5,Ran 3 full epochs — ALL collapsed. Val F1 stuck at 33.82% every epoch; val loss rose 1.08→1.53→1.89. ROC-AUC 0.6829. Best checkpoint: checkpoint-48912 (epoch 1). Class imbalance + label noise + LR decay to 0.0 caused total divergence.
+legal_model,Legal GBERT-large (Law Focus),models/legal_model,98.50%,98.40%,58.30%,98.50%,0.0420,Domain-focused legal corpus (Bundestag + Bundesrat + German statutory law texts),3,16,2e-5,"Specialised on German legislative style. Strong on legal docs, weaker on general German (OOD 58.30%)."
+model_100k,100k GBERT-large (Intermediate),models/model_100k,99.10%,99.05%,61.20%,99.10%,0.1120 → 0.0180 → 0.0300,"49,218 train rows (70,294 total — the '100k' label refers to source pool, actual splits are 70k)",3,16,2e-5,Intermediate scale between v1 (57k) and v5 (262k). Solid F1 with modest OOD generalisation (61.20%).

@@ -1,0 +1,88 @@
+{
+  "macro_f1": 0.35437697787795047,
+  "classification_report": {
+    "human": {
+      "precision": 0.5004143750470881,
+      "recall": 0.9770520741394528,
+      "f1-score": 0.6618504309700562,
+      "support": 6798.0
+    },
+    "ai": {
+      "precision": 0.5170278637770898,
+      "recall": 0.024566048837893498,
+      "f1-score": 0.04690352478584468,
+      "support": 6798.0
+    },
+    "accuracy": 0.5008090614886731,
+    "macro avg": {
+      "precision": 0.5087211194120889,
+      "recall": 0.5008090614886732,
+      "f1-score": 0.35437697787795047,
+      "support": 13596.0
+    },
+    "weighted avg": {
+      "precision": 0.5087211194120889,
+      "recall": 0.5008090614886731,
+      "f1-score": 0.3543769778779505,
+      "support": 13596.0
+    }
+  },
+  "per_domain": {
+    "europarl_de": {
+      "macro_f1": 0.35437697787795047,
+      "n": 13596
+    }
+  },
+  "per_generator_ai_recall": {
+    "unknown": {
+      "mean": 0.024566048837893498,
+      "count": 6798
+    }
+  },
+  "frac_extreme_confidence": 0.980435422182995,
+  "frac_confidently_wrong": 0.48845248602530156,
+  "per_length_bucket": {
+    "0-500_label0": {
+      "accuracy": 0.9769775678866588,
+      "n": 6776
+    },
+    "0-500_label1": {
+      "accuracy": 0.024591370932116035,
+      "n": 6791
+    },
+    "500-650_label0": {
+      "accuracy": 1.0,
+      "n": 15
+    },
+    "500-650_label1": {
+      "accuracy": 0.0,
+      "n": 3
+    },
+    "800-950_label0": {
+      "accuracy": 1.0,
+      "n": 2
+    },
+    "800-950_label1": {
+      "accuracy": 0.0,
+      "n": 2
+    },
+    "950-1100_label0": {
+      "accuracy": 1.0,
+      "n": 1
+    },
+    "1750-10000000_label0": {
+      "accuracy": 1.0,
+      "n": 4
+    },
+    "1750-10000000_label1": {
+      "accuracy": 0.0,
+      "n": 2
+    }
+  },
+  "per_human_source_recall": {
+    "unknown": {
+      "mean": 0.9770520741394528,
+      "count": 6798
+    }
+  }
+}

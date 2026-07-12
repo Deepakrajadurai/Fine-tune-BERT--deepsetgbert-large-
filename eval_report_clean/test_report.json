@@ -1,0 +1,6376 @@
+{
+  "macro_f1": 0.999927572945917,
+  "classification_report": {
+    "human": {
+      "precision": 1.0,
+      "recall": 0.9998550724637681,
+      "f1-score": 0.9999275309805058,
+      "support": 6900.0
+    },
+    "ai": {
+      "precision": 0.9998552403011002,
+      "recall": 1.0,
+      "f1-score": 0.9999276149113283,
+      "support": 6907.0
+    },
+    "accuracy": 0.9999275729702325,
+    "macro avg": {
+      "precision": 0.99992762015055,
+      "recall": 0.999927536231884,
+      "f1-score": 0.999927572945917,
+      "support": 13807.0
+    },
+    "weighted avg": {
+      "precision": 0.9999275834547475,
+      "recall": 0.9999275729702325,
+      "f1-score": 0.9999275729671931,
+      "support": 13807.0
+    }
+  },
+  "per_domain": {
+    "bundestag_speech": {
+      "macro_f1": 1.0,
+      "n": 6625
+    },
+    "europarl_speech": {
+      "macro_f1": 0.9997775559029243,
+      "n": 4559
+    },
+    "state_law": {
+      "macro_f1": 1.0,
+      "n": 2623
+    }
+  },
+  "per_generator_ai_recall": {
+    "claude-sonnet": {
+      "mean": 1.0,
+      "count": 1009
+    },
+    "gemini-2.5": {
+      "mean": 1.0,
+      "count": 1083
+    },
+    "gemma-3": {
+      "mean": 1.0,
+      "count": 683
+    },
+    "gpt-4o": {
+      "mean": 1.0,
+      "count": 1071
+    },
+    "llama-3": {
+      "mean": 1.0,
+      "count": 1037
+    },
+    "mistral-large": {
+      "mean": 1.0,
+      "count": 686
+    },
+    "phi-4": {
+      "mean": 1.0,
+      "count": 338
+    },
+    "qwen-2.5": {
+      "mean": 1.0,
+      "count": 1000
+    }
+  },
+  "frac_extreme_confidence": 1.0,
+  "frac_confidently_wrong": 7.242702976750923e-05,
+  "per_length_bucket": {
+    "0-500_label0": {
+      "accuracy": 0.9996487530734106,
+      "n": 2847
+    },
+    "0-500_label1": {
+      "accuracy": 1.0,
+      "n": 2616
+    },
+    "500-650_label0": {
+      "accuracy": 1.0,
+      "n": 1429
+    },
+    "500-650_label1": {
+      "accuracy": 1.0,
+      "n": 1203
+    },
+    "650-800_label0": {
+      "accuracy": 1.0,
+      "n": 1140
+    },
+    "650-800_label1": {
+      "accuracy": 1.0,
+      "n": 1162
+    },
+    "800-950_label0": {
+      "accuracy": 1.0,
+      "n": 758
+    },
+    "800-950_label1": {
+      "accuracy": 1.0,
+      "n": 891
+    },
+    "950-1100_label0": {
+      "accuracy": 1.0,
+      "n": 520
+    },
+    "950-1100_label1": {
+      "accuracy": 1.0,
+      "n": 598
+    },
+    "1100-1300_label0": {
+      "accuracy": 1.0,
+      "n": 163
+    },
+    "1100-1300_label1": {
+      "accuracy": 1.0,
+      "n": 335
+    },
+    "1300-1500_label0": {
+      "accuracy": 1.0,
+      "n": 41
+    },
+    "1300-1500_label1": {
+      "accuracy": 1.0,
+      "n": 88
+    },
+    "1500-1750_label0": {
+      "accuracy": 1.0,
+      "n": 2
+    },
+    "1500-1750_label1": {
+      "accuracy": 1.0,
+      "n": 14
+    }
+  },
+  "per_human_source_recall": {
+    "Othmar Karas": {
+      "mean": 0.9565217391304348,
+      "count": 23
+    },
+    "Zw\u00f6lfte Verordnung zum Produktsicherheitsgesetz 1": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Zweites Gesetz \u00fcber die Krankenversicherung der Landwirte": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Zweites Gesetz \u00fcber die Anpassung der Renten aus den gesetzlichen Rentenversicherungen aus Anla\u00df der Ver\u00e4nderung der allgemeinen Bemessungsgrundlage f\u00fcr das Jahr 1959": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Zweites Gesetz zur \u00c4nderung und Erg\u00e4nzung des Gesetzes zur Regelung von Anspr\u00fcchen aus Lebens- und Rentenversicherungen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Zweites Gesetz zur Vereinheitlichung und Neuregelung des Besoldungsrechts in Bund und L\u00e4ndern": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Zweite Wahlordnung zum Mitbestimmungsgesetz": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Zweite Verordnung zum Produktsicherheitsgesetz (Verordnung \u00fcber die Sicherheit von Spielzeug)*)": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Zweite Durchf\u00fchrungsverordnung zum Bereinigungsgesetz f\u00fcr deutsche Auslandsbonds (Vereinigte Staaten von Amerika)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Zulassungsverordnung f\u00fcr Vertrags\u00e4rzte": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Zehntes Gesetz \u00fcber die Anpassung der Leistungen des Bundesversorgungsgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Zehntes Buch Sozialgesetzbuch - Sozialverwaltungsverfahren und Sozialdatenschutz -": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Zehnte Verordnung zur Durchf\u00fchrung des Bundes-Immissionsschutzgesetzes*)**)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Zanda Martens": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Zaklin Nastic": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Ye-One Rhie": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Yasmin Fahimi": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Alexander Alvaro": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Albrecht Glaser": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Albert De\u00df": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Agnieszka Brugger": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Agnes Schierhuber": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Agnes Conrad": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Adis Ahmetovic": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Adam Balten": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Achtzehntes Gesetz \u00fcber die Anpassung der Renten aus den gesetzlichen Rentenversicherungen sowie \u00fcber die Anpassung der Geldleistungen aus der gesetzlichen Unfallversicherung und der Altersgelder in der Altershilfe f\u00fcr Landwirte": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Achtes Gesetz \u00fcber die Anpassung der Renten aus den gesetzlichen Rentenversicherungen sowie \u00fcber die Anpassung der Geldleistungen aus der gesetzlichen Unfallversicherung": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Achte Verordnung zur \u00c4nderung der Arbeitszeitverordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Achim Post": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Achim Kessler": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Abgabenordnung": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "32. Verordnung zur Durchf\u00fchrung des Bundes-Immissionsschutzgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Zw\u00f6lfte Verordnung zur Durchf\u00fchrung des Bundes-Immissionsschutzgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Angela Merkel": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Andr\u00e9 Hahn": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Andr\u00e9 Berghegger": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Andrew Ullmann": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Andrej Hunko": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Andreas Schwarz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Andreas Schwab": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Andreas Schieder": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Andreas Scheuer": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Andreas M\u00f6lzer": {
+      "mean": 1.0,
+      "count": 30
+    },
+    "Andreas Mehltretter": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Andreas Mayer": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Andreas Lenz": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Andreas Jung": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Andreas Bleck": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Andreas Audretsch": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Anna Aeikens": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Ann-Veruschka Jurisch": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Anke Hennig": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Anke Domscheit-Berg": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Anja Weisgerber": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Anja Troff-Schaffarzyk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anja Reinalter": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Anja Liebert": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anja Karliczek": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anja Hajduk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anik\u00f3 Glogowski-Merten": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Angelika Winzig": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Angelika Werthmann": {
+      "mean": 1.0,
+      "count": 14
+    },
+    "Angelika Niebler": {
+      "mean": 1.0,
+      "count": 10
+    },
+    "Angelika Gl\u00f6ckner": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Angelika Beer": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anordnung \u00fcber die Befugnisse zur Ernennung und Entlassung der Beamtinnen und Beamten des Bundesamts f\u00fcr Ausw\u00e4rtige Angelegenheiten": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anordnung zur \u00dcbertragung von Zust\u00e4ndigkeiten f\u00fcr den Erlass von Widerspruchsbescheiden und f\u00fcr die Vertretung der Bundesrepublik Deutschland bei Klagen der Beamtinnen und Beamten des Bundesministeriums f\u00fcr Wohnen, Stadtentwicklung und Bauwesen in Angelegenheiten der Besoldung, der Beihilfe und der Unfallf\u00fcrsorge auf das Bundesverwaltungsamt": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Anordnung zur \u00dcbertragung von Zust\u00e4ndigkeiten f\u00fcr den Erlass von Widerspruchsbescheiden und die Vertretung des Dienstherrn bei Klagen von Besch\u00e4ftigten des Deutschen Instituts f\u00fcr Medizinische Dokumentation und Information in Angelegenheiten nach dem Bundesreisekostengesetz und dem Bundesumzugskostengesetz einschlie\u00dflich der hierzu ergangenen Trennungsgeldverordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anordnung zur \u00dcbertragung von Zust\u00e4ndigkeiten f\u00fcr den Erlass von Widerspruchsbescheiden und die Vertretung des Dienstherrn bei Klagen aus dem Beamtenverh\u00e4ltnis im Umweltbundesamt im Gesch\u00e4ftsbereich des Bundesministeriums f\u00fcr Umwelt, Naturschutz und Reaktorsicherheit in Angelegenheiten nach dem Bundesreisekostengesetz, der Trennungsgeldverordnung, dem Bundesumzugskostengesetz und den hierzu ergangenen Verordnungen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anordnung zur \u00dcbertragung von Zust\u00e4ndigkeiten f\u00fcr den Erlass von Widerspruchsbescheiden und die Vertretung des Bundes bei Klagen von Besch\u00e4ftigten der Bundesanstalt f\u00fcr Geowissenschaften und Rohstoffe in Angelegenheiten nach den besoldungsrechtlichen Bestimmungen des Bundes sowie des Kindergeldes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anordnung zur \u00dcbertragung von Zust\u00e4ndigkeiten auf dem Gebiet der Soldatenentsch\u00e4digung im Gesch\u00e4ftsbereich des Bundesministeriums der Verteidigung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anordnung zur \u00dcbertragung des Rechtes zur Ernennung und Entlassung der Beamten der Museumsstiftung Post und Telekommunikation": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anordnung zur \u00dcbertragung der Zust\u00e4ndigkeit f\u00fcr den Erlass von Widerspruchsbescheiden sowie der Vertretung bei Klagen von Beamtinnen und Beamten des Deutschen Patent- und Markenamts in Angelegenheiten der Besoldung und des Reisekostenrechts": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anordnung des Bundespr\u00e4sidenten \u00fcber die Festsetzung von Amtsbezeichnungen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anordnung des Bundespr\u00e4sidenten \u00fcber die Ernennung und Entlassung der Beamtinnen, Beamten, Richterinnen und Richter des Bundes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Annegret Kramp-Karrenbauer": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Anne Zerr": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Annalena Baerbock": {
+      "mean": 1.0,
+      "count": 10
+    },
+    "Anna L\u00fchrmann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anna Christmann": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Anna Cavazzini": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Arne Lietz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Arne Gericke": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Armin-Paulus Hampel": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Armin Laschet": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Armin Grau": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Armand Zorn": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Anton Hofreiter": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anton Friesen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Antje Tillmann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Antje Lezius": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ansgar Heveling": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Anordnung \u00fcber die \u00dcbertragung von Zust\u00e4ndigkeiten auf dem Gebiet der Festsetzung von Beihilfen sowie f\u00fcr den Erlass von Widerspruchsbescheiden und die Vertretung des Dienstherrn bei Klagen aus dem Beamtenverh\u00e4ltnis f\u00fcr Versorgungsempf\u00e4nger des Bundes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anordnung \u00fcber die \u00dcbertragung von Befugnissen auf dem Gebiete des Beamtenrechts im Bereich der Deutschen Bundespost und der Bundesdruckerei": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anordnung \u00fcber die \u00dcbertragung der Befugnis zu Entscheidungen \u00fcber Jubil\u00e4umszuwendungen an Beamte im Gesch\u00e4ftsbereich des Bundesministeriums f\u00fcr Vertriebene, Fl\u00fcchtlinge und Kriegsgesch\u00e4digte": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anordnung \u00fcber die Zust\u00e4ndigkeit der Bundesdisziplinarkammern f\u00fcr Beamte der Deutschen Bundesbahn im Grenzdienst": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Anordnung \u00fcber die Festsetzung von Amtsbezeichnungen f\u00fcr die Beamten des Bundes im Saarland": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Axel Echeverria": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Awet Tesfaiesus": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Au\u00dfenwirtschaftsverordnung": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Au\u00dfenwirtschaftsgesetz": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Ausf\u00fchrungsverordnung zum Chemiewaffen\u00fcbereinkommen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ausf\u00fchrungsgesetz zum deutsch-\u00f6sterreichischen Konkursvertrag": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ausf\u00fchrungsgesetz zu dem \u00dcbereinkommen vom 13. Januar 1993 \u00fcber das Verbot der Entwicklung, Herstellung, Lagerung und des Einsatzes chemischer Waffen und \u00fcber die Vernichtung solcher Waffen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ausbildungs- und Pr\u00fcfungsverordnung \u00fcber die Ausbildung zur An\u00e4sthesietechnischen Assistentin und zum An\u00e4sthesietechnischen Assistenten und \u00fcber die Ausbildung zur Operationstechnischen Assistentin und zum Operationstechnischen Assistenten 1": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ausbildungs- und Pr\u00fcfungsordnung f\u00fcr die Steuerbeamtinnen und Steuerbeamten": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Ates G\u00fcrpinar": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Asylgesetz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Astrid Timmermann-Fechter": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Astrid Mannes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Astrid Lulling": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Astrid Damerow": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Arno Klare": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung der Dienstbez\u00fcge und Anw\u00e4rterbez\u00fcge nach \u00a7 2 Abs. 1 und \u00a7 3 Abs. 2 der Zweiten Besoldungs-\u00dcbergangsverordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung der Beitr\u00e4ge in der Alterssicherung der Landwirte f\u00fcr das Jahr 2022": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung der Beitragss\u00e4tze in der allgemeinen Rentenversicherung und der knappschaftlichen Rentenversicherung f\u00fcr das Jahr 2023": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Beatrix von Storch": {
+      "mean": 1.0,
+      "count": 12
+    },
+    "Beate Walter-Rosenheimer": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Beate M\u00fcller-Gemmeke": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Bastian Treuheit": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bastian Ernst": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Barbara Weiler": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Barbara Lochbihler": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Barbara Kappel": {
+      "mean": 1.0,
+      "count": 12
+    },
+    "Ayse Asar": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Aydan \u00d6zo\u011fuz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Axel Voss": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Axel Sch\u00e4fer": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Axel M\u00fcller": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Bekanntmachung \u00fcber die Auspr\u00e4gung von Bundesm\u00fcnzen im Nennwert von 5 Deutschen Mark (Gedenkm\u00fcnze Europ\u00e4isches Denkmalschutzjahr 1975)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung \u00fcber die Auspr\u00e4gung von Bundesm\u00fcnzen im Nennwert von 5 Deutschen Mark (Gedenkm\u00fcnze 150. Gr\u00fcndungstag des Deutschen Zollvereins)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung \u00fcber die Ausgabe von M\u00fcnzen im Nennwert von 1, 5, 10 und 50 Pfennig, die an Stelle der Schrift \"Bank deutscher L\u00e4nder\" die Umschrift \"Bundesrepublik Deutschland\" tragen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung \u00fcber den Dienstsitz des Bundesaufsichtsamtes f\u00fcr das Versicherungswesen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung \u00fcber den Abschlu\u00df und das Inkrafttreten des Staatsvertrages zwischen dem Land Brandenburg und dem Land Sachsen-Anhalt \u00fcber die \u00c4nderung der gemeinsamen Landesgrenze": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung \u00fcber den Abschlu\u00df und das Inkrafttreten des Staatsvertrages zwischen dem Land Baden-W\u00fcrttemberg und dem Land Hessen \u00fcber eine \u00c4nderung der Landesgrenze": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung zu \u00a7 8 des Markengesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung zu \u00a7 4 des Warenzeichengesetzes": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Bekanntmachung zu \u00a7 35 des Warenzeichengesetzes": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Bekanntmachung nach \u00a7 77 Absatz 4 und \u00a7 78 Absatz 2 des Bundesbesoldungsgesetzes sowie nach \u00a7 5a Absatz 2 und \u00a7 6 Absatz 3 des Besoldungs\u00fcberleitungsgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung nach \u00a7 53a Absatz 11 Satz 2 und 3 des Energiesteuergesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung nach \u00a7 139b Absatz 13 Satz 1 und 2 der Abgabenordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung nach \u00a7 127a Abs. 3 des Urheberrechtsgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung des Beschlusses des Deutschen Bundestages \u00fcber die Feststellung des Fortbestehens der epidemischen Lage von nationaler Tragweite": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Bekanntmachung der \u00c4nderung der zur Entgegennahme von Patent-, Gebrauchsmuster-, Marken- und Designanmeldungen befugten Patentinformationszentren": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung der ab dem 1. Januar 2025 geltenden benannten Leistungsbetr\u00e4ge der Pflegeversicherung sowie weiterer Betr\u00e4ge nach dem Elften Buch Sozialgesetzbuch": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bernd Baumann": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Bergverordnung \u00fcber vermessungstechnische und sicherheitliche Unterlagen": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Benjamin Strasser": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Benita Ferrero-Waldner": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Bengt Bergt": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Bekanntmachung \u00fcber die Feststellung der Gegenseitigkeit gem\u00e4\u00df \u00a7 1 Abs. 2 des Auslandsunterhaltsgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung \u00fcber die Eintragung von verzinslichen Schatzanweisungen des Fonds \"Deutsche Einheit\" in das Schuldbuch des Fonds \"Deutsche Einheit\"": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung \u00fcber die Auspr\u00e4gung von deutschen Euro-Gedenkm\u00fcnzen im Nennwert von 20 Euro (Goldm\u00fcnze \u201ePirol\u201c der Serie \u201eHeimische V\u00f6gel\u201c)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung \u00fcber die Auspr\u00e4gung von deutschen Euro-Gedenkm\u00fcnzen im Nennwert von 20 Euro (Goldm\u00fcnze \u201eFichte\u201c der Serie \u201eDeutscher Wald\u201c)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung \u00fcber die Auspr\u00e4gung von deutschen Euro-Gedenkm\u00fcnzen im Nennwert von 20 Euro (Gedenkm\u00fcnze \u201e125. Geburtstag Erich K\u00e4stner\u201c)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung \u00fcber die Auspr\u00e4gung von deutschen Euro-Gedenkm\u00fcnzen im Nennwert von 2 Euro (Gedenkm\u00fcnze \u201e35 Jahre Erasmus-Programm\u201c)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung \u00fcber die Auspr\u00e4gung von deutschen Euro-Gedenkm\u00fcnzen im Nennwert von 100 Euro (Goldm\u00fcnze \u201eUNESCO Welterbe Altstadt Goslar \u2013 Bergwerk Rammelsberg\u201c)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung \u00fcber die Auspr\u00e4gung von deutschen Euro-Gedenkm\u00fcnzen im Nennwert von 10 Euro Gedenkm\u00fcnze \u201e400 Jahre Keplersche Gesetze\u201c": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung \u00fcber die Auspr\u00e4gung von deutschen Euro-Gedenkm\u00fcnzen im Nennwert von 10 Euro (Gedenkm\u00fcnze \u201e200. Geburtstag Carl Spitzweg\u201c)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung \u00fcber die Auspr\u00e4gung von deutschen Euro-Gedenkm\u00fcnzen im Nennwert von 10 Euro (Gedenkm\u00fcnze \u201e150 Jahre Entdeckung des Urvogels Archaeopteryx\u201c)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bekanntmachung \u00fcber die Auspr\u00e4gung von Bundesm\u00fcnzen im Nennwert von 5 Deutschen Mark (Otto Hahn-Gedenkm\u00fcnze)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Betreuungsorganisationsgesetz": {
+      "mean": 1.0,
+      "count": 11
+    },
+    "Besondere Geb\u00fchrenverordnung des Bundesministeriums der Finanzen zur Finanzdienstleistungsaufsicht": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Berufsbildungsgesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bernhard Zimniok": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Bernhard Rapkay": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Bernhard Loos": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bernhard Herrmann": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Bernhard Daldrup": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Bernd Westphal": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bernd Schattner": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Bernd Riexinger": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Bernd Reuther": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bernd Posselt": {
+      "mean": 1.0,
+      "count": 22
+    },
+    "Bernd Lucke": {
+      "mean": 1.0,
+      "count": 13
+    },
+    "Bernd Lange": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Bernd K\u00f6lmel": {
+      "mean": 1.0,
+      "count": 12
+    },
+    "Bundes-Bodenschutz- und Altlastenverordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bruno Hollnagel": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Britta Reimers": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Britta Ha\u00dfelmann": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Brigitte Langenhagen": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Boris Pistorius": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Boris Mijatovi\u0107": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Birke Bull-Bischoff": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Birgit Sippel": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Birgit Schnieber-Jastram": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Birgit Collin-Langen": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Binnenschifffahrtsstra\u00dfen-Ordnung": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Bijan Djir-Sarai": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Biersteuergesetz": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Bettina Stark-Watzinger": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Bettina Margarethe Wiesmann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Caren Lay": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Cansu \u00d6zdemir": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Cansel Kiziltepe": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Canan Bayram": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "B\u00f6rsengesetz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Burkhard Balz": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Bundes\u00e4rzteordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bundeswahlordnung": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Bundeswahlgesetz": {
+      "mean": 1.0,
+      "count": 17
+    },
+    "Bundesreisekostengesetz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Bundespersonalvertretungsgesetz": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Bundeskindergeldgesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bundesgesetz \u00fcber individuelle F\u00f6rderung der Ausbildung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bundesdatenschutzgesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Bundesberggesetz": {
+      "mean": 1.0,
+      "count": 86
+    },
+    "Bundesbeamtengesetz": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Christian D\u00fcrr": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Christian Doleschal": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Christel Fiebiger": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Christa Randzio-Plath": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Christa Prets": {
+      "mean": 1.0,
+      "count": 9
+    },
+    "Christa Kla\u00df": {
+      "mean": 1.0,
+      "count": 10
+    },
+    "Chantal Kopf": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Cem \u00d6zdemir": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Carsten Tr\u00e4ger": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Carsten Schneider": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Carsten M\u00fcller": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Carolin Bachmann": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Carmen Wegge": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Carl-Philipp Sassenrath": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Carl-Julius Cronenberg": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Carina Konrad": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Christian Wirth": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Christian Ulrik von Boetticher": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Christian Schreider": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Christian Schmidt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Christian Sauter": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Christian Sagartz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Christian Petry": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Christian Moser": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Christian Lindner": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Christian Leye": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Christian K\u00fchn": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Christian Jung": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Christian Hirte": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Christian Haase": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Christian G\u00f6rke": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Christian Ehler": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Claudia Gamon": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Clara B\u00fcnger": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Christophe Hansen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Christoph de Vries": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Christoph Plo\u00df": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Christoph Meyer": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Christoph Hoffmann": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Christoph Bernstiel": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Christine Schneider": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Christine Lambrecht": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Christine Buchholz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Christine Aschenberg-Dugnus": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Christina-Johanne Schr\u00f6der": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Christina Stumpp": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Christina Baum": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Christian Zaum": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Daniel Walter": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Daniel Marc Cohn-Bendit": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Daniel F\u00f6st": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Daniel Freund": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Daniel Cohn-Bendit": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Daniel Caspary": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Daniel Bettermann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Daniel Baldy": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Dagmar Ziegler": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Dagmar Roth-Behrendt": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Cornelia Ernst": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Constanze Krehl": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Claudia Schmidtke": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Claudia Roth": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Claudia Raffelh\u00fcschen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Claudia Moll": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Diana Herbstreuth": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Detlef Seif": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Desiree Becker": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Derya T\u00fcrk-Nachbaur": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Dennis Rohde": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Delara Burkhardt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Deborah D\u00fcring": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "De-Mail-Gesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "David Preisendanz": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "David McAllister": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Danny Meiners": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Daniela Wagner": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Daniela Raschhofer": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Daniela Kolbe": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Daniela Kluckert": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Daniela De Ridder": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Dorothee B\u00e4r": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Doris Pack": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Doris Barnett": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Doris Achelwilm": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Dirk Wiese": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Dirk V\u00f6pel": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Dirk Spaniel": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Dirk Brandes": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Dietrich Monstadt": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Dietmar K\u00f6ster": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Dietmar Friedhoff": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Dietmar Bartsch": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Dietlind Tiemann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Diether Dehm": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Dieter-Lebrecht Koch": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Diana St\u00f6cker": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Einundvierzigste Verordnung zur Durchf\u00fchrung des Bundes-Immissionsschutzgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Einf\u00fchrungsgesetz zur Strafproze\u00dfordnung": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Einf\u00fchrungsgesetz zur Abgabenordnung": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Einfuhrumsatzsteuer-Befreiungsverordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Einfuhr-Verbrauchsteuerbefreiungsverordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Eigenheimzulagengesetz": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Edgar Franke": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Eckhardt Rehberg": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Dunja Kreiser": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Drittes Gesetz \u00fcber die Anpassung der Renten aus den gesetzlichen Rentenversicherungen aus Anla\u00df der Ver\u00e4nderung der allgemeinen Bemessungsgrundlage f\u00fcr das Jahr 1960": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Drittes Gesetz zur \u00c4nderung des Steuerberatungsgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Drittes Gesetz zur \u00c4nderung des Gesetzes \u00fcber das Kreditwesen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Drittes Gesetz zur Durchf\u00fchrung versicherungsrechtlicher Richtlinien des Rates der Europ\u00e4ischen Gemeinschaften": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Dritte Wahlordnung zum Mitbestimmungsgesetz": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Dritte Verordnung zur Durchf\u00fchrung des Bundesentsch\u00e4digungsgesetzes": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Dorothee Martin": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Erik Marquardt": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Erich Irlstorfer": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Erhard Grundl": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Enrico Komning": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Emmi Zeulner": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Elvan Korkmaz-Emre": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Elmar Brok": {
+      "mean": 1.0,
+      "count": 13
+    },
+    "Elisabeth Winkelmeier-Becker": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Elisabeth Schroedter": {
+      "mean": 1.0,
+      "count": 15
+    },
+    "Elisabeth Motschmann": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Elisabeth K\u00f6stinger": {
+      "mean": 1.0,
+      "count": 10
+    },
+    "Elisabeth Kaiser": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Elfte Verordnung zur Durchf\u00fchrung des Bundes-Immissionsschutzgesetzes (Verordnung \u00fcber Emissionserkl\u00e4rungen)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ekin Delig\u00f6z": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Eisenbahn-Signalordnung 1959": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Einundzwanzigste Verordnung zur Durchf\u00fchrung des Bundes-Immissionsschutzgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Europawahlordnung": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Eugen Schmidt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Eugen Freund": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Etelka Barsi-Pataky": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Erwin R\u00fcddel": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Erstes Gesetz zur Vereinheitlichung und Neuregelung des Besoldungsrechts in Bund und L\u00e4ndern": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Erste Wahlordnung zum Mitbestimmungsgesetz": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Erste Verordnung zur Durchf\u00fchrung des Windenergie-auf-See-Gesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Erste Verordnung zum Sprengstoffgesetz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Erste Verordnung zum Produktsicherheitsgesetz 1": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Erste Durchf\u00fchrungsverordnung zum Treuhandgesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Erste Durchf\u00fchrungsbestimmung zur Verordnung \u00fcber die Pflichten und Rechte der Lehrkr\u00e4fte und Erzieher - Arbeitsordnung f\u00fcr p\u00e4dagogische Kr\u00e4fte der Volksbildung -": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ernst Strasser": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Erla\u00df \u00fcber die Genehmigung der Neufassung der Satzung des Johanniterordens": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Erlass \u00fcber die Genehmigung von \u00c4nderungen der Satzung des Ordens Pour le m\u00e9rite f\u00fcr Wissenschaften und K\u00fcnste": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Erika Mann": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Filiz Polat": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Feuerschutzsteuergesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ferat Ko\u00e7ak": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Felix Schreiner": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Felix Banaszak": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Falko Mohrs": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Fabio De Masi": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Fabian Jacobi": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Fabian Gramling": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Fabian Funke": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ewa Klamt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Evelyne Gebhardt": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Evelyn Regner": {
+      "mean": 1.0,
+      "count": 9
+    },
+    "Eva-Maria Schreiber": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Eva Lichtenberger": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Eva H\u00f6gl": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Franziska Gminder": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Franziska Giffey": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Franziska Brantner": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Franz Obermayr": {
+      "mean": 1.0,
+      "count": 21
+    },
+    "Franz Fischler": {
+      "mean": 1.0,
+      "count": 14
+    },
+    "Frank Sch\u00e4ffler": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Frank Schwabe": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Frank M\u00fcller-Rosentritt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Frank Junge": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Frank Bsirske": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Florian Toncar": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Florian Pronold": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Florian O\u00dfner": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Florian Hahn": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Florian Dorn": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Florian Bilic": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gabriela Heinrich": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "F\u00fcnfzehntes Gesetz \u00fcber die Anpassung der Renten aus den gesetzlichen Rentenversicherungen sowie \u00fcber die Anpassung der Geldleistungen aus der gesetzlichen Unfallversicherung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "F\u00fcnftes Gesetz \u00fcber die Anpassung der Renten aus den gesetzlichen Rentenversicherungen aus Anla\u00df der Ver\u00e4nderung der allgemeinen Bemessungsgrundlage f\u00fcr das Jahr 1962": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "F\u00fcnftes Gesetz zur F\u00f6rderung der Verm\u00f6gensbildung der Arbeitnehmer": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "F\u00fcnfte Verordnung \u00fcber Ausnahmen von den Vorschriften der Stra\u00dfenverkehrs-Ordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "F\u00fcnfte Verordnung zur vor\u00fcbergehenden Abweichung von der Binnenschifffahrtsstra\u00dfen-Ordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Fritz G\u00fcntzler": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Frithjof Schmidt": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Friedrich-Wilhelm Graefe zu Baringdorf": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Friedrich Straetmanns": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Friedrich Merz": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Frauke Petry": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Frauke Heiligenstadt": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Fran\u00e7ois de Rugy": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Franziska Mascheck": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Franziska Keller": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gero Storjohann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gero Clemens Hocker": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Gerichtskostengesetz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gereon Bollmann": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Gerald Ullrich": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gerald H\u00e4fner": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Georges Bach": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Georg Schroeter": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Georg Mayer": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Georg Kippels": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Georg Jarzembowski": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gastst\u00e4ttengesetz": {
+      "mean": 1.0,
+      "count": 12
+    },
+    "Gabriele Zimmer": {
+      "mean": 1.0,
+      "count": 15
+    },
+    "Gabriele Stauner": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Gabriele Hiller-Ohm": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gabriele Bischoff": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Gesetz zu \u00dcbergangsregelungen zur Errichtung der Sozialversicherung f\u00fcr Landwirtschaft, Forsten und Gartenbau": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zu dem \u00dcbereinkommen vom 29. Juli 1960 \u00fcber die Haftung gegen\u00fcber Dritten auf dem Gebiet der Kernenergie nebst Zusatzvereinbarungen, zu dem \u00dcbereinkommen vom 25. Mai 1962 \u00fcber die Haftung der Inhaber von Reaktorschiffen nebst Zusatzprotokoll und zu dem \u00dcbereinkommen vom 17. Dezember 1971 \u00fcber die zivilrechtliche Haftung bei der Bef\u00f6rderung von Kernmaterial auf See": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zu dem Wiener \u00dcbereinkommen vom 24. April 1963 \u00fcber konsularische Beziehungen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zu dem Vertrag vom 7. Mai 1963 zwischen der Bundesrepublik Deutschland und der Republik \u00d6sterreich \u00fcber Kriegsopferversorgung und Besch\u00e4ftigung Schwerbesch\u00e4digter": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zu dem Vertrag vom 19. September 2000 zwischen der Bundesrepublik Deutschland und der Tschechischen Republik \u00fcber die gegenseitige Hilfeleistung bei Katastrophen und schweren Ungl\u00fccksf\u00e4llen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zu dem Abkommen zwischen den Parteien des Nordatlantikvertrags vom 19. Juni 1951 \u00fcber die Rechtsstellung ihrer Truppen und zu den Zusatzvereinbarungen vom 3. August 1959 zu diesem Abkommen": {
+      "mean": 1.0,
+      "count": 12
+    },
+    "Gesetz zu dem Abkommen vom 21. November 2000 zwischen der Regierung der Bundesrepublik Deutschland und der Regierung der Republik Polen \u00fcber den Bau und die Erhaltung von Grenzbr\u00fccken im nachgeordneten Stra\u00dfennetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zu dem Abkommen vom 17. Dezember 1997 zwischen der Bundesrepublik Deutschland und der Republik Bulgarien \u00fcber Soziale Sicherheit": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zu dem Abkommen vom 10. November 1995 zwischen der Bundesrepublik Deutschland und den Vereinten Nationen \u00fcber den Sitz des Freiwilligenprogramms der Vereinten Nationen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz gegen den unlauteren Wettbewerb": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz f\u00fcr die Erhaltung, die Modernisierung und den Ausbau der Kraft-W\u00e4rme-Kopplung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz f\u00fcr den Ausbau erneuerbarer Energien": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Gesch\u00e4ftsordnung des Deutschen Bundestages": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Gesch\u00e4ftsordnung des Bundesverfassungsgerichts": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gerrit Huy": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gerold Otten": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz zur Beschleunigung des Ausbaus von Geothermieanlagen, W\u00e4rmepumpen, W\u00e4rmeleitungen und W\u00e4rmespeichern*": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Gesetz zur Beschleunigung der Planungen f\u00fcr Verkehrswege in den neuen L\u00e4ndern sowie im Land Berlin": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Gesetz zur Bereinigung der im Beitrittsgebiet zu Erholungszwecken verliehenen Nutzungsrechte": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Bek\u00e4mpfung der Schwarzarbeit und illegalen Besch\u00e4ftigung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Behandlung von Schuldbuchforderungen gegen die ehemalige Deutsche Demokratische Republik": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Gesetz zur Ausf\u00fchrung zwischenstaatlicher Vertr\u00e4ge und zur Durchf\u00fchrung von Abkommen der Europ\u00e4ischen Union auf dem Gebiet der Anerkennung und Vollstreckung in Zivil- und Handelssachen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz zur Ausf\u00fchrung von Artikel 115 des Grundgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Ausf\u00fchrung des Haager \u00dcbereinkommens vom 15. April 1958 \u00fcber die Anerkennung und Vollstreckung von Entscheidungen auf dem Gebiet der Unterhaltspflicht gegen\u00fcber Kindern": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Ausf\u00fchrung des Abkommens zwischen der Regierung der Bundesrepublik Deutschland und der Regierung der Vereinigten Staaten von Amerika vom 1. Oktober 2008 \u00fcber die Vertiefung der Zusammenarbeit bei der Verhinderung und Bek\u00e4mpfung schwerwiegender Kriminalit\u00e4t": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz zur Ausf\u00fchrung der Verordnung (EG) Nr. 1013/2006 des Europ\u00e4ischen Parlaments und des Rates vom 14. Juni 2006 \u00fcber die Verbringung von Abf\u00e4llen 1) und des Basler \u00dcbereinkommens vom 22. M\u00e4rz 1989 \u00fcber die Kontrolle der grenz\u00fcberschreitenden Verbringung gef\u00e4hrlicher Abf\u00e4lle und ihrer Entsorgung 2)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Ausf\u00fchrung der EU-Verordnung zur Errichtung der Europ\u00e4ischen Staatsanwaltschaft": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Gesetz zur Aufhebung des Gesetzes \u00fcber die Errichtung und das Verfahren der Schiedsstellen f\u00fcr Arbeitsrecht und zur \u00c4nderung des Arbeitsf\u00f6rderungsgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zum Schutz von M\u00fcttern bei der Arbeit, in der Ausbildung und im Studium": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zum Schutz gegen Flugl\u00e4rm": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zum Schutz der Kulturpflanzen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz zu \u00dcbergangsregelungen zur Neuorganisation der vertrags\u00e4rztlichen Selbstverwaltung und Organisation der Krankenkassen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Herstellung der Rechtseinheit in der gesetzlichen Renten- und Unfallversicherung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Gew\u00e4hrung eines Heizkostenzuschusses aufgrund stark gestiegener Energiekosten": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur F\u00f6rderung von Vorruhestandsleistungen": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Gesetz zur Finanzierung von Infrastrukturinvestitionen von L\u00e4ndern und Kommunen": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Gesetz zur Europ\u00e4ischen B\u00fcrgerinitiative": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz zur Errichtung eines Sonderverm\u00f6gens \u201eInvestitions- und Tilgungsfonds\u201c": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz zur Errichtung einer standardisierten zentralen Datei von Polizeibeh\u00f6rden und Nachrichtendiensten von Bund und L\u00e4ndern zur Bek\u00e4mpfung des gewaltbezogenen Rechtsextremismus": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Errichtung einer Stiftung \"Erinnerung, Verantwortung und Zukunft\"": {
+      "mean": 1.0,
+      "count": 13
+    },
+    "Gesetz zur Errichtung einer \"Stiftung J\u00fcdisches Museum Berlin\"": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Gesetz zur Errichtung der Unfallversicherung Bund und Bahn": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Gesetz zur Erg\u00e4nzung des Gesetzes \u00fcber die Mitbestimmung der Arbeitnehmer in den Aufsichtsr\u00e4ten und Vorst\u00e4nden der Unternehmen des Bergbaus und der Eisen und Stahl erzeugenden Industrie": {
+      "mean": 1.0,
+      "count": 9
+    },
+    "Gesetz zur Entwicklung und Einf\u00fchrung einer Digitalen Renten\u00fcbersicht": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Einf\u00fchrung eines Lobbyregisters f\u00fcr die Interessenvertretung gegen\u00fcber dem Deutschen Bundestag und gegen\u00fcber der Bundesregierung": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Gesetz zur Einf\u00fchrung einer kapitalgedeckten H\u00fcttenknappschaftlichen Zusatzversicherung und zur \u00c4nderung anderer Gesetze": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Durchf\u00fchrung des Zensus im Jahr 2022": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Durchf\u00fchrung der Verordnung (EU) 2016/426 des Europ\u00e4ischen Parlaments und des Rates vom 9. M\u00e4rz 2016 \u00fcber Ger\u00e4te zur Verbrennung gasf\u00f6rmiger Brennstoffe und zur Aufhebung der Richtlinie 2009/142/EG": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Vorbereitung eines registergest\u00fctzten Zensus einschlie\u00dflich einer Geb\u00e4ude- und Wohnungsz\u00e4hlung 2011": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Umwandlung der Unternehmen der Deutschen Bundespost in die Rechtsform der Aktiengesellschaft": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Gesetz zur Umsetzung der Richtlinie (EU) 2017/1852 des Rates vom 10. Oktober 2017 \u00fcber Verfahren zur Beilegung von Besteuerungsstreitigkeiten in der Europ\u00e4ischen Union *": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Suche und Auswahl eines Standortes f\u00fcr ein Endlager f\u00fcr hochradioaktive Abf\u00e4lle": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur St\u00e4rkung des Schutzes der finanziellen Interessen der Europ\u00e4ischen Union": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Sicherung der tarifvertraglichen Sozialkassenverfahren*": {
+      "mean": 1.0,
+      "count": 32
+    },
+    "Gesetz zur Sicherung der Neutralit\u00e4t der Bundesanstalt f\u00fcr Arbeit bei Arbeitsk\u00e4mpfen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Sicherstellung des Embryonenschutzes im Zusammenhang mit Einfuhr und Verwendung menschlicher embryonaler Stammzellen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz zur Regelung von Sekundierungen im Rahmen von Eins\u00e4tzen der zivilen Krisenpr\u00e4vention": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Regelung des \u00dcbergangs der Finanzierungs- und Handlungspflichten f\u00fcr die Entsorgung radioaktiver Abf\u00e4lle der Betreiber von Kernkraftwerken": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Regelung des Planungsverfahrens f\u00fcr Magnetschwebebahnen": {
+      "mean": 1.0,
+      "count": 9
+    },
+    "Gesetz zur Regelung des Eigentums an von landwirtschaftlichen Produktionsgenossenschaften vorgenommenen Anpflanzungen": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Gesetz zur Regelung der Arbeitnehmer\u00fcberlassung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Ordnung des Wasserhaushalts 1) 2)": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz zur Markt\u00fcberwachung und zur Sicherstellung der Konformit\u00e4t von Produkten": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz zur Kennzeichnung von energieverbrauchsrelevanten Produkten, Kraftfahrzeugen und Reifen mit Angaben \u00fcber den Verbrauch an Energie und an anderen wichtigen Ressourcen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber bauliche Ma\u00dfnahmen zum Schutz der Zivilbev\u00f6lkerung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber amtlich anerkannte Sachverst\u00e4ndige und amtlich anerkannte Pr\u00fcfer f\u00fcr den Kraftfahrzeugverkehr": {
+      "mean": 1.0,
+      "count": 11
+    },
+    "Gesetz \u00fcber Unterlassungsklagen bei Verbraucherrechts- und anderen Verst\u00f6\u00dfen": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Gesetz \u00fcber Schuldverschreibungen aus Gesamtemissionen": {
+      "mean": 1.0,
+      "count": 12
+    },
+    "Gesetz \u00fcber Rechte an Luftfahrzeugen": {
+      "mean": 1.0,
+      "count": 32
+    },
+    "Gesetz \u00fcber Ordnungswidrigkeiten": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz \u00fcber Naturschutz und Landschaftspflege": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Gesetz \u00fcber Ma\u00dfnahmen zur F\u00f6rderung des deutschen Films *": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz \u00fcber Kosten der freiwilligen Gerichtsbarkeit f\u00fcr Gerichte und Notare": {
+      "mean": 1.0,
+      "count": 39
+    },
+    "Gesetz zur \u00dcbertragung von Verwaltungsaufgaben auf dem Gebiet der Raumfahrt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur \u00dcberf\u00fchrung der Wohnungsgemeinn\u00fctzigkeit in den allgemeinen Wohnungsmarkt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur \u00dcberf\u00fchrung der Anspr\u00fcche und Anwartschaften aus Zusatz- und Sonderversorgungssystemen des Beitrittsgebiets": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur \u00c4nderung von Vorschriften des Verschollenheitsrechts": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur \u00c4nderung des Hauptfeststellungszeitraums f\u00fcr die wirtschaftlichen Einheiten des Betriebsverm\u00f6gens sowie des Hauptveranlagungszeitraums f\u00fcr die Verm\u00f6gensteuer": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz zur Wahrung der Einheitlichkeit der Rechtsprechung der obersten Gerichtsh\u00f6fe des Bundes": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Gesetz zur Vorbeugung vor und Bek\u00e4mpfung von Tierseuchen": {
+      "mean": 1.0,
+      "count": 16
+    },
+    "Gesetz \u00fcber den Wehrbeauftragten des Deutschen Bundestages": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Gesetz \u00fcber den Verkehr mit Milch, Milcherzeugnissen und Fetten": {
+      "mean": 1.0,
+      "count": 10
+    },
+    "Gesetz \u00fcber den Verkehr mit Arzneimitteln": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Gesetz \u00fcber den Milit\u00e4rischen Abschirmdienst": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber den Beruf der Psychotherapeutin und des Psychotherapeuten *": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber den Beruf der Notfallsanit\u00e4terin und des Notfallsanit\u00e4ters*": {
+      "mean": 1.0,
+      "count": 9
+    },
+    "Gesetz \u00fcber den Beruf der An\u00e4sthesietechnischen Assistentin und des An\u00e4sthesietechnischen Assistenten und \u00fcber den Beruf der Operationstechnischen Assistentin und des Operationstechnischen Assistenten": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber den Aufenthalt, die Erwerbst\u00e4tigkeit und die Integration von Ausl\u00e4ndern im Bundesgebiet 1)": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Gesetz \u00fcber den Amateurfunk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber das Technische Hilfswerk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber das Inverkehrbringen, die R\u00fccknahme und die umweltvertr\u00e4gliche Entsorgung von Elektro- und Elektronikger\u00e4ten": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz \u00fcber das Bundesverfassungsgericht": {
+      "mean": 1.0,
+      "count": 34
+    },
+    "Gesetz \u00fcber das Bundeskriminalamt und die Zusammenarbeit des Bundes und der L\u00e4nder in kriminalpolizeilichen Angelegenheiten": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Gesetz \u00fcber das Bundesamt f\u00fcr Sicherheit in der Informationstechnik und \u00fcber die Sicherheit in der Informationstechnik von Einrichtungen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber das Aufsp\u00fcren von Gewinnen aus schweren Straftaten": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz \u00fcber befriedete Bezirke f\u00fcr Verfassungsorgane des Bundes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber die Haftung des Reichs f\u00fcr seine Beamten": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber die Gleichbehandlung der Soldatinnen und Soldaten": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Gesetz \u00fcber die Feststellung des Bundeshaushaltsplans f\u00fcr das Haushaltsjahr 2026": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber die Errichtung einer Bundeskanzler-Helmut-Schmidt-Stiftung": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Gesetz \u00fcber die Elektrizit\u00e4ts- und Gasversorgung": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Gesetz \u00fcber die Einf\u00fchrung des deutschen Rechts auf dem Gebiete der Steuern, Z\u00f6lle und Finanzmonopole im Saarland": {
+      "mean": 1.0,
+      "count": 22
+    },
+    "Gesetz \u00fcber die Bundespolizei": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz \u00fcber die Bevorratung mit Erd\u00f6l und Erd\u00f6lerzeugnissen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz \u00fcber die Beaufsichtigung von Zahlungsdiensten": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz \u00fcber die Beaufsichtigung der Versorgungsanstalt der deutschen B\u00fchnen und der Versorgungsanstalt der deutschen Kulturorchester": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber die Beaufsichtigung der Versicherungsunternehmen": {
+      "mean": 1.0,
+      "count": 11
+    },
+    "Gesetz \u00fcber den registergest\u00fctzten Zensus im Jahre 2011": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber den rechtlichen Schutz von Design": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz \u00fcber den deutschen Auslandsrundfunk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber den Zivilschutz und die Katastrophenhilfe des Bundes": {
+      "mean": 1.0,
+      "count": 9
+    },
+    "Gesetz \u00fcber den Wertpapierhandel": {
+      "mean": 1.0,
+      "count": 123
+    },
+    "Gesetz \u00fcber die weitere Sicherung des Einsatzes von Gemeinschaftskohle in der Elektrizit\u00e4tswirtschaft": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber die psychosoziale Prozessbegleitung im Strafverfahren": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber die elektromagnetische Vertr\u00e4glichkeit von Betriebsmitteln*": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber die Verwendung der zur Durchf\u00fchrung der Rechtsakte der Europ\u00e4ischen Gemeinschaft \u00fcber die Kennzeichnung und Registrierung von Rindern erhobenen Daten": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber die Versorgung der fr\u00fcheren Soldatinnen und fr\u00fcheren Soldaten und ihrer Hinterbliebenen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz \u00fcber die Verg\u00fctung von Vorm\u00fcndern und Betreuern": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber die Unterlagen des Staatssicherheitsdienstes der ehemaligen Deutschen Demokratischen Republik": {
+      "mean": 1.0,
+      "count": 14
+    },
+    "Gesetz \u00fcber die Umzugskostenverg\u00fctung f\u00fcr die Bundesbeamten, Richter im Bundesdienst und Soldaten": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber die Tilgung von Ausgleichsforderungen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber die Statistik f\u00fcr Bundeszwecke": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber die Statistik der Stra\u00dfenverkehrsunf\u00e4lle": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber die Statistik der Bev\u00f6lkerungsbewegung und die Fortschreibung des Bev\u00f6lkerungsstandes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber die Sicherstellung von Leistungen auf dem Gebiet der gewerblichen Wirtschaft sowie des Geld- und Kapitalverkehrs": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz \u00fcber die Rechtswirkungen des Ausspruchs einer nachtr\u00e4glichen Eheschlie\u00dfung": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz \u00fcber die Mitbestimmung der Arbeitnehmer bei grenz\u00fcberschreitendem Formwechsel und grenz\u00fcberschreitender Spaltung": {
+      "mean": 1.0,
+      "count": 14
+    },
+    "Gesetz \u00fcber die Koordinierung der Entwicklung und des Einsatzes neuer Software der Steuerverwaltung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gunther Krichbaum": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gunnar Beck": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Guido Reil": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Grunderwerbsteuergesetz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Grigorios Aggelidis": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Gregor Gysi": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Graham R. Watson": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gottfried Curio": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Gitta Connemann": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Gisela Kallenbach": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesine Meissner": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Gesine L\u00f6tzsch": {
+      "mean": 1.0,
+      "count": 9
+    },
+    "Gesetz \u00fcber verfassungskonkretisierende allgemeine Ma\u00dfst\u00e4be f\u00fcr die Verteilung des Umsatzsteueraufkommens, f\u00fcr den Finanzkraftausgleich sowie f\u00fcr die Gew\u00e4hrung von Bundeserg\u00e4nzungszuweisungen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber steuerrechtliche Ma\u00dfnahmen bei Erh\u00f6hung des Nennkapitals aus Gesellschaftsmitteln": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gesetz \u00fcber explosionsgef\u00e4hrliche Stoffe": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Gesetz \u00fcber die \u00dcberf\u00fchrung der Anteilsrechte an der Volkswagenwerk Gesellschaft mit beschr\u00e4nkter Haftung in private Hand": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Hans Michelbach": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Hans Kronberger": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Hannes Walter": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Hannes Swoboda": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Hannes Gnauck": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Hakan Demir": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "G\u00fcterkraftverkehrsgesetz": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "G\u00fcnther Verheugen": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "G\u00fcnther Sidl": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "G\u00fcnther Oettinger": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "G\u00fcnter Krings": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "G\u00fclistan Y\u00fcksel": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "G\u00f6tz Fr\u00f6mming": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "G\u00f6kay Akbulut": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Gyde Jensen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Gustav Herzog": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Hauke Finger": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Hartmut Nassauer": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Harald Weyel": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Harald Weinberg": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Harald Vilimsky": {
+      "mean": 1.0,
+      "count": 9
+    },
+    "Harald Ettl": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Harald Ebner": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Hansj\u00f6rg M\u00fcller": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Hansj\u00f6rg Durz": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Hans-Peter Martin": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Hans-Olaf Henkel": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Hans-J\u00fcrgen Thies": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Hans-Gert P\u00f6ttering": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Hans-Gert Poettering": {
+      "mean": 1.0,
+      "count": 17
+    },
+    "Hans Theiss": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Hans Modrow": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Helmut Kuhne": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Helmut Kleebank": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Helge Lindh": {
+      "mean": 1.0,
+      "count": 11
+    },
+    "Helge Limburg": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Helga Tr\u00fcpel": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Heinz K. Becker": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Heiko Wildberg": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Heiko Maas": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Heiko He\u00dfenkemper": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Heike H\u00e4nsel": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Heike Engelhardt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Heike Baehrens": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Heidrun Bluhm": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Heidi Reichinnek": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Heide R\u00fchle": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Hedwig Keppelhoff-Wiechert": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Holger Krahmer": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Holger Becker": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Hiltrud Breyer": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Hildegard Bentele": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Hermann-Josef Tebroke": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Hermann Otto Solms": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Hermann Gr\u00f6he": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Hermann F\u00e4rber": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Heribert Hirte": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Herbert Reul": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Herbert Dorfmann": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Herbert B\u00f6sch": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Hendrik Hoppenstedt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Hendrik Bollmann": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Helmuth Markov": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Helmut Scholz": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Iris Nieland": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Irene Mihalic": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Investmentsteuergesetz": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Internationales G\u00fcterrechtsverfahrensgesetz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Internationale Regeln von 1972 zur Verh\u00fctung von Zusammenst\u00f6\u00dfen auf See (Anlage zu \u00a7 1 der Verordnung zu den Internationalen Regeln von 1972 zur Verh\u00fctung von Zusammenst\u00f6\u00dfen auf See)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ingrid Nestle": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Ingo Wellenreuther": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ingo G\u00e4dechens": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Ingo Friedrich": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Ingeborg Gr\u00e4\u00dfle": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Ina Latendorf": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "H\u00fclya D\u00fcber": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Hubertus Heil": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Hubert Pirker": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Horst Seehofer": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Horst Schnellhardt": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Janine Wissler": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Jana Schimke": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Jan-Niclas Gesenhues": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Jan-Marco Luczak": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Jan-Christoph Oetjen": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Jan Ralf Nolte": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Jan Plobner": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Jan Philipp Albrecht": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Jan K\u00f6stering": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Jan Korte": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Jan Dieren": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Jamila Sch\u00e4fer": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Ismail Ertug": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Isabel Mackensen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Isabel Cademartori Dujisin": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Isabel Cademartori": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Joachim Kuhs": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Jo Leinen": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Jens Zimmermann": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Jens Teutrine": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Jens Spahn": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Jens Lehmann": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Jens Koeppen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Jens Kestner": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Jens Gieseke": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Jens Geier": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Jens Brandenburg": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Jens Beeck": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Jean Spautz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Jasmina Hostert": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Janosch Dahmen": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Jannis Sakellariou": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Johannes Sch\u00e4tzl": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Johannes R\u00f6ring": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Johannes Kahrs": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Johannes Huber": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Johannes Hahn": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Johannes Fechner": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Johannes Arlt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Johannes (Hannes) Swoboda": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Johann Saathoff": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Johann David Wadephul": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Joe Weingarten": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Jochen Haug": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Joana Cotar": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Joachim Zeller": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Joachim Starbatty": {
+      "mean": 1.0,
+      "count": 19
+    },
+    "Joachim Schuster": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Julian Pahlke": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Julia-Christina Stange": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Julia Verlinden": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Julia Reda": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Julia Kl\u00f6ckner": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Judith Skudelny": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Josip Juratovic": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Josephine Ortleb": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Josep-Maria Terricabras": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Josef Weidenholzer": {
+      "mean": 1.0,
+      "count": 11
+    },
+    "Josef Oster": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Jorgo Chatzimarkakis": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Johannes Voggenhuber": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Johannes Vogel": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Johannes Steiniger": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Johannes Selle": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "J\u00fcrgen Martens": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "J\u00fcrgen Kretz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "J\u00fcrgen Klute": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "J\u00fcrgen Hardt": {
+      "mean": 1.0,
+      "count": 11
+    },
+    "J\u00fcrgen Braun": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "J\u00f6rn K\u00f6nig": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "J\u00f6rg Zirwes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "J\u00f6rg N\u00fcrnberger": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "J\u00f6rg Meuthen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "J\u00f6rg Leichtfried": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "J\u00f6rg Cezanne": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Jutta Steinruck": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Jutta Paulus": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Jutta Haug": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Jutta D. Haug": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Justizbeitreibungsgesetz": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Karlheinz Busen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Karl-Heinz Florenz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Karl-Heinz Brunner": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Karl von Wogau": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Karl Lauterbach": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Karin Scheele": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Karin Resetarits": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Karin Prien": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Karin Kadenbach": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Karin J\u00f6ns": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Karin Junker": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Karamba Diaby": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Kai Gehring": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "J\u00fcrgen Zimmerling": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "J\u00fcrgen Trittin": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "J\u00fcrgen Pohl": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Katja Mast": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Katja Kipping": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Katja Keul": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Katja Hessel": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Kathrin Henneberger": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Kathrin Gebel": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Katharina Willkomm": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Katharina Dr\u00f6ge": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Katharina Beck": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Katarina Barley": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Katalin Gennburg": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Karsten Wildberger": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Karsten Klein": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Karsten Hilse": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Karsten Friedrich Hoppenstedt": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Karoline Otte": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Kirsten L\u00fchmann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Kirsten Kappert-Gonther": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Kerstin Westphal": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Kerstin Vieregge": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Kerstin Tack": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Kerstin Przygodda": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Kerstin Andreae": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Kay-Uwe Ziegler": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Kay Gottschalk": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Katrin Zschau": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Katrin Uhlig": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Katrin Staffler": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Katrin Langensiepen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Katrin Helling-Plahr": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Katrin Fey": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Katrin Budde": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Kordula Schulz-Asche": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Konstantin von Notz": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Konstantin Kuhle": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Konrad Stockmeier": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Konrad K\u00f6rner": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Knut Fleckenstein": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Knut Abraham": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Klaus-Peter Willsch": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Klaus-Peter Schulze": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Klaus-Heiner Lehne": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Klaus-Dieter Gr\u00f6hler": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Klaus Wiener": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Klaus St\u00f6ber": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Klaus Mindrup": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Klaus H\u00e4nsch": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Klaus Ernst": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Lina Seitzl": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Leon Eckert": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Lennard Oehl": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Leni Breymaier": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Lena Gumnior": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Lena D\u00fcpont": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Lars Schieske": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Lars Rohwer": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Lars Haise": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Lars Ehm": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Lars Castellucci": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Lamya Kaddor": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "K\u00f6rperschaftsteuer-Durchf\u00fchrungsverordnung 1994": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Kurt Kleinschmidt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Kristine L\u00fctke": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Kristian Klinck": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Lutz Goepel": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Lutz Brinkmann": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Lukas Mandl": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Lukas K\u00f6hler": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Lukas Benner": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Luiza Licina-Bode": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Luise Amtsberg": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Luftverkehrs-Ordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Luftsicherheits-Schulungsverordnung": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Lothar Bisky": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Lothar Binding": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Lorenz G\u00f6sta Beutin": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Lissy Gr\u00f6ner": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Lisa Paus": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Lisa Badum": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Linda Teuteberg": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Marcel Bauer": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Marc Jongen": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Marc Henrichmann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Marc Biadacz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Marc Bernhard": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Manuela Schwesig": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Manuela Rottmann": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Manuel Sarrazin": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Manuel H\u00f6ferlin": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Manfred Weber": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Manfred Todtenhausen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Malte Kaufmann": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Maja Wallstein": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Maik Beermann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Maik Au\u00dfendorf": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Macit Karaahmeto\u011flu": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Marie-Agnes Strack-Zimmermann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Marian Wendt": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Maria-Lena Weiss": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Maria Noichl": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Maria Klein-Schmeink": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Maria Heubuch": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Maria Berger": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Mareike Lotte Wulf": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Marcus Weinberg": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Marcus Pretzell": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Marcus Faber": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Marcus B\u00fchl": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Marco B\u00fclow": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Marco Buschmann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Marcel Klinge": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Marcel Emmerich": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Martin Hebner": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Martin Gassner-Herz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Martin Ehrenhauser": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Marlene Sch\u00f6nberger": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Markus Uhl": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Markus T\u00f6ns": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Markus Reichel": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Markus Pieper": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Markus Kurth": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Markus H\u00fcmpfer": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Markus Gr\u00fcbel": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Markus Frohnmaier": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Markus Ferber": {
+      "mean": 1.0,
+      "count": 11
+    },
+    "Mark Helfrich": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Marja-Liisa V\u00f6llers": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Mario Mieruch": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Martina Stamm-Fibich": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Martina Renner": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Martina Michels": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Martin Sichert": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Martin Schulz": {
+      "mean": 1.0,
+      "count": 33
+    },
+    "Martin Schirdewan": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Martin Rosemann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Martin Reichardt": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Martin Rabanus": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Martin Plum": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Martin Neumann": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Martin Kr\u00f6ber": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Martin Kastler": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Martin H\u00e4usling": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Martin Hohmann": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Martin Hess": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Maximilian Funke-Kaiser": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Max Straubinger": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Matthias Zimmer": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Matthias Seestern-Pauly": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Matthias Miersch": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Matthias Helferich": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Matthias Hauer": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Matthias Groote": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Matthias Gastel": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Matthias David Mieves": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Mathieu Grosch": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Mathias Weiser": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Mathias Stein": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Mathias Middelberg": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Matern von Marschall": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Martina Werner": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Michael Gahler": {
+      "mean": 1.0,
+      "count": 10
+    },
+    "Michael Frieser": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Michael Espendiller": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Michael Detjen": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Michael Cramer": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Micha Fehre": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Metin Hakverdi": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Melanie Wegling": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Mechtild Rothe": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Mechthilde Wittmann": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Mechthild Rawert": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Mechthild Heil": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Mayra Vriesema": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Maximilian M\u00f6rseburg": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Maximilian Mordhorst": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Maximilian Krah": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Milan Hor\u00e1\u010dek": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Michl Ebner": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Michel Reimon": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Michel Brandt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Michaele Schreyer": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Michael Thews": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Michael Theurer": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Michael Schrodi": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Michael Roth": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Michael Kuffer": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Michael Kruse": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Michael Kie\u00dfling": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Michael Kellner": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Michael Hennrich": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Michael Gerdes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Michael Georg Link": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Neunte Verordnung zum Produktsicherheitsgesetz *)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Nationale Sonderbestimmungen (Anhang II der Binnenschiffsuntersuchungsordnung BGBl I 2018, 1398)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Natalie Pawlik": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Nancy Faeser": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Nadja Sthamer": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Nadja Hirsch": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Nadine Sch\u00f6n": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Nadine Ruf": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Muhanad Al-Halak": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Moselschiffahrtspolizeiverordnung": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Moritz K\u00f6rner": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Monika Vana": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Monika Hohlmeier": {
+      "mean": 1.0,
+      "count": 9
+    },
+    "Monika Gr\u00fctters": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Misbah Khan": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Mirze Edis": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Nina Warken": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Nina Stahr": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Nina Scheer": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Nils Schmid": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Nils Gr\u00fcnder": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Niklas Wagener": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Niema Movassat": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Nicole Westig": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Nicole H\u00f6chst": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Nicole Gohlke": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Nicole Bauer": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Nicolaus Fest": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Nicola Beer": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Nezahat Baradari": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Neunzehntes Gesetz \u00fcber die Anpassung der Renten aus den gesetzlichen Rentenversicherungen sowie \u00fcber die Anpassung der Geldleistungen aus der gesetzlichen Unfallversicherung und der Altersgelder in der Altershilfe f\u00fcr Landwirte": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Neuntes Gesetz \u00fcber die Anpassung der Renten aus den gesetzlichen Rentenversicherungen sowie \u00fcber die Anpassung der Geldleistungen aus der gesetzlichen Unfallversicherung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ozan Ceyhun": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Otto Strau\u00df": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Otto Fricke": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Ottmar von Holtz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Organisationserlass des Bundeskanzlers": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Oliver Krischer": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Oliver Grundmann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Olaf in der Beek": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Olaf Scholz": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Nyke Slawik": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Norbert Neuser": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Norbert M\u00fcller": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Norbert Lins": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Norbert Kleinw\u00e4chter": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Norbert Glante": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Peter Boehringer": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Peter Bleser": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Peter Aumer": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Peter Altmaier": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Peggy Schierenbeck": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Paula Piechotta": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Paul Ziemiak": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Paul Schmidt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Paul R\u00fcbig": {
+      "mean": 1.0,
+      "count": 18
+    },
+    "Paul Lehrieder": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Patrick Schnieder": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Passgesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Pascal Meiser": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Pascal Kober": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Pascal Arimont": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Parsa Marvi": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Postgesetz": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Philipp Rottwilm": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Philipp Hartewig": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Philipp Amthor": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Pfandbriefgesetz": {
+      "mean": 1.0,
+      "count": 40
+    },
+    "Petra Sitte": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Petra Nicolaisen": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Petra Kammerevert": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Petr Bystron": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Peter Wei\u00df": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Peter Tauber": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Peter Stein": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Peter Liese": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Peter Jahr": {
+      "mean": 1.0,
+      "count": 11
+    },
+    "Peter Heidt": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Peter Bohnhof": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Raumordnungsgesetz *)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Rasmus Andresen": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Rasha Nasr": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Ralph Lenkert": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Ralph Edelh\u00e4u\u00dfer": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ralf Walter": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Ralf Stegner": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ralf Kapschack": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Rainer Wieland": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Rainer Spiering": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Rainer Rothfu\u00df": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Rainer Kraft": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Raina A. Mercedes Echerer": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Raimond Scheirich": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Pr\u00fcfungsordnung nach \u00a7 10 des Gesetzes \u00fcber die Aus\u00fcbung der Zahnheilkunde": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Preisangabenverordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ren\u00e9 Repasi": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Ren\u00e9 Bochmann": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Rentenanpassungsgesetz 1982 (Artikel 1 des Gesetzes \u00fcber die Anpassung der Renten der gesetzlichen Rentenversicherung im Jahr 1982)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Rennwett- und Lotteriegesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Renate Sommer": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Renate K\u00fcnast": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Reinhold Sendker": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Reinhard Rack": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Reinhard Houben": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Reinhard B\u00fctikofer": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Reinhard Brandl": {
+      "mean": 1.0,
+      "count": 10
+    },
+    "Reimer B\u00f6ge": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Reginald Hanke": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Rebenpflanzgutverordnung": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Rebecca Lenhard": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Rebecca Harms": {
+      "mean": 1.0,
+      "count": 12
+    },
+    "Roderich Kiesewetter": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Robin Wagener": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Robin Mesarosch": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Robert Goebbels": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Robert Farle": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Robby Schlund": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Rita Schwarzel\u00fchr-Sutter": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Rita Hagl-Kehl": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Richard Seeber": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Ricarda Lang": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ria Schr\u00f6der": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Rheinschiffspersonalverordnung (Anlage 1 zur Verordnung zur Einf\u00fchrung der Rheinschiffspersonalverordnung)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Rheinschiffahrtspolizeiverordnung (Anlage zur Verordnung zur Einf\u00fchrung der Rheinschiffahrtspolizeiverordnung)": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Reza Asghari": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ren\u00e9 Springer": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Ren\u00e9 R\u00f6spel": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sabine Zimmermann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sabine Verheyen": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Sabine Poschmann": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Sabine L\u00f6sing - Sabine": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sabine L\u00f6sing": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sabine Leidig": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sabine Dittmar": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Saatgutverkehrsgesetz *": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Saatgutbeihilfeverordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "R\u00fcdiger Lucassen": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Ruppert St\u00fcwe": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Romeo Franz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Roman M\u00fcller-B\u00f6hm": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Roman Haider": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Rolf Linkohr": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Roger Beckamp": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Sebastian Fiedler": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Sebastian Brehm": {
+      "mean": 1.0,
+      "count": 14
+    },
+    "Schiffssicherheitsverordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Schiffsbesetzungsverordnung": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Schahina Gambir": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Saskia Ludwig": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Saskia Esken": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Sascha Wagner": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Sascha Lensing": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sarah Lahrkamp": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Sara Nanni": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Sanierungshilfengesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sandra Weeser": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sanae Abdi": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sahra Wagenknecht": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Sabine Zissener": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Siebtes Buch Sozialgesetzbuch - Gesetzliche Unfallversicherung - (Artikel 1 des Gesetzes vom 7. August 1996, BGBl. I S. 1254)": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Siebenunddrei\u00dfigste Verordnung zur Durchf\u00fchrung des Bundes-Immissionsschutzgesetzes 1, 2 (Verordnung zur Anrechnung von strombasierten Kraftstoffen und mitverarbeiteten biogenen Rohstoffen auf die Treibhausgasquote und zur Anrechnung auf die Verpflichtung nach Artikel 4 in Verbindung mit Anhang I der Verordnung (EU) 2023/2405)": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Siebentes Gesetz \u00fcber die Anpassung der Renten aus den gesetzlichen Rentenversicherungen sowie \u00fcber die Anpassung der Geldleistungen aus der gesetzlichen Unfallversicherung": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Siebente Durchf\u00fchrungsverordnung (Stichtag) zum Bereinigungsgesetz f\u00fcr deutsche Auslandsbonds": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sevim Da\u011fdelen": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Sergey Lagodinsky": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Sergej Minich": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Serap G\u00fcler": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sepp M\u00fcller": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Sepp Kusstatscher": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Seeschiffahrtsstra\u00dfen-Ordnung": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Sebastian Steineke": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sebastian Roloff": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Sebastian M\u00fcnzenmaier": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sebastian Maack": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Sebastian Hartmann": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Sozialgesetzbuch (SGB) Sechstes Buch (VI) - Gesetzliche Rentenversicherung - (Artikel 1 des Gesetzes v. 18. Dezember 1989, BGBl. I S. 2261, 1990 I S. 1337)": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Sozialgesetzbuch (SGB) F\u00fcnftes Buch (V) - Gesetzliche Krankenversicherung - (Artikel 1 des Gesetzes v. 20. Dezember 1988, BGBl. I S. 2477)": {
+      "mean": 1.0,
+      "count": 25
+    },
+    "Sozialgesetzbuch (SGB) Drittes Buch (III) - Arbeitsf\u00f6rderung - (Artikel 1 des Gesetzes vom 24. M\u00e4rz 1997, BGBl. I S. 594)": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Sozialgesetzbuch (SGB) - Elftes Buch (XI) - Soziale Pflegeversicherung (Artikel 1 des Gesetzes vom 26. Mai 1994, BGBl. I S. 1014)": {
+      "mean": 1.0,
+      "count": 11
+    },
+    "Sozialgesetzbuch (SGB) - Achtes Buch (VIII) - Kinder- und Jugendhilfe - (Artikel 1 des Gesetzes v. 26. Juni 1990, BGBl. I S. 1163)": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Sortenschutzgesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sonja Eichwede": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Sonja Amalie Steffen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Soldatinnen- und Soldatenbeteiligungsgesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Simone Barrientos": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Simona Ko\u00df": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Silvia Breher": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Silvana Koch-Mehrin": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Silke Launert": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Siegfried Walch": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Siegbert Droese": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Stefan Schmidt": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Stefan Nacke": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Stefan M\u00f6ller": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Stefan Korbach": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Stefan Keuter": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Stefan Kaufmann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Stefan Heck": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Stefan Gelbhaar": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Stefan Eck": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Statut der GBB Genossenschafts-Holding Berlin (Anlage zur Verordnung zur \u00c4nderung des Statuts der Genossenschaftsbank Berlin und zu deren Umwandlung)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Staatsvertrag zwischen dem Land Hessen und dem Land Niedersachsen \u00fcber die \u00c4nderung der gemeinsamen Landesgrenze (Anlage zur Bekanntmachung \u00fcber den Abschluss und das Inkrafttreten des Staatsvertrages zwischen dem Land Hessen und dem Land Niedersachsen \u00fcber die \u00c4nderung der gemeinsamen Landesgrenze)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sozialgesetzbuch Vierzehntes Buch - Soziale Entsch\u00e4digung -": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Sozialgesetzbuch Neuntes Buch \u2013 Rehabilitation und Teilhabe von Menschen mit Behinderungen \u2013 (Artikel 1 des Gesetzes v. 23. Dezember 2016, BGBl. I S. 3234)": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Sozialgesetzbuch (SGB) Zw\u00f6lftes Buch (XII) - Sozialhilfe - (Artikel 1 des Gesetzes vom 27. Dezember 2003, BGBl. I S. 3022)": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Sozialgesetzbuch (SGB) Zweites Buch (II) - B\u00fcrgergeld, Grundsicherung f\u00fcr Arbeitsuchende - (Artikel 1 des Gesetzes vom 24. Dezember 2003, BGBl. I S. 2954) *": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Sozialgesetzbuch (SGB) Viertes Buch (IV) - Gemeinsame Vorschriften f\u00fcr die Sozialversicherung - (Artikel I des Gesetzes vom 23. Dezember 1976, BGBl. I S. 3845)": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Stiftungsregistergesetz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Stephanie Aeffner": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Stephan Thomae": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Stephan Stracke": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Stephan Seiter": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Stephan Protschka": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Stephan Pilsinger": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Stephan Mayer": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Stephan K\u00fchn": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Stephan Brandner": {
+      "mean": 1.0,
+      "count": 9
+    },
+    "Stephan Albani": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Steffi Lemke": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Steffen Kotr\u00e9": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Steffen Bilger": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Stefan Seidler": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Stefan Schwartze": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "SvenjaSvenja SchulzeSchulze": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Svenja Stadler": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Svenja Schulze": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Svenja Hahn": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sven-Christian Kindler": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sven Schulze": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Sven Lehmann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Sven Giegold": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Susanne Mittag": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Susanne Menge": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Susanne Melior": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Susanne Hierl": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Susanne Hennig-Wellsow": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Susanne Ferschl": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Stra\u00dfenverkehrs-Zulassungs-Ordnung": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Stra\u00dfenverkehrs-Ordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Thomas Heilmann": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Thomas Hacker": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Thomas Gebhart": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Thomas Erndl": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Thomas Ehrhorn": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Tessa Ganserer": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Telekommunikationsgesetz": {
+      "mean": 1.0,
+      "count": 10
+    },
+    "Tabea R\u00f6\u00dfner": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Tabaksteuergesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "S\u00f6ren Bartol": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "S\u00f6nke Rix": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Sylvia-Yvonne Kaufmann": {
+      "mean": 1.0,
+      "count": 9
+    },
+    "Sylvia Lehmann": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Sylvia Kotting-Uhl": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Swen Schulz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Swantje Henrike Michaelsen": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Thorsten Rudolph": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Thorsten Lieb": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Thorsten Frei": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Thomas de Maizi\u00e8re": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Thomas Waitz": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Thomas Ulmer": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Thomas Silberhorn": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Thomas Seitz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Thomas Sattelberger": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Thomas Mann": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Thomas Maizi\u00e8re": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Thomas Lutze": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Thomas Ladzinski": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Thomas Jurk": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Thomas Jarzombek": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Thomas H\u00e4ndel": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Tobias Zech": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Tobias Winkler": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Tobias Pfl\u00fcger": {
+      "mean": 1.0,
+      "count": 9
+    },
+    "Tobias Matthias Peterka": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Tobias Lindner": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Tobias B. Bacherle": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Tino Sorge": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Tino Chrupalla": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Tina Winklmann": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Tina Rudolph": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Timon Gremmels": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Tilman Kuban": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Till Steffen": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Till Mansmann": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Tierzuchtgesetz": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Tiemo W\u00f6lken": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ulrich Oehme": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ulrich Lechte": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ulrich Lange": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Ulle Schauws": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ulla Jelpke": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ulla Ihnen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Uli Gr\u00f6tsch": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Udo Voigt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Udo Theodor Hemmelgarn": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Udo Schiefner": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Udo Bullmann - Matthias": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Udo Bullmann": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Truels Reichardt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Transparenzregistereinsichtnahmeverordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Torsten Schweiger": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Torsten Herbst": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Uwe Schummer": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Uwe Schulz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ute Vogt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ursula von der Leyen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Ursula Stenzel": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Ursula Groden-Kranich": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Umwandlungssteuergesetz": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Umwandlungsgesetz": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Umsatzsteuergesetz": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Umsatzsteuer-Durchf\u00fchrungsverordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ulrike Trebesius": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Ulrike Rodust": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ulrike Lunacek": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Ulrike Bahr": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ulrich von Zons": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Ulrich Stockmann": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zum deutsch-schweizerischen Abkommen \u00fcber Zusammenarbeit und Koordinierung der Wettbewerbsbeh\u00f6rden": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zum Verm\u00f6gensgesetz \u00fcber die R\u00fcckgabe von Unternehmen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zum Schutz wild lebender Tier- und Pflanzenarten": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung zum Schutz vor der sch\u00e4dlichen Wirkung ionisierender Strahlung": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung zum Schutz vor Gefahrstoffen*)": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung zum Schutz von Tieren beim Transport und zur Durchf\u00fchrung der Verordnung (EG) Nr. 1/2005 des Rates 1) 2)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zum Schutz gegen die Verschleppung von Tierseuchen im Viehverkehr": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zum Schutz gegen die Leukose der Rinder": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zum Eignungs\u00fcbungsgesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zu der Vereinbarung zwischen der Regierung der Bundesrepublik Deutschland und dem Freiwilligenprogramm der Vereinten Nationen (UNV) \u00fcber die Errichtung einer Zweigstelle des B\u00fcros der Vereinten Nationen f\u00fcr Projektdienstleistungen (UNOPS) in Bonn": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zu dem Abkommen vom 9. Dezember 2022 zwischen der Regierung der Bundesrepublik Deutschland und dem Europ\u00e4ischen Zentrum f\u00fcr mittelfristige Wettervorhersage \u00fcber eine Zweigniederlassung des Europ\u00e4ischen Zentrums f\u00fcr mittelfristige Wettervorhersage in Bonn": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung gem\u00e4\u00df \u00a7 252 Absatz 5 des F\u00fcnften Buches Sozialgesetzbuch zur Pr\u00fcfung der Beitr\u00e4ge nach \u00a7 252 Absatz 2 Satz 2 des F\u00fcnften Buches Sozialgesetzbuch (Pr\u00fcfverordnung sonstige Beitr\u00e4ge)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verm\u00f6gensteuergesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verena Hubertz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Vereinbarung \u00fcber die Durchf\u00fchrung des Pr\u00fcfverfahrens zur Erbringung mautdienstbezogener Leistungen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Uwe Witt": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Verordnung zur Durchf\u00fchrung des F\u00fcnften Verm\u00f6gensbildungsgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Durchf\u00fchrung der unionsrechtlichen Regelungen \u00fcber Erzeugerorganisationen im Sektor Obst und Gem\u00fcse": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung zur Durchf\u00fchrung der Vorschriften \u00fcber Steuerberater, Steuerbevollm\u00e4chtigte und Berufsaus\u00fcbungsgesellschaften": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Verordnung zur Durchf\u00fchrung der Direktzahlungen an Inhaber landwirtschaftlicher Betriebe im Rahmen von St\u00fctzungsregelungen der Gemeinsamen Agrarpolitik": {
+      "mean": 1.0,
+      "count": 21
+    },
+    "Verordnung zur Durchf\u00fchrung der Berufsf\u00f6rderung von Soldatinnen und Soldaten": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Verordnung zur Bildung von Altersr\u00fcckstellungen durch die gesetzlichen Krankenkassen und ihre Verb\u00e4nde": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Bezeichnung der als Einkommen geltenden sonstigen Einnahmen nach \u00a7 21 Abs. 3 Nr. 4 des Bundesausbildungsf\u00f6rderungsgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Beteiligung von Patientinnen und Patienten in der Gesetzlichen Krankenversicherung": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung zur Bestimmung der Rentenwerte in der gesetzlichen Rentenversicherung und in der Alterssicherung der Landwirte und zur Bestimmung weiterer Werte zum 1. Juli 2019": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Berechnung von Einkommen sowie zur Nichtber\u00fccksichtigung von Einkommen und Verm\u00f6gen beim B\u00fcrgergeld *": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Berechnung der Wohnfl\u00e4che": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Ausf\u00fchrung des deutsch-griechischen Abkommens \u00fcber die gegenseitige Rechtshilfe in Angelegenheiten des b\u00fcrgerlichen und Handels-Rechts": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung zur Anwendung des Fremdvergleichsgrundsatzes auf Betriebsst\u00e4tten nach \u00a7 1 Absatz 5 des Au\u00dfensteuergesetzes": {
+      "mean": 1.0,
+      "count": 23
+    },
+    "Verordnung zur Anpassung der Renten im Jahre 1997": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Abweichung von der Approbationsordnung f\u00fcr \u00c4rzte bei einer epidemischen Lage von nationaler Tragweite": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Abstimmung \u00fcber die Aufnahme in die h\u00fcttenknappschaftliche Zusatzversicherung": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Verordnung zur Festlegung der Steuers\u00e4tze im Jahr 2014 nach \u00a7 11 Absatz 2 des Luftverkehrsteuergesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Erstreckung des Anleihe-Gesetzes von 1950 auf das Land Berlin": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Ermittlung des Arbeitseinkommens aus der Land- und Forstwirtschaft f\u00fcr das Jahr 2022": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Erhebung, zur Nachweisf\u00fchrung \u00fcber die f\u00fcr die Maut ma\u00dfgeblichen Tatsachen und zur Erstattung der Maut": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Erhebung von Garantiepr\u00e4mien f\u00fcr die erg\u00e4nzende staatliche Absicherung von Reisegutscheinen wegen der COVID-19-Pandemie": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung zur Einf\u00fchrung von Vordrucken f\u00fcr das Mahnverfahren": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Einf\u00fchrung eines Daten\u00fcbermittlungsstandards XBasisdaten": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Durchsetzung lebensmittelrechtlicher Rechtsakte der Europ\u00e4ischen Gemeinschaft": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Durchf\u00fchrung unionsrechtlicher Vorschriften betreffend die Information der Verbraucher \u00fcber Lebensmittel": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Verordnung zur Durchf\u00fchrung einer Zusatzstatistik auf dem Gebiet der Kriegsopferf\u00fcrsorge \u00fcber Leistungen nach \u00a7 27b des Bundesversorgungsgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Durchf\u00fchrung des \u00a7 31 Abs. 4 des Bundesversorgungsgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Durchf\u00fchrung des \u00a7 11a des Verm\u00f6gensanlagengesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Durchf\u00fchrung des \u00a7 1 Abs. 1 und 3, des \u00a7 30 Abs. 1 und des \u00a7 35 Abs. 1 des Bundesversorgungsgesetzes": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Verordnung zur Durchf\u00fchrung des Schaumwein- und Zwischenerzeugnissteuergesetzes": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung zur Durchf\u00fchrung des Grundbuchbereinigungsgesetzes und anderer Vorschriften auf dem Gebiet des Sachenrechts": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Durchf\u00fchrung des Gesetzes \u00fcber das Ausl\u00e4nderzentralregister": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur \u00dcbertragung von Aufgaben der Oberfinanzdirektionen Chemnitz, Cottbus, Hamburg, Hannover, Karlsruhe, Koblenz, K\u00f6ln und N\u00fcrnberg": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur intensivierten erweiterten Sicherheits\u00fcberpr\u00fcfung mit Sicherheitsermittlungen f\u00fcr Soldatinnen und Soldaten": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur elektronischen \u00dcbermittlung von Daten f\u00fcr die Verbrauchsteuern und die Luftverkehrsteuer": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur befristeten Ausweitung des Stromerzeugungsangebots durch Anlagen aus der Versorgungsreserve": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung zur angemessenen Eigenmittelausstattung von Instituten, Institutsgruppen, Finanzholding-Gruppen und gemischten Finanzholding-Gruppen 1": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Regelung des Verfahrens bei Zulassung und \u00dcberwachung industrieller Abwasserbehandlungsanlagen und Gew\u00e4sserbenutzungen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Regelung der Produktion, der Kontrolle und der Kennzeichnung von Bio-Zutaten und Bio-Erzeugnissen sowie zur Auszeichnung des Gesamtanteils an Bio-Lebensmitteln in gemeinschaftlichen Verpflegungseinrichtungen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Regelung der Krankenhauspfleges\u00e4tze": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Regelung der Arbeitszeit der den Gesellschaften des Deutsche Bahn Konzerns zugewiesenen Beamtinnen und Beamten des Bundeseisenbahnverm\u00f6gens": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Regelung bestimmter Fragen der amtlichen \u00dcberwachung des Herstellens, Behandelns und Inverkehrbringens von Lebensmitteln tierischen Ursprungs 1 , 2": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur K\u00fcrzung der Zahlungsanspr\u00fcche im Rahmen der Betriebspr\u00e4mienregelung f\u00fcr das Jahr 2014": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Konkretisierung der Verhaltensregeln und Organisationsanforderungen f\u00fcr Wertpapierdienstleistungsunternehmen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Gew\u00e4hrung und Durchf\u00fchrung von Ma\u00dfnahmen aus dem Wirtschaftsstabilisierungsfonds nach dem Stabilisierungsfondsgesetz": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Verordnung zur F\u00f6rderung der G\u00fcte von Rohmilch": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung zur Freistellung von Versicherungsunternehmen von der Aufsicht nach dem Versicherungsaufsichtsgesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur Feststellung der Gesamtverwaltungskosten der gemeinsamen Einrichtung": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Verordnung \u00fcber Sicherheit und Gesundheitsschutz bei T\u00e4tigkeiten mit Biologischen Arbeitsstoffen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber Risikomanagement und Risikomessung beim Einsatz von Derivaten, Wertpapier-Darlehen und Pensionsgesch\u00e4ften in Investmentverm\u00f6gen nach dem Kapitalanlagegesetzbuch": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber Kraftfahrzeughilfe zur beruflichen Rehabilitation": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber H\u00f6chstmengen an R\u00fcckst\u00e4nden von Pflanzenschutz- und Sch\u00e4dlingsbek\u00e4mpfungsmitteln in oder auf Lebensmitteln": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber Geb\u00fchren und Auslagen f\u00fcr Amtshandlungen der Zulassungsstelle und der Widerspruchsbeh\u00f6rde bei der Durchf\u00fchrung des Umweltauditgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber Geb\u00fchren in Handels-, Genossenschafts-, Gesellschafts- und Partnerschaftsregistersachen": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Verordnung \u00fcber Gashochdruckleitungen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber Fruchtsaft, Fruchtnektar und koffeinhaltige Erfrischungsgetr\u00e4nke": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber Flugfunkzeugnisse": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber Betriebsbeauftragte f\u00fcr Abfall": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber Arbeitsst\u00e4tten": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber Anwendungsverbote f\u00fcr Pflanzenschutzmittel": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber Anforderungen an eine nachhaltige Herstellung von Biomasse zur Stromerzeugung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber Anforderungen an eine nachhaltige Herstellung von Biokraftstoffen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur \u00dcbertragung von Zust\u00e4ndigkeiten auf Hauptzoll\u00e4mter f\u00fcr den Bereich mehrerer Hauptzoll\u00e4mter": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung zur \u00dcbertragung von Erm\u00e4chtigungen zum Erlass von Rechtsverordnungen nach dem Luftverkehrsgesetz auf das Bundesaufsichtsamt f\u00fcr Flugsicherung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber das Wasserskilaufen auf den Binnenschiffahrtsstra\u00dfen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber das Verschreiben, die Abgabe und den Nachweis des Verbleibs von Bet\u00e4ubungsmitteln": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber das Verfahren zur Zusammenarbeit der Bundesoberbeh\u00f6rden und der Ethik-Kommissionen bei der Bewertung von Antr\u00e4gen auf Genehmigung von klinischen Pr\u00fcfungen mit Arzneimitteln*)": {
+      "mean": 1.0,
+      "count": 10
+    },
+    "Verordnung \u00fcber das Verfahren f\u00fcr die Gew\u00e4hrung von Sondererstattungen bei der Ausfuhr von Rindfleisch nach Drittl\u00e4ndern": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber das Verfahren der Erteilung von Sicherheitszertifikaten und Anerkennungen durch das Bundesamt f\u00fcr Sicherheit in der Informationstechnik 1": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber das Verfahren bei der Erteilung von Unbedenklichkeitsbescheinigungen f\u00fcr andere Spiele im Sinne des \u00a7 33d Abs. 1 der Gewerbeordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber das Musterverfahrensregister nach dem Kapitalanleger-Musterverfahrensgesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber das Meisterpr\u00fcfungsberufsbild und \u00fcber die Pr\u00fcfungsanforderungen in den Teilen I und II der Meisterpr\u00fcfung im Keramiker-Handwerk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber das Inverkehrbringen von Anbaumaterial von Gem\u00fcse-, Obst- und Zierpflanzenarten*": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber das Deutsche Patent- und Markenamt": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber das Bewachungsgewerbe": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber das Berufsbild und \u00fcber die Pr\u00fcfungsanforderungen im praktischen und im fachtheoretischen Teil der Meisterpr\u00fcfung f\u00fcr das B\u00e4cker-Handwerk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber das Berufsbild und \u00fcber die Pr\u00fcfungsanforderungen im praktischen und im fachtheoretischen Teil der Meisterpr\u00fcfung f\u00fcr das Bogenmacher-Handwerk": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Verordnung \u00fcber das Befahren der Bundeswasserstra\u00dfe Elbe in bestimmten Naturschutzgebieten der Freien und Hansestadt Hamburg": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Verordnung \u00fcber Verwaltungskosten beim Deutschen Patent- und Markenamt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber Sicherheit und Gesundheitsschutz bei der Verwendung von Arbeitsmitteln": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber den Zahlungsverkehr, die Buchf\u00fchrung und die Rechnungslegung in der Sozialversicherung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber den Vorbereitungsdienst f\u00fcr den h\u00f6heren Ausw\u00e4rtigen Dienst": {
+      "mean": 1.0,
+      "count": 12
+    },
+    "Verordnung \u00fcber den Vorbereitungsdienst f\u00fcr den gehobenen nichttechnischen Zolldienst des Bundes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber den Vorbereitungsdienst f\u00fcr den gehobenen nichttechnischen Verwaltungsdienst in der Bundeswehrverwaltung": {
+      "mean": 1.0,
+      "count": 14
+    },
+    "Verordnung \u00fcber den Vorbereitungsdienst f\u00fcr den gehobenen nichttechnischen Dienst des Bundes in der Sozialversicherung": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Verordnung \u00fcber den Vorbereitungsdienst f\u00fcr den gehobenen Verwaltungsinformatikdienst des Bundes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber den Versicherungsschutz in der Kraftfahrzeug-Haftpflichtversicherung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber den Vergleich von Kosten und Nutzen der Kraft-W\u00e4rme-Kopplung und der R\u00fcckf\u00fchrung industrieller Abw\u00e4rme bei der W\u00e4rme- und K\u00e4lteversorgung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber den Sonderurlaub f\u00fcr Bundesbeamtinnen und Bundesbeamte sowie f\u00fcr Richterinnen und Richter des Bundes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber den Inhalt der Pr\u00fcfungsberichte zu den Jahresabschl\u00fcssen und den Solvabilit\u00e4ts\u00fcbersichten von Versicherungsunternehmen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber den Inhalt der Angebotsunterlage, die Gegenleistung bei \u00dcbernahmeangeboten und Pflichtangeboten und die Befreiung von der Verpflichtung zur Ver\u00f6ffentlichung und zur Abgabe eines Angebots": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber den Betrieb von Kraftfahrunternehmen im Personenverkehr": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber den Betrieb von Apotheken": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber den Betrieb eines Videokommunikationssystems f\u00fcr notarielle Urkundst\u00e4tigkeiten 1": {
+      "mean": 1.0,
+      "count": 10
+    },
+    "Verordnung \u00fcber den Betrieb des Registers zum Schutz des Wettbewerbs um \u00f6ffentliche Auftr\u00e4ge und Konzessionen": {
+      "mean": 1.0,
+      "count": 12
+    },
+    "Verordnung \u00fcber den Bau und Betrieb der Stra\u00dfenbahnen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Bauger\u00e4tef\u00fchrer/zur Bauger\u00e4tef\u00fchrerin": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung in der Seeschifffahrt": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung in der Bauwirtschaft": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Verordnung \u00fcber die Berufsausbildung in den industriellen Metallberufen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung im Laborbereich Chemie, Biologie und Lack *)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Benennung und Einrichtung der nationalen Eurojust-Anlaufstelle f\u00fcr Terrorismusfragen": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Verordnung \u00fcber die Bef\u00e4higungen der Seeleute in der Seeschifffahrt *": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Ausdehnung des grenznahen Raums und die der Grenzaufsicht unterworfenen Gebiete": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Anzeigen und die Vorlage von Unterlagen nach dem Kreditwesengesetz": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Verordnung \u00fcber die Anforderungen in der Pr\u00fcfung zum anerkannten Abschluss Gepr\u00fcfter Forstmaschinenf\u00fchrer/Gepr\u00fcfte Forstmaschinenf\u00fchrerin": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Anforderungen an die Zulassung von Klassifizierungsunternehmen und Klassifizierern f\u00fcr Schlachtk\u00f6rper von Rindern, Schweinen und Schafen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Amtsdauer, Amtsf\u00fchrung und Entsch\u00e4digung der Mitglieder des Gemeinsamen Bundesausschusses und der Landesaussch\u00fcsse der \u00c4rzte (Zahn\u00e4rzte) und Krankenkassen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Akkreditierung von Pr\u00fcflaboratorien als Voraussetzung f\u00fcr die Zulassung privater Gegenprobensachverst\u00e4ndiger f\u00fcr die Untersuchung von Proben": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Abgrenzung der im Pflegesatz nicht zu ber\u00fccksichtigenden Investitionskosten von den pflegesatzf\u00e4higen Kosten der Krankenh\u00e4user": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber den grenz\u00fcberschreitenden G\u00fcterkraftverkehr und den Kabotageverkehr": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber den automatisierten Abruf von Daten der Familienkassen durch Mitgliedstaaten der Europ\u00e4ischen Union": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Schuhfertiger und zur Schuhfertigerin*": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Raumausstatter/zur Raumausstatterin": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Produktveredler-Textil/zur Produktveredlerin-Textil": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Polster- und Dekorationsn\u00e4her/zur Polster- und Dekorationsn\u00e4herin": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Naturwerksteinmechaniker/zur Naturwerksteinmechanikerin": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Metall- und Glockengie\u00dfer/zur Metall- und Glockengie\u00dferin": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Medientechnologen Druck und zur Medientechnologin Druck*)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Mechaniker f\u00fcr Reifen- und Vulkanisationstechnik/zur Mechanikerin f\u00fcr Reifen- und Vulkanisationstechnik": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Kaufmann f\u00fcr audiovisuelle Medien/zur Kauffrau f\u00fcr audiovisuelle Medien": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Hauswirtschafter und zur Hauswirtschafterin": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Floristen und zur Floristin *": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Fischwirt und zur Fischwirtin *)": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Fachverk\u00e4ufer im Lebensmittelhandwerk/zur Fachverk\u00e4uferin im Lebensmittelhandwerk": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Dachdecker und zur Dachdeckerin*": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum B\u00fcchsenmacher und zur B\u00fcchsenmacherin*)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Buchbinder und zur Buchbinderin*)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Eignung der Ausbildungsst\u00e4tte in der l\u00e4ndlichen Hauswirtschaft": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die EG-Genehmigung f\u00fcr Kraftfahrzeuge und ihre Anh\u00e4nger sowie f\u00fcr Systeme, Bauteile und selbstst\u00e4ndige technische Einheiten f\u00fcr diese Fahrzeuge*)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Durchf\u00fchrung von St\u00fctzungsregelungen und des Integrierten Verwaltungs- und Kontrollsystems": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Durchf\u00fchrung von Heilverfahren nach \u00a7 33 des Beamtenversorgungsgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Durchf\u00fchrung der Flugsicherung": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Verordnung \u00fcber die Bestellung von Gefahrgutbeauftragten in Unternehmen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Besch\u00e4ftigung von Ausl\u00e4nderinnen und Ausl\u00e4ndern": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung zur Fachkraft f\u00fcr Lebensmitteltechnik": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung zur Fachkraft K\u00fcche*": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Zweiradmechatroniker und zur Zweiradmechatronikerin*": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Textilreiniger/zur Textilreinigerin": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Textilgestalter und zur Textilgestalterin im Handwerk*)": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Technischen Produktdesigner und zur Technischen Produktdesignerin sowie zum Technischen Systemplaner und zur Technischen Systemplanerin*)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Steuerfachangestellten und zur Steuerfachangestellten*": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Sport- und Fitnesskaufmann/zur Sport- und Fitnesskauffrau": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Berufsausbildung zum Sozialversicherungsfachangestellten/zur Sozialversicherungsfachangestellten": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die F\u00fchrung notarieller Akten und Verzeichnisse": {
+      "mean": 1.0,
+      "count": 20
+    },
+    "Verordnung \u00fcber die Finanzierung des Sicherungsfonds f\u00fcr die Lebensversicherer": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Festsetzung von Naturschutzgebieten und einem Landschaftsschutzgebiet von zentraler Bedeutung mit der Gesamtbezeichnung \"Biosph\u00e4renreservat Rh\u00f6n\"": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Festsetzung von Naturschutzgebieten und einem Landschaftsschutzgebiet von zentraler Bedeutung als Naturpark \"Dr\u00f6mling\"": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Festsetzung des Nationalparks Hochharz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Festsetzung der L\u00e4nderschl\u00fcsselzahlen und die Ermittlung der Schl\u00fcsselzahlen f\u00fcr die Aufteilung des Gemeindeanteils an der Umsatzsteuer nach \u00a7 5a des Gemeindefinanzreformgesetzes f\u00fcr die Jahre 2024, 2025 und 2026": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Erteilung einer Verwarnung, Regels\u00e4tze f\u00fcr Geldbu\u00dfen und die Anordnung eines Fahrverbotes wegen Ordnungswidrigkeiten im Stra\u00dfenverkehr": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Erstattung von Aufwendungen f\u00fcr die gesetzliche Rentenversicherung der in Werkst\u00e4tten besch\u00e4ftigten Behinderten": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Ersetzung zerst\u00f6rter oder abhanden gekommener gerichtlicher oder notarischer Urkunden": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Verordnung \u00fcber die Erprobung einer neuen Ausbildungsform f\u00fcr die Berufsausbildung in den industriellen Elektroberufen": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Verordnung \u00fcber die Ermittlung der zul\u00e4ssigen Miete f\u00fcr preisgebundene Wohnungen": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Verordnung \u00fcber die Erhebung von Geb\u00fchren und Auslagen f\u00fcr die Erteilung von Zulassungen und Best\u00e4tigungen durch die Gesellschaft f\u00fcr Telematik": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Erfassung und \u00dcbermittlung von Daten f\u00fcr die Tr\u00e4ger der Sozialversicherung": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Entsorgung gebrauchter halogenierter L\u00f6semittel": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Emissionsberichterstattung nach dem Brennstoffemissionshandelsgesetz f\u00fcr die Jahre 2023 bis 2030": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Einfuhr von Hanf aus Drittl\u00e4ndern": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Verordnung \u00fcber die Laufbahnen des Ausw\u00e4rtigen Dienstes": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Verordnung \u00fcber die Laufbahnen der Soldatinnen und Soldaten": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Laufbahnen der Bundesbeamtinnen und Bundesbeamten": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Laufbahnen der Beamtinnen und Beamten im Geltungsbereich des Postpersonalrechtsgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Laufbahnen der Beamtinnen und Beamten beim Bundeseisenbahnverm\u00f6gen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Laufbahn, Ausbildung und Pr\u00fcfung f\u00fcr den mittleren feuerwehrtechnischen Dienst in der Bundeswehr": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Laufbahn, Ausbildung und Pr\u00fcfung f\u00fcr den h\u00f6heren technischen Verwaltungsdienst des Bundes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Laufbahn, Ausbildung und Pr\u00fcfung f\u00fcr den h\u00f6heren technischen Dienst bei der Eisenbahn-Unfallkasse": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Kennzeichnung von auf Binnenschiffahrtsstra\u00dfen verkehrenden Kleinfahrzeugen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Kapitalausstattung von Versicherungsunternehmen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Herstellung und den Vertrieb von Medaillen und M\u00fcnzst\u00fccken zum Schutz deutscher Euro-Gedenkm\u00fcnzen": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Grunds\u00e4tze f\u00fcr die Ermittlung der Verkehrswerte von Immobilien und der f\u00fcr die Wertermittlung erforderlichen Daten": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Gliederung des Jahresabschlusses von Wohnungsunternehmen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Gew\u00e4hrung von Verg\u00fcnstigungen im Rahmen der gemeinsamen Marktorganisation f\u00fcr Fischereierzeugnisse": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Gew\u00e4hrung von Beihilfen f\u00fcr die private Lagerhaltung von Wei\u00dfzucker": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Gesch\u00e4ftsorganisation des Reisesicherungsfonds und die Voraussetzungen der Erteilung der Erlaubnis": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Verordnung \u00fcber die Mindestanforderungen an die Vereinbarungen \u00fcber Leistungen der Eingliederung nach dem Zweiten Buch Sozialgesetzbuch": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Meldung zu Versuchszwecken verwendeter Wirbeltiere oder Kopff\u00fc\u00dfer oder zu bestimmten anderen Zwecken verwendeter Wirbeltiere": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Meldung und Vorf\u00fchrung von Saatgut bei der Einfuhr": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Verordnung \u00fcber die Meisterpr\u00fcfung in den Teilen I und II im Zweiradmechaniker-Handwerk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Meisterpr\u00fcfung in den Teilen I und II im Schornsteinfeger-Handwerk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Meisterpr\u00fcfung in den Teilen I und II im M\u00fcller-Handwerk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Meisterpr\u00fcfung in den Teilen I und II im Modellbauer-Handwerk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Meisterpr\u00fcfung in den Teilen I und II im Metallbauer-Handwerk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Meisterpr\u00fcfung in den Teilen I und II im Informationstechniker-Handwerk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Meisterpr\u00fcfung in den Teilen I und II im Galvaniseur-Handwerk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Meisterpr\u00fcfung in den Teilen I und II im Fotografen-Handwerk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Meisterpr\u00fcfung in den Teilen I und II im Feinwerkmechaniker-Handwerk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Meisterpr\u00fcfung in den Teilen I und II im B\u00fcrsten- und Pinselmacher-Gewerbe": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Meisterpr\u00fcfung in den Teilen I und II im B\u00f6ttcher-Handwerk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Meisterpr\u00fcfung in den Teilen I und II im Boots- und Schiffbauer-Handwerk": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Verordnung \u00fcber die Laufbahnen des Polizeivollzugsdienstes in der Bundespolizei": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Rechnungslegung von Pensionsfonds": {
+      "mean": 1.0,
+      "count": 16
+    },
+    "Verordnung \u00fcber die Pr\u00fcfung zum anerkannten Fortbildungsabschluss Gepr\u00fcfter Industriemeister\u2013Fachrichtung Printmedien und Gepr\u00fcfte Industriemeisterin\u2013Fachrichtung Printmedien-Bachelor Professional in Print": {
+      "mean": 1.0,
+      "count": 11
+    },
+    "Verordnung \u00fcber die Pr\u00fcfung zum anerkannten Fortbildungsabschluss Gepr\u00fcfter Industriemeister \u2013 Fachrichtung Schuhfertigung und Gepr\u00fcfte Industriemeisterin \u2013 Fachrichtung Schuhfertigung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Pr\u00fcfung zum anerkannten Fortbildungsabschluss Gepr\u00fcfter Fachwirt f\u00fcr B\u00fcro- und Projektorganisation und Gepr\u00fcfte Fachwirtin f\u00fcr B\u00fcro- und Projektorganisation": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Pr\u00fcfung zum anerkannten Fortbildungsabschluss Gepr\u00fcfter Aus- und Weiterbildungsp\u00e4dagoge/Gepr\u00fcfte Aus- und Weiterbildungsp\u00e4dagogin": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Pr\u00fcfung zum anerkannten Abschlu\u00df Gepr\u00fcfter Leasingfachwirt/Gepr\u00fcfte Leasingfachwirtin": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Verordnung \u00fcber die Pr\u00fcfung zum anerkannten Abschluss Gepr\u00fcfter Wassermeister/Gepr\u00fcfte Wassermeisterin": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Verordnung \u00fcber die Pr\u00fcfung zum anerkannten Abschluss Gepr\u00fcfter Tierpflegemeister/Gepr\u00fcfte Tierpflegemeisterin": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Pr\u00fcfung zum anerkannten Abschluss Gepr\u00fcfter Industriemeister/Gepr\u00fcfte Industriemeisterin - Fachrichtung Papiererzeugung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Pr\u00fcfung der Jahresabschl\u00fcsse der Wertpapierinstitute sowie \u00fcber die zu erstellenden Berichte 1": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Pr\u00fcfung der Jahresabschl\u00fcsse der Kreditinstitute und Finanzdienstleistungsinstitute sowie \u00fcber die dar\u00fcber zu erstellenden Berichte": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Preismeldung bei Schlachtk\u00f6rpern und deren Kennzeichnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Nachweisf\u00fchrung bei der Entsorgung von Abf\u00e4llen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Mitwirkung der Helferinnen und Helfer im Technischen Hilfswerk": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Mindestnettobetr\u00e4ge nach dem Altersteilzeitgesetz f\u00fcr das Jahr 2004": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Mindestanforderungen f\u00fcr das Recht auf Versorgung mit Telekommunikationsdiensten *": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die allgemeine Lehrverpflichtung des hauptberuflichen wissenschaftlichen Personals an der Hochschule des Bundes f\u00fcr \u00f6ffentliche Verwaltung": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Verordnung \u00fcber die Zuteilung von Treibhausgas-Emissionsberechtigungen in der Zuteilungsperiode 2005 bis 2007": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Zust\u00e4ndigkeit und das Verfahren bei der Unabk\u00f6mmlichstellung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Zul\u00e4ssigkeit der Anwendung von R\u00f6ntgenstrahlung zur Fr\u00fcherkennung von Brustkrebs bei Frauen 1": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Zulassung von Personen zum Stra\u00dfenverkehr": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Verordnung \u00fcber die Zulassung von Fahrzeugen zum Stra\u00dfenverkehr": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Vorbereitungsdienste f\u00fcr den gehobenen Kriminaldienst des Bundes": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Verwertung von Kl\u00e4rschlamm, Kl\u00e4rschlammgemisch und Kl\u00e4rschlammkompost": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Verwaltung und Ordnung der Seelotsreviere Weser I und Weser II/Jade": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die Versteigerung von Emissionsberechtigungen nach dem Zuteilungsgesetz 2012": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Vergabe \u00f6ffentlicher Auftr\u00e4ge": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Verordnung \u00fcber die Vergabe von \u00f6ffentlichen Auftr\u00e4gen im Bereich des Verkehrs, der Trinkwasserversorgung, der Postdienste und der Energieversorgung": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Verordnung \u00fcber die Steuerberaterplattform und die besonderen elektronischen Steuerberaterpostf\u00e4cher": {
+      "mean": 1.0,
+      "count": 10
+    },
+    "Verordnung \u00fcber die Standards f\u00fcr die \u00dcbermittlung elektronischer Akten zwischen Strafverfolgungsbeh\u00f6rden und Gerichten im Strafverfahren": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Sicherheitsstufen und Sicherheitsma\u00dfnahmen bei gentechnischen Arbeiten in gentechnischen Anlagen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die Schiffssicherheit in der Binnenschifffahrt 1 ,\u00a0 2": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Vierte Verordnung zur \u00c4nderung der Verordnung \u00fcber die Anerkennung von Systemen und Einrichtungen der sozialen Sicherheit als gesetzliche Rentenversicherungen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Victoria Bro\u00dfart": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Victor Perli": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verwaltungsgerichtsordnung": {
+      "mean": 1.0,
+      "count": 61
+    },
+    "Vertrag \u00fcber die Durchf\u00fchrung des europ\u00e4ischen elektronischen Mautdienstes auf Bundesstra\u00dfen im Geltungsbereich des Bundesfernstra\u00dfenmautgesetzes": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Verordnung \u00fcber wohnungswirtschaftliche Berechnungen nach dem Zweiten Wohnungsbaugesetz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber soldatenversorgungsrechtliche \u00dcbergangsregelungen nach Herstellung der Einheit Deutschlands": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die \u00dcberwachung der Entrichtung der Beitragsanteile und der K\u00fcnstlersozialabgabe nach dem K\u00fcnstlersozialversicherungsgesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die \u00dcbermittlung von Ausk\u00fcnften an die Nachrichtendienste des Bundes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die von den Traumaambulanzen in der Sozialen Entsch\u00e4digung zu erf\u00fcllenden Qualit\u00e4tskriterien und die Pflichten der Traumaambulanz": {
+      "mean": 1.0,
+      "count": 13
+    },
+    "Verordnung \u00fcber die versicherungsmathematische Best\u00e4tigung, den Erl\u00e4uterungsbericht und den Angemessenheitsbericht des Verantwortlichen Aktuars": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Verordnung \u00fcber die unentgeltliche Bef\u00f6rderung von Soldatinnen und Soldaten in \u00f6ffentlichen Eisenbahnen bei Privatfahrten": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die grundbuchm\u00e4\u00dfige Behandlung von Anteilen an ungetrennten Hofr\u00e4umen": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die fachliche Eignung f\u00fcr die Berufsausbildung der Medizinischen, Zahnmedizinischen und Tiermedizinischen Fachangestellten sowie der Pharmazeutisch-kaufm\u00e4nnischen Angestellten": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die einmalige Unfallentsch\u00e4digung nach \u00a7 43 Abs. 3 des Beamtenversorgungsgesetzes": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Verordnung \u00fcber die aufsichtsrechtlichen Anforderungen an Verg\u00fctungssysteme von Instituten 1": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Weinverordnung": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Weingesetz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Wehrsoldgesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Wehrdisziplinarordnung": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Wahlverordnung zum Soldatinnen- und Soldatenbeteiligungsgesetz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Wahlpr\u00fcfungsgesetz": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Wahlordnung zum Mitbestimmungserg\u00e4nzungsgesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Wahlordnung f\u00fcr die Sozialversicherung": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Waffengesetz": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Vural \u00d6ger": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Volker Ullrich": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Volker Scheurell": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Volker Kauder": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Vlad-Marius Boto\u015f": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Violetta Bock": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Vierunddrei\u00dfigste Verordnung zur Durchf\u00fchrung des Bundes-Immissionsschutzgesetzes (Verordnung \u00fcber die L\u00e4rmkartierung)": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Yannick Bury": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Wolfgang Wiehle": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Wolfgang Stefinger": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Wolfgang Kubicki": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Wolfgang Kreissl-D\u00f6rfler": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Wolfgang Dahler": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Wolf Klinz": {
+      "mean": 1.0,
+      "count": 11
+    },
+    "Winfried Menrad": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Willem Schuth": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Wilfried Oellers": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Wilfried Kuckelkorn": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Wiebke Papenbrock": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Wiebke Esdar": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Werner Schulz": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Werner Langen": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Werner Kuhn": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Andrea Lindholz": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Amira Mohamed Ali": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Alois Rainer": {
+      "mean": 1.0,
+      "count": 6
+    },
+    "Alice Weidel": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Ali Al-Dailami": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Alexandra Thein": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Alexandra Geese": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Alexander Throm": {
+      "mean": 1.0,
+      "count": 3
+    },
+    "Alexander S. Neu": {
+      "mean": 1.0,
+      "count": 1
+    },
+    "Alexander Radwan": {
+      "mean": 1.0,
+      "count": 5
+    },
+    "Alexander M\u00fcller": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Alexander Hoffmann": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "Alexander Graf Lambsdorff": {
+      "mean": 1.0,
+      "count": 7
+    },
+    "Alexander Gauland": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "Alexander Dobrindt": {
+      "mean": 1.0,
+      "count": 8
+    },
+    "Alexander Bernhuber": {
+      "mean": 1.0,
+      "count": 4
+    },
+    "bundestag_opendata_plenarprotokoll": {
+      "mean": 1.0,
+      "count": 1021
+    },
+    "europarl_de": {
+      "mean": 1.0,
+      "count": 839
+    },
+    "gesetze_im_internet": {
+      "mean": 1.0,
+      "count": 291
+    },
+    "\u00d6zlem Demirel": {
+      "mean": 1.0,
+      "count": 2
+    },
+    "31. Verordnung zur Durchf\u00fchrung des Bundes-Immissionsschutzgesetzes": {
+      "mean": 1.0,
+      "count": 2
+    }
+  }
+}

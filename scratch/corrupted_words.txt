@@ -1,0 +1,6 @@
+Total unique corrupted words: 4
+
+Count:     1 | mesi[U+FFFD]
+Count:     1 | solidarnos[U+FFFD]
+Count:     1 | gro[U+FFFD]e
+Count:     1 | f[U+FFFD]r

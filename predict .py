@@ -127,15 +127,16 @@ def split_into_chunks(text: str, tokenizer, max_length: int) -> list[str]:
 class AITextDetector:
     def __init__(self, model_dir: str = MODEL_DIR, threshold: float | None = None):
         log.info(f"Loading model from {model_dir}...")
+        self.device = DEVICE
         is_bert = os.path.exists(os.path.join(model_dir, "vocab.txt")) or 'gbert' in model_dir
         if is_bert:
             from transformers import BertTokenizer, BertForSequenceClassification
             self.tokenizer = BertTokenizer.from_pretrained(model_dir)
-            self.model     = BertForSequenceClassification.from_pretrained(model_dir).to(DEVICE)
+            self.model     = BertForSequenceClassification.from_pretrained(model_dir).to(self.device)
         else:
             self.tokenizer = AutoTokenizer.from_pretrained(model_dir)
             self.model     = AutoModelForSequenceClassification.from_pretrained(
-                                model_dir).to(DEVICE)
+                                model_dir).to(self.device)
         self.model.eval()
 
         # Load calibrated threshold
@@ -158,8 +159,8 @@ class AITextDetector:
             truncation=True,
             return_tensors="pt",
         )
-        input_ids      = enc["input_ids"].to(DEVICE)
-        attention_mask = enc["attention_mask"].to(DEVICE)
+        input_ids      = enc["input_ids"].to(self.device)
+        attention_mask = enc["attention_mask"].to(self.device)
 
         with torch.amp.autocast('cuda', enabled=USE_FP16):
             logits = self.model(input_ids=input_ids,

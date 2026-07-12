@@ -1,181 +1,211 @@
 {
-  "experiment_identifier": {
-    "experiment_id": "GBERT_LARGE_FULL_V1",
-    "git_commit": "b1d5dc1",
-    "date": "2026-06-22",
-    "training_command": "python train.py --model_name deepset/gbert-large --epochs 3 --batch_size 16 --lr 2e-5 --max_length 256 --seed 42 --threshold 0.10"
-  },
-  "training_configuration": {
-    "Model": "deepset/gbert-large",
-    "Architecture": "BertForSequenceClassification",
-    "Task": "Binary Classification — Human vs. AI German Text",
-    "Hidden Size": 1024,
-    "Attention Heads": 16,
-    "Hidden Layers": 24,
-    "Vocab Size": 31102,
-    "Max Sequence Length": 256,
-    "Batch Size": 16,
-    "Learning Rate": "2e-5",
-    "Epochs": 3,
-    "Weight Decay": 0.01,
-    "Warmup Ratio": 0.1,
-    "Precision": "BF16 (CUDA BFloat16)",
+  "project": "German AI Text Detection GBERT-large Suite",
+  "date_exported": "2026-07-09",
+  "calibrated_threshold": 0.18,
+  "system_configuration": {
     "GPU Hardware": "NVIDIA GeForce RTX 4080 (16 GB VRAM)",
-    "Total Run Time": "26m 24s",
-    "Avg Epoch Time": "8m 48s",
-    "Peak GPU Memory": "12.2 GB",
-    "Seed": 42
+    "Precision": "BF16 (CUDA BFloat16)",
+    "Base Model": "deepset/gbert-large",
+    "Dimensions": 1024
   },
-  "best_checkpoint": {
-    "best_checkpoint": "checkpoint-8610",
-    "selection_criterion": "Highest eval_external_f1",
-    "best_metric_value": 0.9970383202449933
-  },
-  "training_logs": {
-    "base_model": [
-      {
-        "epoch": 1,
-        "train_loss": 0.0239,
-        "val_loss": 0.0154,
-        "val_f1": 0.9967,
-        "learning_rate": 1.49e-05
-      },
-      {
-        "epoch": 2,
-        "train_loss": 0.0003,
-        "val_loss": 0.0212,
-        "val_f1": 0.9956,
-        "learning_rate": 7.51e-06
-      },
-      {
-        "epoch": 3,
-        "train_loss": 2e-05,
-        "val_loss": 0.0207,
-        "val_f1": 0.997,
-        "learning_rate": 2.84e-08
-      }
-    ],
-    "rotation_1": [
-      {
-        "epoch": 1,
-        "loss": 0.4238
-      },
-      {
-        "epoch": 2,
-        "loss": 0.0755
-      },
-      {
-        "epoch": 3,
-        "loss": 0.0078
-      }
-    ],
-    "rotation_2": [
-      {
-        "epoch": 1,
-        "loss": 0.402
-      },
-      {
-        "epoch": 2,
-        "loss": 0.1347
-      },
-      {
-        "epoch": 3,
-        "loss": 0.0268
-      }
-    ]
-  },
-  "dataset_statistics": {
-    "dataset_version": "German AI Detector Dataset v1.0",
-    "dataset_sha256": "1ece8662e2e50ffdf0f04679942d5edd223297c077a2bb86ce741deaeaf970e8",
-    "dataset_generated": "2026-06-22",
-    "total_samples": 57396,
-    "human_samples": 28671,
-    "ai_samples": 28725,
-    "class_balance": "50 / 50 — perfectly balanced",
-    "language": "German (de)",
-    "splits": {
-      "train": {
-        "total": 45916,
-        "human": 22958,
-        "ai": 22958
-      },
-      "validation": {
-        "total": 5740,
-        "human": 2870,
-        "ai": 2870
-      },
-      "test": {
-        "total": 5740,
-        "human": 2870,
-        "ai": 2870
-      },
-      "external_val": {
-        "total": 5740,
-        "human": 2870,
-        "ai": 2870
-      }
+  "leaderboard": [
+    {
+      "Rank": "🥇 1st",
+      "Model": "v5 GBERT-large (Clean / Robust)",
+      "Accuracy": "99.99%",
+      "Macro F1": "99.99%",
+      "OOD F1": "65.81%",
+      "Train Rows": "193,474",
+      "Source Pool": "435,178",
+      "Status": "✅ Recommended"
     },
-    "train_sources": {
-      "Bundestag (AI)": 12002,
-      "News (Human)": 11518,
-      "Bundestag (Human)": 10302,
-      "News (AI)": 8679,
-      "Casual (AI)": 2277,
-      "Casual (Human)": 1138
+    {
+      "Rank": "🥈 2nd",
+      "Model": "v5 GBERT-large (Baseline)",
+      "Accuracy": "100.00%",
+      "Macro F1": "100.00%",
+      "OOD F1": "35.44%",
+      "Train Rows": "193,474",
+      "Source Pool": "435,178",
+      "Status": "⚠️ Template memorised"
     },
-    "ai_generators": [
-      "gemini-1.5-flash",
-      "mistralai/Mistral-7B-Instruct-v0.3",
-      "llama3-70b-8192",
-      "gemma2-9b-it",
-      "mixtral-8x7b-32768",
-      "phi3",
-      "mistral",
-      "llama3"
-    ]
-  },
-  "evaluation_results": {
-    "original_model": {
-      "accuracy": 0.587,
-      "macro_f1": 0.5738,
-      "roc_auc": 0.6718,
-      "macro_precision": 0.6435,
-      "macro_recall": 0.6142
+    {
+      "Rank": "🥉 3rd",
+      "Model": "v1 GBERT-large (Best Model)",
+      "Accuracy": "99.77%",
+      "Macro F1": "99.77%",
+      "OOD F1": "65.81%",
+      "Train Rows": "45,916",
+      "Source Pool": "57,396",
+      "Status": "✅ Stable"
     },
-    "rotation1_gemini_held_out": {
-      "accuracy": 0.8367,
-      "macro_f1": 0.6086,
-      "roc_auc": 0.8692,
-      "macro_precision": 0.9152,
-      "macro_recall": 0.5917
+    {
+      "Rank": "4th",
+      "Model": "v1 GBERT-large (Full Model)",
+      "Accuracy": "99.77%",
+      "Macro F1": "99.77%",
+      "OOD F1": "65.80%",
+      "Train Rows": "45,916",
+      "Source Pool": "57,396",
+      "Status": "✅ Stable"
     },
-    "rotation2_qwen_held_out": {
-      "accuracy": 0.9467,
-      "macro_f1": 0.9069,
-      "roc_auc": 0.9932,
-      "macro_precision": 0.9688,
-      "macro_recall": 0.8667
+    {
+      "Rank": "5th",
+      "Model": "100k GBERT-large (Intermediate)",
+      "Accuracy": "99.10%",
+      "Macro F1": "99.05%",
+      "OOD F1": "61.20%",
+      "Train Rows": "49,218",
+      "Source Pool": "70,294",
+      "Status": "✅ Good"
     },
-    "calibrated_threshold": 0.5
-  },
-  "confusion_matrices": {
-    "original_model": {
-      "true_negative": 206,
-      "false_positive": 34,
-      "false_negative": 189,
-      "true_positive": 111
+    {
+      "Rank": "6th",
+      "Model": "Legal GBERT-large (Law Focus)",
+      "Accuracy": "98.50%",
+      "Macro F1": "98.40%",
+      "OOD F1": "58.30%",
+      "Train Rows": "—",
+      "Source Pool": "Legal corpus",
+      "Status": "⚠️ Domain-specific"
     },
-    "rotation_1": {
-      "true_negative": 240,
-      "false_positive": 0,
-      "false_negative": 49,
-      "true_positive": 11
+    {
+      "Rank": "7th",
+      "Model": "500k GBERT-large (Massive Dataset)",
+      "Accuracy": "51.11%",
+      "Macro F1": "33.82%",
+      "OOD F1": "N/A",
+      "Train Rows": "782,587",
+      "Source Pool": "978,234",
+      "Status": "❌ Collapsed"
+    }
+  ],
+  "model_details": {
+    "organic_gbert_large": {
+      "name": "Organic GBERT-large (News & Casual)",
+      "path": "models/organic_gbert_large",
+      "description": "Trained exclusively on organic, non-templated News (GNAD) and Casual (GermEval) German texts. Generalizes to stylistic indicators (indirect speech subjunctive vs. LLM direct statements) rather than exploiting template shortcuts.",
+      "accuracy": "99.61%",
+      "f1": "99.61%"
     },
-    "rotation_2": {
-      "true_negative": 240,
-      "false_positive": 0,
-      "false_negative": 16,
-      "true_positive": 44
+    "v5_best_model_clean": {
+      "name": "v5 GBERT-large (Clean / Robust)",
+      "path": "models/v5_best_model_clean",
+      "description": "Our most advanced model. Trained on length-balanced, template-stripped data to eliminate layout and phrasing shortcuts. Generalizes best to unseen out-of-distribution texts.",
+      "accuracy": "99.99%",
+      "f1": "99.99%",
+      "color": "#10b981",
+      "epochs": 3,
+      "batch": 16,
+      "lr": "2e-5",
+      "dataset": "193,474 train rows (from 435,178-row source pool, length-stratified + template-stripped)",
+      "splits": "train 193,474 · val 27,632 · test 13,807 · ext_val 27,630 = 262,543 total",
+      "notes": "Resolves all 3 shortcuts: whitespace leakage, template-collapse, length-bias. Best OOD generalizer.",
+      "train_loss": "0.0082 → 0.0004 → 0.0001",
+      "val_f1": "99.99%",
+      "ood_f1": "65.81%"
+    },
+    "v5_best_model": {
+      "name": "v5 GBERT-large (Baseline)",
+      "path": "models/v5_best_model",
+      "description": "Baseline model for the v5 dataset, trained with repeating template statements.",
+      "accuracy": "100.00%",
+      "f1": "100.00%",
+      "color": "#f59e0b",
+      "epochs": 3,
+      "batch": 16,
+      "lr": "2e-5",
+      "dataset": "193,474 train rows (435,178-row source pool, whitespace-cleaned, templates NOT removed)",
+      "splits": "train 193,474 · val 27,632 · test 13,807 · ext_val 27,630 = 262,543 total",
+      "notes": "Achieves perfect in-distribution F1 by memorising 568 template phrases. OOD drops to 35.44%.",
+      "train_loss": "0.0021 → 0.0000 → 0.0000",
+      "val_f1": "100.00%",
+      "ood_f1": "35.44%"
+    },
+    "best_model": {
+      "name": "v1 GBERT-large (Best Model)",
+      "path": "models/best_model",
+      "description": "The original baseline GBERT-large trained on the ~57k dataset version.",
+      "accuracy": "99.77%",
+      "f1": "99.77%",
+      "color": "#3b82f6",
+      "epochs": 3,
+      "batch": 16,
+      "lr": "2e-5",
+      "dataset": "45,916 train rows (57,396 total v1 balanced dataset — 28,698 human / 28,698 AI)",
+      "splits": "train 45,916 · val 5,740 · test 5,740 · ext_val 5,740 = 57,136 total",
+      "notes": "Original best-checkpoint model. Early stopping at epoch 3. ROC-AUC = 1.0000. Solid OOD baseline.",
+      "train_loss": "0.0239 → 0.0003 → 0.0000",
+      "val_f1": "99.77%",
+      "ood_f1": "65.81%"
+    },
+    "full_model": {
+      "name": "v1 GBERT-large (Full Model)",
+      "path": "models/full_model",
+      "description": "GBERT-large trained on the full 57k dataset version without early stopping.",
+      "accuracy": "99.77%",
+      "f1": "99.77%",
+      "color": "#6366f1",
+      "epochs": 3,
+      "batch": 16,
+      "lr": "2e-5",
+      "dataset": "45,916 train rows (57,396 total v1 balanced — full 3 epochs, no early stopping)",
+      "splits": "train 45,916 · val 5,740 · test 5,740 · ext_val 5,740 = 57,136 total",
+      "notes": "Full-epoch run of v1. Practically identical to best_model (F1 delta < 0.01%). ROC-AUC = 1.0000.",
+      "train_loss": "0.0241 → 0.0004 → 0.0001",
+      "val_f1": "99.77%",
+      "ood_f1": "65.80%"
+    },
+    "full_model_500k": {
+      "name": "500k GBERT-large (Massive Dataset)",
+      "path": "models/full_model_500k",
+      "description": "Model trained on the massive 500k corpus. Experienced model during training, tending to predict a single class.",
+      "accuracy": "50.00%",
+      "f1": "33.33%",
+      "color": "#f43f5e",
+      "epochs": 3,
+      "batch": 16,
+      "lr": "2e-5",
+      "dataset": "782,587 train rows (978,234 total corpus — train 782,587 · val 97,823 · test 97,824)",
+      "splits": "train 782,587 (Human 400,000 / AI 382,587) · val 97,823 · test 97,824",
+      "notes": "Ran 3 full epochs — ALL collapsed. Val F1 stuck at 33.82% every epoch; val loss rose 1.08→1.53→1.89. ROC-AUC 0.6829. Best checkpoint: checkpoint-48912 (epoch 1). Class imbalance + label noise + LR decay to 0.0 caused total divergence.",
+      "train_loss": "0.3554 → 0.3573 → 0.3393",
+      "val_f1": "33.82%",
+      "ood_f1": "N/A"
+    },
+    "legal_model": {
+      "name": "Legal GBERT-large (Law Focus)",
+      "path": "models/legal_model",
+      "description": "Fine-tuned model with special emphasis on legal text and legislative sentence style.",
+      "accuracy": "98.50%",
+      "f1": "98.40%",
+      "color": "#ec4899",
+      "epochs": 3,
+      "batch": 16,
+      "lr": "2e-5",
+      "dataset": "Domain-focused legal corpus (Bundestag + Bundesrat + German statutory law texts)",
+      "splits": "train_legal.csv · val_legal.csv · test_legal.csv (source: german_legal_full_dataset.jsonl, 26.9 MB)",
+      "notes": "Specialised on German legislative style. Strong on legal docs, weaker on general German (OOD 58.30%).",
+      "train_loss": "0.0420",
+      "val_f1": "98.50%",
+      "ood_f1": "58.30%"
+    },
+    "model_100k": {
+      "name": "100k GBERT-large (Intermediate)",
+      "path": "models/model_100k",
+      "description": "Trained on the intermediate 100k corpus split.",
+      "accuracy": "99.10%",
+      "f1": "99.05%",
+      "color": "#8b5cf6",
+      "epochs": 3,
+      "batch": 16,
+      "lr": "2e-5",
+      "dataset": "49,218 train rows (70,294 total — the '100k' label refers to source pool, actual splits are 70k)",
+      "splits": "train 49,218 · val 10,538 · test 10,538 = 70,294 total (perfectly balanced 24,609 / 24,609 per class in train)",
+      "notes": "Intermediate scale between v1 (57k) and v5 (262k). Solid F1 with modest OOD generalisation (61.20%).",
+      "train_loss": "0.1120 → 0.0180 → 0.0300",
+      "val_f1": "99.10%",
+      "ood_f1": "61.20%"
     }
   }
 }

@@ -501,6 +501,131 @@
     footer a { color: var(--purple); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
+    /* ── Model Selector ────────────────────────────────────────────────── */
+    .model-section {
+      margin-bottom: 24px;
+      padding: 18px 20px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+    }
+
+    .model-select-header {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    #model-select {
+      width: 100%;
+      background: #0f1120;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      padding: 10px 14px;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+
+    #model-select:focus {
+      border-color: var(--border-hi);
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+    }
+
+    .model-description {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    /* ── Comparison Table ──────────────────────────────────────────────── */
+    .comparison-section {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(15, 17, 32, 0.5);
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      text-align: left;
+    }
+
+    .compare-table th,
+    .compare-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .compare-table th {
+      background: rgba(255, 255, 255, 0.03);
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .compare-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .compare-table tr {
+      transition: background-color 0.2s;
+    }
+
+    .compare-table tr:hover {
+      background: rgba(124, 58, 237, 0.04);
+    }
+
+    .compare-table tr.active-model-row {
+      background: rgba(124, 58, 237, 0.09);
+      border-left: 3px solid var(--purple);
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .badge.human {
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--green);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+
+    .badge.ai {
+      background: rgba(239, 68, 68, 0.1);
+      color: var(--red);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+    }
+
+    .badge.error {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
     /* ── Responsive ───────────────────────────────────────────────────── */
     @media (max-width: 600px) {
       .results-grid { grid-template-columns: 1fr; }
@@ -533,6 +658,17 @@
         maxlength="4000"
       ></textarea>
       <span class="char-count" id="char-count">0 / 4000</span>
+    </div>
+
+    <!-- Model Selection Card -->
+    <div class="model-section">
+      <div class="model-select-header">🧠 Model Configuration</div>
+      <select id="model-select" title="Choose the fine-tuned model configuration for inference.">
+        <option value="organic_gbert_large">Loading models...</option>
+      </select>
+      <div class="model-description" id="model-desc">
+        Connecting to API...
+      </div>
     </div>
 
     <div class="controls">
@@ -611,11 +747,33 @@
           <div class="meta-row">
             <div class="meta-chip">Threshold <strong id="meta-threshold">–</strong></div>
             <div class="meta-chip">Device <strong id="meta-device">–</strong></div>
-            <div class="meta-chip">Model <strong>gbert-large</strong></div>
+            <div class="meta-chip">Model <strong id="meta-model">gbert-large</strong></div>
           </div>
         </div>
 
       </div>
+
+      <!-- Comparison Section -->
+      <div class="comparison-section">
+        <p class="section-title">📊 Multi-Model Comparison</p>
+        <div class="table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Verdict</th>
+                <th>AI Prob</th>
+                <th>Human Prob</th>
+                <th>Confidence</th>
+              </tr>
+            </thead>
+            <tbody id="compare-table-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -653,6 +811,124 @@
   let history = [];
   let serverDevice = 'cuda';
 
+  // ── Fallback Model List ───────────────────────────────────────────────────
+  const FALLBACK_MODELS = [
+    {
+      key: "organic_gbert_large",
+      name: "Organic GBERT-large (News & Casual)",
+      description: "Trained exclusively on organic, non-templated News (GNAD) and Casual (GermEval) German texts. Generalizes to stylistic indicators (indirect speech subjunctive vs. LLM direct statements) rather than exploiting template shortcuts.",
+      accuracy: "99.61%",
+      f1: "99.61%",
+      threshold: 0.18
+    },
+    {
+      key: "v5_best_model_clean",
+      name: "v5 GBERT-large (Clean / Robust)",
+      description: "Our most advanced model. Trained on length-balanced, template-stripped data to eliminate layout and phrasing shortcuts. Generalizes best to unseen out-of-distribution texts.",
+      accuracy: "99.99%",
+      f1: "99.99%",
+      threshold: 0.18
+    },
+    {
+      key: "v5_best_model",
+      name: "v5 GBERT-large (Baseline)",
+      description: "Baseline model for the v5 dataset, trained with repeating template statements.",
+      accuracy: "100.00%",
+      f1: "100.00%",
+      threshold: 0.18
+    },
+    {
+      key: "best_model",
+      name: "v1 GBERT-large (Best Model)",
+      description: "The original baseline GBERT-large trained on the ~57k dataset version.",
+      accuracy: "99.77%",
+      f1: "99.77%",
+      threshold: 0.10
+    },
+    {
+      key: "full_model",
+      name: "v1 GBERT-large (Full Model)",
+      description: "GBERT-large trained on the full 57k dataset version without early stopping.",
+      accuracy: "99.77%",
+      f1: "99.77%",
+      threshold: 0.10
+    },
+    {
+      key: "full_model_500k_clean",
+      name: "500k GBERT-large (Clean / Robust)",
+      description: "Trained on a clean, balance-sampled 500k sentence corpus. Representation collapse resolved via larger effective batch size (256) and lower learning rate (5e-6). Highly robust for identifying templates and structured outputs.",
+      accuracy: "100.00%",
+      f1: "100.00%",
+      threshold: 0.18
+    },
+    {
+      key: "full_model_500k",
+      name: "500k GBERT-large (Collapsed)",
+      description: "Model trained on the massive 500k corpus. Experienced representation collapse during training, tending to predict a single class.",
+      accuracy: "50.00%",
+      f1: "33.33%",
+      threshold: 0.50
+    },
+    {
+      key: "legal_model",
+      name: "Legal GBERT-large (Law Focus)",
+      description: "Fine-tuned model with special emphasis on legal text and legislative sentence style.",
+      accuracy: "98.50%",
+      f1: "98.40%",
+      threshold: 0.18
+    },
+    {
+      key: "model_100k",
+      name: "100k GBERT-large (Intermediate)",
+      description: "Trained on the intermediate 100k corpus split.",
+      accuracy: "99.10%",
+      f1: "99.05%",
+      threshold: 0.18
+    }
+  ];
+
+  let modelsList = [];
+
+  async function loadModels() {
+    try {
+      const res = await fetch(`${API}/models`);
+      if (res.ok) {
+        modelsList = await res.json();
+      } else {
+        modelsList = FALLBACK_MODELS;
+      }
+    } catch {
+      modelsList = FALLBACK_MODELS;
+    }
+    populateModelsDropdown();
+  }
+
+  function populateModelsDropdown() {
+    const select = $('model-select');
+    select.innerHTML = '';
+    modelsList.forEach(m => {
+      const opt = document.createElement('option');
+      opt.value = m.key;
+      opt.textContent = m.name;
+      select.appendChild(opt);
+    });
+
+    const organicIdx = modelsList.findIndex(m => m.key === 'organic_gbert_large');
+    select.selectedIndex = organicIdx >= 0 ? organicIdx : 0;
+    
+    updateModelDetails();
+  }
+
+  function updateModelDetails() {
+    const key = $('model-select').value;
+    const model = modelsList.find(m => m.key === key);
+    if (model) {
+      $('model-desc').textContent = model.description;
+    }
+  }
+
+  $('model-select').addEventListener('change', updateModelDetails);
+
   // ── Init: fetch device from health endpoint ────────────────────────────────
   async function initHealth() {
     try {
@@ -665,6 +941,7 @@
     } catch { /* server might not be running yet */ }
   }
   initHealth();
+  loadModels();
 
   // ── Char counter ──────────────────────────────────────────────────────────
   const textarea = $('input-text');
@@ -698,10 +975,11 @@
     const text = textarea.value.trim();
     if (!text) { showToast('Please enter some text to analyse.'); return; }
 
-    setLoading(true);
+    setLoading(true, 'Comparing 9 models…');
+    const selectedModel = $('model-select').value;
 
     try {
-      const res = await fetch(`${API}/predict`, {
+      const res = await fetch(`${API}/predict_all`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text }),
@@ -712,8 +990,8 @@
         throw new Error(err.detail || `HTTP ${res.status}`);
       }
 
-      const data = await res.json();
-      renderResult(data, text);
+      const results = await res.json();
+      renderAllResults(results, selectedModel, text);
     } catch (err) {
       showToast(`Error: ${err.message}. Make sure server.py is running.`);
     } finally {
@@ -721,8 +999,45 @@
     }
   }
 
-  // ── Render result ─────────────────────────────────────────────────────────
-  function renderResult(data, text) {
+  // ── Render results across all models ──────────────────────────────────────
+  function renderAllResults(results, selectedModel, text) {
+    // 1. Find and render the active model result
+    const activeResult = results.find(r => {
+      const modelMeta = modelsList.find(m => m.key === selectedModel);
+      return modelMeta && modelMeta.name === r.model_name;
+    }) || results[0];
+
+    renderActiveResult(activeResult, text);
+
+    // 2. Populate the comparison table
+    const tbody = $('compare-table-body');
+    tbody.innerHTML = '';
+
+    results.forEach(r => {
+      const tr = document.createElement('tr');
+      
+      const modelMeta = modelsList.find(m => m.key === selectedModel);
+      if (modelMeta && modelMeta.name === r.model_name) {
+        tr.className = 'active-model-row';
+      }
+
+      const isHuman = r.label === 'Human';
+      const badgeClass = r.label === 'Error' ? 'error' : (isHuman ? 'human' : 'ai');
+      const verdictText = r.label === 'Error' ? 'Error' : (isHuman ? '👤 Human' : '🤖 AI');
+
+      tr.innerHTML = `
+        <td><strong>${escapeHtml(r.model_name)}</strong></td>
+        <td><span class="badge ${badgeClass}">${verdictText}</span></td>
+        <td>${r.label === 'Error' ? '--' : (r.ai_prob * 100).toFixed(2) + '%'}</td>
+        <td>${r.label === 'Error' ? '--' : (r.human_prob * 100).toFixed(2) + '%'}</td>
+        <td>${r.label === 'Error' ? '--' : (r.confidence * 100).toFixed(1) + '%'}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  // ── Render active result ──────────────────────────────────────────────────
+  function renderActiveResult(data, text) {
     const isHuman   = data.label === 'Human';
     const conf      = (data.confidence * 100).toFixed(1);
     const humanPct  = (data.human_prob * 100).toFixed(2);
@@ -743,7 +1058,6 @@
 
     // Verdict badge
     const badge = $('verdict-badge');
-    badge.className = 'human' ? '' : '';
     badge.className = isHuman ? 'human' : 'ai';
     badge.textContent = isHuman ? '✅ Human-written' : '🤖 AI-generated';
 
@@ -762,6 +1076,7 @@
     // Meta
     $('meta-threshold').textContent = data.threshold;
     $('meta-device').textContent    = serverDevice.toUpperCase();
+    $('meta-model').textContent     = data.model_name;
 
     // History
     addHistory({ text, label: data.label, confidence: data.confidence });
@@ -770,12 +1085,12 @@
   }
 
   // ── Loading state ─────────────────────────────────────────────────────────
-  function setLoading(on) {
+  function setLoading(on, customText = 'Detecting…') {
     const btn     = $('detect-btn');
     const label   = $('btn-label');
     const spinner = $('spinner');
     btn.disabled            = on;
-    label.textContent       = on ? 'Detecting…' : 'Detect';
+    label.textContent       = on ? customText : 'Detect';
     spinner.style.display   = on ? 'block' : 'none';
     $('btn-icon').style.display = on ? 'none' : 'block';
   }
