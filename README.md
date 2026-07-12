@@ -20,6 +20,7 @@ A comprehensive, state-of-the-art AI text detection suite for the German languag
 - [Usage](#usage)
 - [Model Performance Leaderboard](#model-performance-leaderboard)
 - [Model Limitations & Fail-Proofs Analysis](#model-limitations--fail-proofs-analysis)
+- [Model Complexity, Bias & Variance Analysis](#model-complexity-bias--variance-analysis)
 - [License](#license)
 
 ---
@@ -221,6 +222,45 @@ To ensure safe deployment, the models' structural protections (fail-proofs) and 
 *   ⚠️ **Limitations:**
     *   **Semantic Blindness:** Fails to detect logical contradictions, factual errors, or deep semantic shifts, as it only evaluates superficial syntax and distribution metrics.
     *   **Paraphrasing Sensitivity:** Highly vulnerable to paraphrasing tools or minor modifications that artificially raise/lower vocabulary entropy.
+
+---
+
+## Model Complexity, Bias & Variance Analysis
+
+To analyze how effectively G-BERT generalized, we investigate model complexity (underfitting vs. overfitting) and decompose error profiles into Bias and Variance.
+
+### Conceptual Bias-Variance Tradeoff Profile
+![Bias-Variance Tradeoff Chart](results/images/bias_variance_tradeoff.png)
+
+### Model Loss Profiles (Underfitting, Overfitting, and Optimal)
+![G-BERT Model Learning Curves](results/images/learning_curves.png)
+
+### Model-by-Model Error Breakdown
+
+1.  **`full_model_500k` (Massive v3 split)**:
+    *   **Fitting Status**: ❌ **Severe Underfitting (Gradient Collapse)**. Validation F1 remained flat at 33.82% (random prediction).
+    *   **Bias / Variance**: **Extremely High Bias, Zero Variance**. The model made static assumptions and predicted 100% human.
+    *   **Cause**: Hyperparameter instability (excessive learning rate `2e-5` for ~1M rows without gradient accumulation) leading to weight saturation.
+2.  **`v5_best_model` (v5 Baseline)** & **`full_model_500k_clean`**:
+    *   **Fitting Status**: ⚠️ **Severe Overfitting (Template Memorization)**. Achieved 100% in-distribution F1 but OOD F1 collapsed to 35.44% (AI Recall = 1.6%).
+    *   **Bias / Variance**: **Very Low Bias, Extremely High Variance**. Over-sensitized to the training dataset's synthetic noise.
+    *   **Cause**: Synthetic text template-collapse. The model memorized the 568 sentence templates instead of learning writing style.
+3.  **`legal_model` (v4 Legal)**:
+    *   **Fitting Status**: ⚠️ **Domain Overfitting (Narrow Generalization)**. Macro F1 is 98.40% in-distribution but drops to 58.30% OOD.
+    *   **Bias / Variance**: **Low Bias, High Variance**.
+    *   **Cause**: Over-specialization on German legislative grammar and parliamentary vocabulary.
+4.  **`best_model` / `full_model` (v1, 57k)** & **`model_100k` (v2, 70k)**:
+    *   **Fitting Status**: 🟡 **Moderate Generalization (Partially Overfit)**. Macro F1: 99.77% in-distribution, 65.81% OOD.
+    *   **Bias / Variance**: **Low Bias, Moderate Variance**.
+    *   **Cause**: The models generalized to OOD data by relying on formatting leakages and text length distribution shortcuts.
+5.  **`v5_best_model_clean`** & **`organic_gbert_large`**:
+    *   **Fitting Status**: 🏆 **Optimal Fit (Robust Stylistic Generalization)**. Macro F1: 99.99% / 99.61% in-distribution, 65.81% OOD.
+    *   **Bias / Variance**: **Optimized Low Bias & Low Variance**.
+    *   **Cause**: Double-layered template stripping, length-stratified matching, and formatting normalization forced G-BERT layers to learn stylometric boundaries.
+6.  **`XGBoost Classifier` (Stylometric Baseline)**:
+    *   **Fitting Status**: 🏆 **High Explainability, Stable Fit**. In-distribution Macro F1: 99.99%.
+    *   **Bias / Variance**: **Moderate Bias, Low Variance**.
+    *   **Cause**: Uses dense mathematical features (Shannon entropy, Type-Token Ratio, lemmas) to classify style directly, making it immune to vocabulary memorization but blind to deeper semantic flows.
 
 ---
 
