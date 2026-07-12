@@ -63,3 +63,16 @@ In the previous session, prior to length matching, evaluating the clean model on
 1. **Acknowledge Dataset Limitations**: The synthetic AI class in `training_pair_v5_clean.csv` does not contain style information, only structural templates and topic titles.
 2. **Generate Organic AI Texts**: To build a genuinely robust German AI detector, a new synthetic dataset must be generated where the AI models write organic, full-length paragraphs *without* predefined sentence templates.
 3. **Use the Template-Memorized Model as a Baseline**: If the goal is strictly in-distribution detection, the model trained with templates achieves **`1.0000`** Macro F1 but will fail to generalize to real-world out-of-distribution texts.
+
+---
+
+## 5. Model Complexity, Bias & Variance Visualization
+
+The model complexity tradeoff and convergence curves are shown below:
+
+### Conceptual Bias-Variance Tradeoff Profile
+![Bias-Variance Tradeoff Chart](results/images/bias_variance_tradeoff.png)
+
+### Model Loss Profiles (Underfitting, Overfitting, and Optimal)
+![G-BERT Model Learning Curves](results/images/learning_curves.png)
+
