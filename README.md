@@ -21,6 +21,7 @@ A comprehensive, state-of-the-art AI text detection suite for the German languag
 - [Model Performance Leaderboard](#model-performance-leaderboard)
 - [Model Limitations & Fail-Proofs Analysis](#model-limitations--fail-proofs-analysis)
 - [Model Complexity, Bias & Variance Analysis](#model-complexity-bias--variance-analysis)
+- [Interpretability & Model Diagnostics (SHAP & LIME)](#interpretability--model-diagnostics-shap--lime)
 - [License](#license)
 
 ---
@@ -261,6 +262,44 @@ To analyze how effectively G-BERT generalized, we investigate model complexity (
     *   **Fitting Status**: 🏆 **High Explainability, Stable Fit**. In-distribution Macro F1: 99.99%.
     *   **Bias / Variance**: **Moderate Bias, Low Variance**.
     *   **Cause**: Uses dense mathematical features (Shannon entropy, Type-Token Ratio, lemmas) to classify style directly, making it immune to vocabulary memorization but blind to deeper semantic flows.
+
+---
+
+## 🔍 Interpretability & Model Diagnostics (SHAP & LIME)
+
+To uncover why earlier models suffered from shortcut learning and model collapse, we conducted an extensive post-hoc explainability analysis using **SHAP (Shapley Additive exPlanations)** and **LIME (Local Interpretable Model-agnostic Explanations)**.
+
+Full research reports and diagnostic pipelines are available in:
+- 📄 [SHAP & LIME Interpretability & Failure Mode Report](shap_lime_analysis_report.md)
+- 📄 [LIME Interpretability & Performance Diagnostic Report](LIME%20Results.md)
+- 🐍 Scripts: [`explainability_analysis.py`](explainability_analysis.py), [`generate_advanced_shap_plots.py`](generate_advanced_shap_plots.py), [`generate_lime_analysis.py`](generate_lime_analysis.py)
+
+---
+
+### 1. SHAP Global & Local Visualization Suite
+
+| SHAP Visualization | Description & Empirical Findings | Artifact Link |
+| :--- | :--- | :---: |
+| **Global Beeswarm Plot** | Displays feature value distributions (red=high, blue=low) vs SHAP attributions across instances. Shows template terms (`dr`, `abgeordneten`) driving AI predictions. | ![Beeswarm](results/explainability/advanced_shap/shap_beeswarm_plot.png) |
+| **Global Bar Plot** | Ranks features by mean absolute SHAP value $E[\|\phi_i\|]$ across samples. | ![Bar Plot](results/explainability/advanced_shap/shap_bar_plot.png) |
+| **Local Waterfall Plot** | Decomposes a single text prediction step-by-step from base probability $E[f(x)] = 0.50$ up to final probability. | ![Waterfall](results/explainability/advanced_shap/shap_waterfall_local.png) |
+| **Local Force Plot** | Displays the equilibrium push/pull forces acting on prediction probabilities for specific instances. | ![Force Plot](results/explainability/advanced_shap/shap_force_local.png) |
+| **Heatmap Plot** | Matrix heatmap showing token/feature attributions across multiple test instances. | ![Heatmap](results/explainability/advanced_shap/shap_heatmap_tokens.png) |
+| **Feature Dependence Plot** | Maps non-linear feature value vs. SHAP value interactions for key n-grams. | ![Dependence](results/explainability/advanced_shap/shap_dependence_feature1.png) |
+
+---
+
+### 2. LIME Local Interpretability & Corpus Error Visuals
+
+| Diagnostic Artifact | Description & Implication | Visual Link |
+| :--- | :--- | :---: |
+| **Token Weight Bar Chart** | Quantifies word attributions ($+\text{AI}$ vs $-\text{Human}$) for local text predictions. | ![LIME Bar](results/lime_analysis/lime_token_weight_bars.png) |
+| **Highlighted Text HTML** | Interactive word-level highlight view (Green = Human, Red = AI). | [Interactive HTML View](results/lime_analysis/lime_highlighted_text_sample1.html) |
+| **Normalized Confusion Matrix** | Proportional true/false classification metrics on diagnostic test sets. | ![Confusion Matrix](results/lime_analysis/normalized_confusion_matrix.png) |
+| **Precision-Recall Curve** | PR trajectory reporting Average Precision (AP) for AI text detection. | ![PR Curve](results/lime_analysis/precision_recall_curve.png) |
+| **Probability Histogram** | Density distribution of $P(\text{AI})$ showing class separation and overlap region $[0.40, 0.60]$. | ![Probability Histogram](results/lime_analysis/prediction_probability_histogram.png) |
+| **Misclassification Analysis** | Top words triggering False Positives (formal news terms) and False Negatives. | ![Misclassifications](results/lime_analysis/misclassification_top_words.png) |
+| **t-SNE Embedding Projection** | 2D projection of BERT `[CLS]` embeddings displaying cluster boundaries and misclassifications. | ![t-SNE Embeddings](results/lime_analysis/tsne_embedding_projection.png) |
 
 ---
 
